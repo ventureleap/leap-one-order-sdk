@@ -193,7 +193,7 @@ $apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The new ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The new ConfigurationEntry resource
 
 try {
     $result = $apiInstance->postConfigurationEntryCollection($body);
@@ -208,7 +208,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**map[string,object]**](../Model/map.md)| The new ConfigurationEntry resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite**](../Model/ConfigurationEntryJsonldConfigurationWrite.md)| The new ConfigurationEntry resource | [optional]
 
 ### Return type
 
@@ -246,7 +246,7 @@ $apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The updated ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The updated ConfigurationEntry resource
 
 try {
     $result = $apiInstance->putConfigurationEntryItem($id, $body);
@@ -262,7 +262,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**map[string,object]**](../Model/map.md)| The updated ConfigurationEntry resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite**](../Model/ConfigurationEntryJsonldConfigurationWrite.md)| The updated ConfigurationEntry resource | [optional]
 
 ### Return type
 

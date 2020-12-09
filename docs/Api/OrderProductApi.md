@@ -191,7 +191,7 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The new OrderProduct resource
+$body = new \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite | The new OrderProduct resource
 
 try {
     $result = $apiInstance->postOrderProductCollection($body);
@@ -206,7 +206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**map[string,object]**](../Model/map.md)| The new OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldProductWrite**](../Model/OrderProductJsonldProductWrite.md)| The new OrderProduct resource | [optional]
 
 ### Return type
 
@@ -244,7 +244,7 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The updated OrderProduct resource
+$body = new \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite | The updated OrderProduct resource
 
 try {
     $result = $apiInstance->putOrderProductItem($id, $body);
@@ -260,7 +260,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**map[string,object]**](../Model/map.md)| The updated OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldProductWrite**](../Model/OrderProductJsonldProductWrite.md)| The updated OrderProduct resource | [optional]
 
 ### Return type
 

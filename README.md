@@ -130,7 +130,7 @@ $apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The new ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The new ConfigurationEntry resource
 
 try {
     $result = $apiInstance->postConfigurationEntryCollection($body);
@@ -151,7 +151,7 @@ $apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\map(); // map[string,object] | The updated ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The updated ConfigurationEntry resource
 
 try {
     $result = $apiInstance->putConfigurationEntryItem($id, $body);
@@ -204,6 +204,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
+
+## 0
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 
 ## apiKey
 
