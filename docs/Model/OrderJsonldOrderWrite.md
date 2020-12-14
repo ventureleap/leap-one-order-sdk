@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]**](OrderProductJsonldOrderWrite.md) |  | [optional] 
-**additional_properties** | **string[]** |  | [optional] 
+**additional_properties** | **map[string,string]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

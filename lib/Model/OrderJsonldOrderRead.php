@@ -73,8 +73,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'active' => 'bool',
 'deleted' => 'bool',
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]',
-'logs' => '\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]',
-'additional_properties' => 'string[]',
+'additional_properties' => 'map[string,string]',
 'total_gross_amount' => 'float',
 'total_net_amount' => 'float',
 'total_vat_amount' => 'float'    ];
@@ -102,7 +101,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'active' => null,
 'deleted' => null,
 'order_products' => null,
-'logs' => null,
 'additional_properties' => null,
 'total_gross_amount' => null,
 'total_net_amount' => null,
@@ -152,7 +150,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'active' => 'active',
 'deleted' => 'deleted',
 'order_products' => 'orderProducts',
-'logs' => 'logs',
 'additional_properties' => 'additionalProperties',
 'total_gross_amount' => 'totalGrossAmount',
 'total_net_amount' => 'totalNetAmount',
@@ -181,7 +178,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'order_products' => 'setOrderProducts',
-'logs' => 'setLogs',
 'additional_properties' => 'setAdditionalProperties',
 'total_gross_amount' => 'setTotalGrossAmount',
 'total_net_amount' => 'setTotalNetAmount',
@@ -210,7 +206,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'order_products' => 'getOrderProducts',
-'logs' => 'getLogs',
 'additional_properties' => 'getAdditionalProperties',
 'total_gross_amount' => 'getTotalGrossAmount',
 'total_net_amount' => 'getTotalNetAmount',
@@ -291,7 +286,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
-        $this->container['logs'] = isset($data['logs']) ? $data['logs'] : null;
         $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
         $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
@@ -740,33 +734,9 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets logs
-     *
-     * @return \VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]
-     */
-    public function getLogs()
-    {
-        return $this->container['logs'];
-    }
-
-    /**
-     * Sets logs
-     *
-     * @param \VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[] $logs logs
-     *
-     * @return $this
-     */
-    public function setLogs($logs)
-    {
-        $this->container['logs'] = $logs;
-
-        return $this;
-    }
-
-    /**
      * Gets additional_properties
      *
-     * @return string[]
+     * @return map[string,string]
      */
     public function getAdditionalProperties()
     {
@@ -776,7 +746,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Sets additional_properties
      *
-     * @param string[] $additional_properties additional_properties
+     * @param map[string,string] $additional_properties additional_properties
      *
      * @return $this
      */

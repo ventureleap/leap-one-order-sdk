@@ -196,7 +196,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
  - [OrderJsonldOrderRead](docs/Model/OrderJsonldOrderRead.md)
  - [OrderJsonldOrderWrite](docs/Model/OrderJsonldOrderWrite.md)
- - [OrderLogJsonldOrderRead](docs/Model/OrderLogJsonldOrderRead.md)
  - [OrderProductJsonldOrderRead](docs/Model/OrderProductJsonldOrderRead.md)
  - [OrderProductJsonldOrderWrite](docs/Model/OrderProductJsonldOrderWrite.md)
  - [OrderProductJsonldProductRead](docs/Model/OrderProductJsonldProductRead.md)

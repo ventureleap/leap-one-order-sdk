@@ -68,7 +68,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'bool',
 'deleted' => 'bool',
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
-'additional_properties' => 'string[]'    ];
+'additional_properties' => 'map[string,string]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -568,7 +568,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Gets additional_properties
      *
-     * @return string[]
+     * @return map[string,string]
      */
     public function getAdditionalProperties()
     {
@@ -578,7 +578,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Sets additional_properties
      *
-     * @param string[] $additional_properties additional_properties
+     * @param map[string,string] $additional_properties additional_properties
      *
      * @return $this
      */
