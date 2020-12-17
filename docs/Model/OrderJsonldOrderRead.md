@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]**](OrderProductJsonldOrderRead.md) |  | [optional] 
+**date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **additional_properties** | **map[string,string]** |  | [optional] 
 **total_gross_amount** | **float** |  | [optional] 
 **total_net_amount** | **float** |  | [optional] 
