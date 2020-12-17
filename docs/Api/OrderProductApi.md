@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2001 getOrderProductCollection($properties, $name, $uom, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2001 getOrderProductCollection($properties, $name, $uom, $product_id, $page)
 
 Retrieves the collection of OrderProduct resources.
 
@@ -84,10 +84,11 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
 $properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 $name = "name_example"; // string | 
 $uom = "uom_example"; // string | 
+$product_id = "product_id_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderProductCollection($properties, $name, $uom, $page);
+    $result = $apiInstance->getOrderProductCollection($properties, $name, $uom, $product_id, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->getOrderProductCollection: ', $e->getMessage(), PHP_EOL;
@@ -102,6 +103,7 @@ Name | Type | Description  | Notes
  **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
  **name** | **string**|  | [optional]
  **uom** | **string**|  | [optional]
+ **product_id** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type

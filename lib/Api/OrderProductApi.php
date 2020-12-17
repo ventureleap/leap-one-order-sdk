@@ -324,15 +324,16 @@ class OrderProductApi
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $name name (optional)
      * @param  string $uom uom (optional)
+     * @param  string $product_id product_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2001
      */
-    public function getOrderProductCollection($properties = null, $name = null, $uom = null, $page = '1')
+    public function getOrderProductCollection($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
     {
-        list($response) = $this->getOrderProductCollectionWithHttpInfo($properties, $name, $uom, $page);
+        list($response) = $this->getOrderProductCollectionWithHttpInfo($properties, $name, $uom, $product_id, $page);
         return $response;
     }
 
@@ -344,16 +345,17 @@ class OrderProductApi
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
+     * @param  string $product_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderProductCollectionWithHttpInfo($properties = null, $name = null, $uom = null, $page = '1')
+    public function getOrderProductCollectionWithHttpInfo($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2001';
-        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $page);
+        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $product_id, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -422,14 +424,15 @@ class OrderProductApi
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
+     * @param  string $product_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsync($properties = null, $name = null, $uom = null, $page = '1')
+    public function getOrderProductCollectionAsync($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
     {
-        return $this->getOrderProductCollectionAsyncWithHttpInfo($properties, $name, $uom, $page)
+        return $this->getOrderProductCollectionAsyncWithHttpInfo($properties, $name, $uom, $product_id, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -445,15 +448,16 @@ class OrderProductApi
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
+     * @param  string $product_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsyncWithHttpInfo($properties = null, $name = null, $uom = null, $page = '1')
+    public function getOrderProductCollectionAsyncWithHttpInfo($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2001';
-        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $page);
+        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $product_id, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -498,12 +502,13 @@ class OrderProductApi
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
+     * @param  string $product_id (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderProductCollectionRequest($properties = null, $name = null, $uom = null, $page = '1')
+    protected function getOrderProductCollectionRequest($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
     {
 
         $resourcePath = '/order/order_products';
@@ -527,6 +532,10 @@ class OrderProductApi
         // query params
         if ($uom !== null) {
             $queryParams['uom'] = ObjectSerializer::toQueryValue($uom, null);
+        }
+        // query params
+        if ($product_id !== null) {
+            $queryParams['productId'] = ObjectSerializer::toQueryValue($product_id, null);
         }
         // query params
         if ($page !== null) {
