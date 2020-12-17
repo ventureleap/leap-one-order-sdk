@@ -331,15 +331,19 @@ class OrderApi
      * @param  string $customer_uuid customer_uuid (optional)
      * @param  bool $active active (optional)
      * @param  bool $deleted deleted (optional)
+     * @param  string $date_of_validity_before date_of_validity_before (optional)
+     * @param  string $date_of_validity_strictly_before date_of_validity_strictly_before (optional)
+     * @param  string $date_of_validity_after date_of_validity_after (optional)
+     * @param  string $date_of_validity_strictly_after date_of_validity_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2002
      */
-    public function getOrderCollection($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $page = '1')
+    public function getOrderCollection($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
     {
-        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page);
+        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
         return $response;
     }
 
@@ -358,16 +362,20 @@ class OrderApi
      * @param  string $customer_uuid (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  string $date_of_validity_before (optional)
+     * @param  string $date_of_validity_strictly_before (optional)
+     * @param  string $date_of_validity_after (optional)
+     * @param  string $date_of_validity_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderCollectionWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $page = '1')
+    public function getOrderCollectionWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page);
+        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -443,14 +451,18 @@ class OrderApi
      * @param  string $customer_uuid (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  string $date_of_validity_before (optional)
+     * @param  string $date_of_validity_strictly_before (optional)
+     * @param  string $date_of_validity_after (optional)
+     * @param  string $date_of_validity_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsync($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $page = '1')
+    public function getOrderCollectionAsync($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
     {
-        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page)
+        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -473,15 +485,19 @@ class OrderApi
      * @param  string $customer_uuid (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  string $date_of_validity_before (optional)
+     * @param  string $date_of_validity_strictly_before (optional)
+     * @param  string $date_of_validity_after (optional)
+     * @param  string $date_of_validity_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $page = '1')
+    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page);
+        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -533,12 +549,16 @@ class OrderApi
      * @param  string $customer_uuid (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  string $date_of_validity_before (optional)
+     * @param  string $date_of_validity_strictly_before (optional)
+     * @param  string $date_of_validity_after (optional)
+     * @param  string $date_of_validity_strictly_after (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderCollectionRequest($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $page = '1')
+    protected function getOrderCollectionRequest($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
     {
 
         $resourcePath = '/order/orders';
@@ -590,6 +610,22 @@ class OrderApi
         // query params
         if ($deleted !== null) {
             $queryParams['deleted'] = ObjectSerializer::toQueryValue($deleted, null);
+        }
+        // query params
+        if ($date_of_validity_before !== null) {
+            $queryParams['dateOfValidity[before]'] = ObjectSerializer::toQueryValue($date_of_validity_before, null);
+        }
+        // query params
+        if ($date_of_validity_strictly_before !== null) {
+            $queryParams['dateOfValidity[strictly_before]'] = ObjectSerializer::toQueryValue($date_of_validity_strictly_before, null);
+        }
+        // query params
+        if ($date_of_validity_after !== null) {
+            $queryParams['dateOfValidity[after]'] = ObjectSerializer::toQueryValue($date_of_validity_after, null);
+        }
+        // query params
+        if ($date_of_validity_strictly_after !== null) {
+            $queryParams['dateOfValidity[strictly_after]'] = ObjectSerializer::toQueryValue($date_of_validity_strictly_after, null);
         }
         // query params
         if ($page !== null) {

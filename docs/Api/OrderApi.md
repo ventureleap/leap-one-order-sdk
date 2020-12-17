@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page)
 
 Retrieves the collection of Order resources.
 
@@ -91,10 +91,14 @@ $payment_status = "payment_status_example"; // string |
 $customer_uuid = "customer_uuid_example"; // string | 
 $active = true; // bool | 
 $deleted = true; // bool | 
+$date_of_validity_before = "date_of_validity_before_example"; // string | 
+$date_of_validity_strictly_before = "date_of_validity_strictly_before_example"; // string | 
+$date_of_validity_after = "date_of_validity_after_example"; // string | 
+$date_of_validity_strictly_after = "date_of_validity_strictly_after_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $page);
+    $result = $apiInstance->getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -116,6 +120,10 @@ Name | Type | Description  | Notes
  **customer_uuid** | **string**|  | [optional]
  **active** | **bool**|  | [optional]
  **deleted** | **bool**|  | [optional]
+ **date_of_validity_before** | **string**|  | [optional]
+ **date_of_validity_strictly_before** | **string**|  | [optional]
+ **date_of_validity_after** | **string**|  | [optional]
+ **date_of_validity_strictly_after** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
