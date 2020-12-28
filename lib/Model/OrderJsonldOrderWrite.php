@@ -59,7 +59,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
-'order_code' => 'string',
 'status' => 'string',
 'payment_status' => 'string',
 'payment_date' => '\DateTime',
@@ -69,6 +68,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'bool',
 'deleted' => 'bool',
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
+'date_of_validity' => '\DateTime',
 'additional_properties' => 'object'    ];
 
     /**
@@ -80,7 +80,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'order_code' => null,
 'status' => null,
 'payment_status' => null,
 'payment_date' => 'date-time',
@@ -90,6 +89,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => null,
 'deleted' => null,
 'order_products' => null,
+'date_of_validity' => 'date-time',
 'additional_properties' => null    ];
 
     /**
@@ -122,7 +122,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
-'order_code' => 'orderCode',
 'status' => 'status',
 'payment_status' => 'paymentStatus',
 'payment_date' => 'paymentDate',
@@ -132,6 +131,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'active',
 'deleted' => 'deleted',
 'order_products' => 'orderProducts',
+'date_of_validity' => 'dateOfValidity',
 'additional_properties' => 'additionalProperties'    ];
 
     /**
@@ -143,7 +143,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
-'order_code' => 'setOrderCode',
 'status' => 'setStatus',
 'payment_status' => 'setPaymentStatus',
 'payment_date' => 'setPaymentDate',
@@ -153,6 +152,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'order_products' => 'setOrderProducts',
+'date_of_validity' => 'setDateOfValidity',
 'additional_properties' => 'setAdditionalProperties'    ];
 
     /**
@@ -164,7 +164,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
-'order_code' => 'getOrderCode',
 'status' => 'getStatus',
 'payment_status' => 'getPaymentStatus',
 'payment_date' => 'getPaymentDate',
@@ -174,6 +173,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'order_products' => 'getOrderProducts',
+'date_of_validity' => 'getDateOfValidity',
 'additional_properties' => 'getAdditionalProperties'    ];
 
     /**
@@ -237,7 +237,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['order_code'] = isset($data['order_code']) ? $data['order_code'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['payment_status'] = isset($data['payment_status']) ? $data['payment_status'] : null;
         $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
@@ -247,6 +246,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
+        $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
         $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
     }
 
@@ -351,30 +351,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_code
-     *
-     * @return string
-     */
-    public function getOrderCode()
-    {
-        return $this->container['order_code'];
-    }
-
-    /**
-     * Sets order_code
-     *
-     * @param string $order_code order_code
-     *
-     * @return $this
-     */
-    public function setOrderCode($order_code)
-    {
-        $this->container['order_code'] = $order_code;
 
         return $this;
     }
@@ -591,6 +567,30 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setOrderProducts($order_products)
     {
         $this->container['order_products'] = $order_products;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_validity
+     *
+     * @return \DateTime
+     */
+    public function getDateOfValidity()
+    {
+        return $this->container['date_of_validity'];
+    }
+
+    /**
+     * Sets date_of_validity
+     *
+     * @param \DateTime $date_of_validity date_of_validity
+     *
+     * @return $this
+     */
+    public function setDateOfValidity($date_of_validity)
+    {
+        $this->container['date_of_validity'] = $date_of_validity;
 
         return $this;
     }

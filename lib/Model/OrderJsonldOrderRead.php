@@ -74,6 +74,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'deleted' => 'bool',
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]',
 'logs' => '\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]',
+'date_of_validity' => '\DateTime',
 'additional_properties' => 'object',
 'total_gross_amount' => 'int',
 'total_net_amount' => 'int',
@@ -103,6 +104,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'deleted' => null,
 'order_products' => null,
 'logs' => null,
+'date_of_validity' => 'date-time',
 'additional_properties' => null,
 'total_gross_amount' => null,
 'total_net_amount' => null,
@@ -153,6 +155,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'deleted' => 'deleted',
 'order_products' => 'orderProducts',
 'logs' => 'logs',
+'date_of_validity' => 'dateOfValidity',
 'additional_properties' => 'additionalProperties',
 'total_gross_amount' => 'totalGrossAmount',
 'total_net_amount' => 'totalNetAmount',
@@ -182,6 +185,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'deleted' => 'setDeleted',
 'order_products' => 'setOrderProducts',
 'logs' => 'setLogs',
+'date_of_validity' => 'setDateOfValidity',
 'additional_properties' => 'setAdditionalProperties',
 'total_gross_amount' => 'setTotalGrossAmount',
 'total_net_amount' => 'setTotalNetAmount',
@@ -211,6 +215,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'deleted' => 'getDeleted',
 'order_products' => 'getOrderProducts',
 'logs' => 'getLogs',
+'date_of_validity' => 'getDateOfValidity',
 'additional_properties' => 'getAdditionalProperties',
 'total_gross_amount' => 'getTotalGrossAmount',
 'total_net_amount' => 'getTotalNetAmount',
@@ -292,6 +297,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['logs'] = isset($data['logs']) ? $data['logs'] : null;
+        $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
         $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
         $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
@@ -759,6 +765,30 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setLogs($logs)
     {
         $this->container['logs'] = $logs;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_validity
+     *
+     * @return \DateTime
+     */
+    public function getDateOfValidity()
+    {
+        return $this->container['date_of_validity'];
+    }
+
+    /**
+     * Sets date_of_validity
+     *
+     * @param \DateTime $date_of_validity date_of_validity
+     *
+     * @return $this
+     */
+    public function setDateOfValidity($date_of_validity)
+    {
+        $this->container['date_of_validity'] = $date_of_validity;
 
         return $this;
     }
