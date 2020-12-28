@@ -20,11 +20,11 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]**](OrderProductJsonldOrderRead.md) |  | [optional] 
-**date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**additional_properties** | **map[string,string]** |  | [optional] 
-**total_gross_amount** | **float** |  | [optional] 
-**total_net_amount** | **float** |  | [optional] 
-**total_vat_amount** | **float** |  | [optional] 
+**logs** | [**\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]**](OrderLogJsonldOrderRead.md) |  | [optional] 
+**additional_properties** | **object** |  | [optional] 
+**total_gross_amount** | **int** |  | [optional] 
+**total_net_amount** | **int** |  | [optional] 
+**total_vat_amount** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

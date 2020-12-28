@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **name** | **string** | Name of the product | [optional] 
 **uom** | **string** | Unit of Measurement (UOM) Codes | [optional] 
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
-**single_net_amount** | **float** |  | 
+**single_net_amount** | **int** |  | 
 **active** | **bool** |  | [optional] 
-**single_vat_amount** | **float** |  | [optional] 
-**single_gross_amount** | **float** |  | [optional] 
+**single_vat_amount** | **int** |  | [optional] 
+**single_gross_amount** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

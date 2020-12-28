@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
+**order_code** | **string** |  | [optional] 
 **status** | **string** |  | 
 **payment_status** | **string** |  | 
 **payment_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
@@ -15,8 +16,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]**](OrderProductJsonldOrderWrite.md) |  | [optional] 
-**date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**additional_properties** | **map[string,string]** |  | [optional] 
+**additional_properties** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
