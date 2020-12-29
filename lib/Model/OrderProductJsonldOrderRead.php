@@ -59,12 +59,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'uuid' => 'string',
 'product_id' => 'string',
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
 'single_net_amount' => 'int',
 'active' => 'bool',
+'deleted' => 'bool',
+'additional_properties' => 'object',
 'single_vat_amount' => 'int',
 'single_gross_amount' => 'int'    ];
 
@@ -77,12 +80,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'uuid' => 'uuid',
 'product_id' => 'uuid',
 'name' => null,
 'uom' => null,
 'quantity' => null,
 'single_net_amount' => null,
 'active' => null,
+'deleted' => null,
+'additional_properties' => null,
 'single_vat_amount' => null,
 'single_gross_amount' => null    ];
 
@@ -116,12 +122,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'uuid' => 'uuid',
 'product_id' => 'productId',
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
 'single_net_amount' => 'singleNetAmount',
 'active' => 'active',
+'deleted' => 'deleted',
+'additional_properties' => 'additionalProperties',
 'single_vat_amount' => 'singleVatAmount',
 'single_gross_amount' => 'singleGrossAmount'    ];
 
@@ -134,12 +143,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'uuid' => 'setUuid',
 'product_id' => 'setProductId',
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
 'single_net_amount' => 'setSingleNetAmount',
 'active' => 'setActive',
+'deleted' => 'setDeleted',
+'additional_properties' => 'setAdditionalProperties',
 'single_vat_amount' => 'setSingleVatAmount',
 'single_gross_amount' => 'setSingleGrossAmount'    ];
 
@@ -152,12 +164,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'uuid' => 'getUuid',
 'product_id' => 'getProductId',
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
 'single_net_amount' => 'getSingleNetAmount',
 'active' => 'getActive',
+'deleted' => 'getDeleted',
+'additional_properties' => 'getAdditionalProperties',
 'single_vat_amount' => 'getSingleVatAmount',
 'single_gross_amount' => 'getSingleGrossAmount'    ];
 
@@ -222,12 +237,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
         $this->container['single_vat_amount'] = isset($data['single_vat_amount']) ? $data['single_vat_amount'] : null;
         $this->container['single_gross_amount'] = isset($data['single_gross_amount']) ? $data['single_gross_amount'] : null;
     }
@@ -330,6 +348,30 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
@@ -474,6 +516,54 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setActive($active)
     {
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted deleted
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_properties
+     *
+     * @return object
+     */
+    public function getAdditionalProperties()
+    {
+        return $this->container['additional_properties'];
+    }
+
+    /**
+     * Sets additional_properties
+     *
+     * @param object $additional_properties additional_properties
+     *
+     * @return $this
+     */
+    public function setAdditionalProperties($additional_properties)
+    {
+        $this->container['additional_properties'] = $additional_properties;
 
         return $this;
     }

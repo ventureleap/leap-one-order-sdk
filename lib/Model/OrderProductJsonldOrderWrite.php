@@ -63,7 +63,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
-'single_net_amount' => 'int'    ];
+'single_net_amount' => 'int',
+'active' => 'bool',
+'deleted' => 'bool',
+'additional_properties' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,7 +81,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => null,
 'uom' => null,
 'quantity' => null,
-'single_net_amount' => null    ];
+'single_net_amount' => null,
+'active' => null,
+'deleted' => null,
+'additional_properties' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,7 +120,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
-'single_net_amount' => 'singleNetAmount'    ];
+'single_net_amount' => 'singleNetAmount',
+'active' => 'active',
+'deleted' => 'deleted',
+'additional_properties' => 'additionalProperties'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -129,7 +138,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
-'single_net_amount' => 'setSingleNetAmount'    ];
+'single_net_amount' => 'setSingleNetAmount',
+'active' => 'setActive',
+'deleted' => 'setDeleted',
+'additional_properties' => 'setAdditionalProperties'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -144,7 +156,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
-'single_net_amount' => 'getSingleNetAmount'    ];
+'single_net_amount' => 'getSingleNetAmount',
+'active' => 'getActive',
+'deleted' => 'getDeleted',
+'additional_properties' => 'getAdditionalProperties'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,6 +227,9 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
     }
 
     /**
@@ -432,6 +450,78 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setSingleNetAmount($single_net_amount)
     {
         $this->container['single_net_amount'] = $single_net_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets active
+     *
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->container['active'];
+    }
+
+    /**
+     * Sets active
+     *
+     * @param bool $active active
+     *
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted deleted
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_properties
+     *
+     * @return object
+     */
+    public function getAdditionalProperties()
+    {
+        return $this->container['additional_properties'];
+    }
+
+    /**
+     * Sets additional_properties
+     *
+     * @param object $additional_properties additional_properties
+     *
+     * @return $this
+     */
+    public function setAdditionalProperties($additional_properties)
+    {
+        $this->container['additional_properties'] = $additional_properties;
 
         return $this;
     }
