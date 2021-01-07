@@ -63,7 +63,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
-'single_net_amount' => 'int'    ];
+'single_net_amount' => 'int',
+'active' => 'bool',
+'deleted' => 'bool',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,7 +81,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => null,
 'uom' => null,
 'quantity' => null,
-'single_net_amount' => null    ];
+'single_net_amount' => null,
+'active' => null,
+'deleted' => null,
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,7 +120,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
-'single_net_amount' => 'singleNetAmount'    ];
+'single_net_amount' => 'singleNetAmount',
+'active' => 'active',
+'deleted' => 'deleted',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -129,7 +138,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
-'single_net_amount' => 'setSingleNetAmount'    ];
+'single_net_amount' => 'setSingleNetAmount',
+'active' => 'setActive',
+'deleted' => 'setDeleted',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -144,7 +156,10 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
-'single_net_amount' => 'getSingleNetAmount'    ];
+'single_net_amount' => 'getSingleNetAmount',
+'active' => 'getActive',
+'deleted' => 'getDeleted',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,6 +227,9 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -432,6 +450,78 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setSingleNetAmount($single_net_amount)
     {
         $this->container['single_net_amount'] = $single_net_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets active
+     *
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->container['active'];
+    }
+
+    /**
+     * Sets active
+     *
+     * @param bool $active active
+     *
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted deleted
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }
