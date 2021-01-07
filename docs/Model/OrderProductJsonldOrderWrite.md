@@ -11,9 +11,6 @@ Name | Type | Description | Notes
 **uom** | **string** | Unit of Measurement (UOM) Codes | [optional] 
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
 **single_net_amount** | **int** |  | 
-**active** | **bool** |  | [optional] 
-**deleted** | **bool** |  | [optional] 
-**additional_properties** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

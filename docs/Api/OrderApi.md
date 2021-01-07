@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page)
 
 Retrieves the collection of Order resources.
 
@@ -82,7 +82,7 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderApi(
     $config
 );
 $properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
-$additional_properties = "additional_properties_example"; // string | 
+$custom_data = "custom_data_example"; // string | 
 $internal_comment = "internal_comment_example"; // string | 
 $customer_comment = "customer_comment_example"; // string | 
 $order_code = "order_code_example"; // string | 
@@ -95,10 +95,12 @@ $date_of_validity_before = "date_of_validity_before_example"; // string |
 $date_of_validity_strictly_before = "date_of_validity_strictly_before_example"; // string | 
 $date_of_validity_after = "date_of_validity_after_example"; // string | 
 $date_of_validity_strictly_after = "date_of_validity_strictly_after_example"; // string | 
+$order_created_at = "order_created_at_example"; // string | 
+$order_payment_date = "order_payment_date_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -111,7 +113,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
- **additional_properties** | **string**|  | [optional]
+ **custom_data** | **string**|  | [optional]
  **internal_comment** | **string**|  | [optional]
  **customer_comment** | **string**|  | [optional]
  **order_code** | **string**|  | [optional]
@@ -124,6 +126,8 @@ Name | Type | Description  | Notes
  **date_of_validity_strictly_before** | **string**|  | [optional]
  **date_of_validity_after** | **string**|  | [optional]
  **date_of_validity_strictly_after** | **string**|  | [optional]
+ **order_created_at** | **string**|  | [optional]
+ **order_payment_date** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type

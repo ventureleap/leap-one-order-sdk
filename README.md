@@ -197,10 +197,10 @@ Class | Method | HTTP request | Description
  - [OrderJsonldOrderRead](docs/Model/OrderJsonldOrderRead.md)
  - [OrderJsonldOrderWrite](docs/Model/OrderJsonldOrderWrite.md)
  - [OrderLogJsonldOrderRead](docs/Model/OrderLogJsonldOrderRead.md)
+ - [OrderProductJsonldOrderProductRead](docs/Model/OrderProductJsonldOrderProductRead.md)
+ - [OrderProductJsonldOrderProductWrite](docs/Model/OrderProductJsonldOrderProductWrite.md)
  - [OrderProductJsonldOrderRead](docs/Model/OrderProductJsonldOrderRead.md)
  - [OrderProductJsonldOrderWrite](docs/Model/OrderProductJsonldOrderWrite.md)
- - [OrderProductJsonldProductRead](docs/Model/OrderProductJsonldProductRead.md)
- - [OrderProductJsonldProductWrite](docs/Model/OrderProductJsonldProductWrite.md)
 
 ## Documentation For Authorization
 
