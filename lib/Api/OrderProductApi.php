@@ -621,7 +621,7 @@ class OrderProductApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldProductRead
+     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
     public function getOrderProductItem($id)
     {
@@ -638,11 +638,11 @@ class OrderProductApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldProductRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderProductItemWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->getOrderProductItemRequest($id);
 
         try {
@@ -694,7 +694,7 @@ class OrderProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead',
+                        '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -736,7 +736,7 @@ class OrderProductApi
      */
     public function getOrderProductItemAsyncWithHttpInfo($id)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->getOrderProductItemRequest($id);
 
         return $this->client
@@ -884,11 +884,11 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldProductRead
+     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
     public function postOrderProductCollection($body = null)
     {
@@ -901,15 +901,15 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldProductRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function postOrderProductCollectionWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->postOrderProductCollectionRequest($body);
 
         try {
@@ -961,7 +961,7 @@ class OrderProductApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead',
+                        '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -976,7 +976,7 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -996,14 +996,14 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postOrderProductCollectionAsyncWithHttpInfo($body = null)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->postOrderProductCollectionRequest($body);
 
         return $this->client
@@ -1046,7 +1046,7 @@ class OrderProductApi
     /**
      * Create request for operation 'postOrderProductCollection'
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1141,11 +1141,11 @@ class OrderProductApi
      * Replaces the OrderProduct resource.
      *
      * @param  string $id id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldProductRead
+     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
     public function putOrderProductItem($id, $body = null)
     {
@@ -1159,15 +1159,15 @@ class OrderProductApi
      * Replaces the OrderProduct resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldProductRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
     public function putOrderProductItemWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->putOrderProductItemRequest($id, $body);
 
         try {
@@ -1219,7 +1219,7 @@ class OrderProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead',
+                        '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1235,7 +1235,7 @@ class OrderProductApi
      * Replaces the OrderProduct resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1256,14 +1256,14 @@ class OrderProductApi
      * Replaces the OrderProduct resource.
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putOrderProductItemAsyncWithHttpInfo($id, $body = null)
     {
-        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldProductRead';
+        $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->putOrderProductItemRequest($id, $body);
 
         return $this->client
@@ -1307,7 +1307,7 @@ class OrderProductApi
      * Create request for operation 'putOrderProductItem'
      *
      * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

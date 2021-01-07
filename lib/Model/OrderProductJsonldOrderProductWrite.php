@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderProductJsonldOrderWrite
+ * OrderProductJsonldOrderProductWrite
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderProductJsonldOrderWrite Class Doc Comment
+ * OrderProductJsonldOrderProductWrite Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
+class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderWrite';
+    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderProductWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,6 +59,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'order' => 'string',
 'product_id' => 'string',
 'name' => 'string',
 'uom' => 'string',
@@ -76,6 +77,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'order' => 'iri-reference',
 'product_id' => 'uuid',
 'name' => null,
 'uom' => null,
@@ -114,6 +116,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'order' => 'order',
 'product_id' => 'productId',
 'name' => 'name',
 'uom' => 'uom',
@@ -131,6 +134,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'order' => 'setOrder',
 'product_id' => 'setProductId',
 'name' => 'setName',
 'uom' => 'setUom',
@@ -148,6 +152,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'order' => 'getOrder',
 'product_id' => 'getProductId',
 'name' => 'getName',
 'uom' => 'getUom',
@@ -217,6 +222,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
@@ -235,6 +241,9 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
+        }
         if ($this->container['product_id'] === null) {
             $invalidProperties[] = "'product_id' can't be null";
         }
@@ -324,6 +333,30 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order The corresponding order for this product as Iri
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }

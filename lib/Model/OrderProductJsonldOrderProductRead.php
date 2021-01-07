@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderProductJsonldOrderWrite
+ * OrderProductJsonldOrderProductRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderProductJsonldOrderWrite Class Doc Comment
+ * OrderProductJsonldOrderProductRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
+class OrderProductJsonldOrderProductRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderWrite';
+    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderProductRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,13 +59,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'uuid' => 'string',
+'application_id' => 'string',
+'order' => 'string',
 'product_id' => 'string',
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
 'single_net_amount' => 'int',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
 'active' => 'bool',
-'deleted' => 'bool'    ];
+'deleted' => 'bool',
+'single_vat_amount' => 'int',
+'single_gross_amount' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,13 +83,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'uuid' => 'uuid',
+'application_id' => null,
+'order' => 'iri-reference',
 'product_id' => 'uuid',
 'name' => null,
 'uom' => null,
 'quantity' => null,
 'single_net_amount' => null,
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
 'active' => null,
-'deleted' => null    ];
+'deleted' => null,
+'single_vat_amount' => null,
+'single_gross_amount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,13 +128,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'uuid' => 'uuid',
+'application_id' => 'applicationId',
+'order' => 'order',
 'product_id' => 'productId',
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
 'single_net_amount' => 'singleNetAmount',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
 'active' => 'active',
-'deleted' => 'deleted'    ];
+'deleted' => 'deleted',
+'single_vat_amount' => 'singleVatAmount',
+'single_gross_amount' => 'singleGrossAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -131,13 +152,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'uuid' => 'setUuid',
+'application_id' => 'setApplicationId',
+'order' => 'setOrder',
 'product_id' => 'setProductId',
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
 'single_net_amount' => 'setSingleNetAmount',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
 'active' => 'setActive',
-'deleted' => 'setDeleted'    ];
+'deleted' => 'setDeleted',
+'single_vat_amount' => 'setSingleVatAmount',
+'single_gross_amount' => 'setSingleGrossAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -148,13 +176,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'uuid' => 'getUuid',
+'application_id' => 'getApplicationId',
+'order' => 'getOrder',
 'product_id' => 'getProductId',
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
 'single_net_amount' => 'getSingleNetAmount',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
 'active' => 'getActive',
-'deleted' => 'getDeleted'    ];
+'deleted' => 'getDeleted',
+'single_vat_amount' => 'getSingleVatAmount',
+'single_gross_amount' => 'getSingleGrossAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -217,13 +252,20 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['single_vat_amount'] = isset($data['single_vat_amount']) ? $data['single_vat_amount'] : null;
+        $this->container['single_gross_amount'] = isset($data['single_gross_amount']) ? $data['single_gross_amount'] : null;
     }
 
     /**
@@ -235,6 +277,9 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
+        }
         if ($this->container['product_id'] === null) {
             $invalidProperties[] = "'product_id' can't be null";
         }
@@ -324,6 +369,78 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order The corresponding order for this product as Iri
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }
@@ -449,6 +566,54 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
      * Gets active
      *
      * @return bool
@@ -492,6 +657,54 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setDeleted($deleted)
     {
         $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets single_vat_amount
+     *
+     * @return int
+     */
+    public function getSingleVatAmount()
+    {
+        return $this->container['single_vat_amount'];
+    }
+
+    /**
+     * Sets single_vat_amount
+     *
+     * @param int $single_vat_amount single_vat_amount
+     *
+     * @return $this
+     */
+    public function setSingleVatAmount($single_vat_amount)
+    {
+        $this->container['single_vat_amount'] = $single_vat_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets single_gross_amount
+     *
+     * @return int
+     */
+    public function getSingleGrossAmount()
+    {
+        return $this->container['single_gross_amount'];
+    }
+
+    /**
+     * Sets single_gross_amount
+     *
+     * @param int $single_gross_amount single_gross_amount
+     *
+     * @return $this
+     */
+    public function setSingleGrossAmount($single_gross_amount)
+    {
+        $this->container['single_gross_amount'] = $single_gross_amount;
 
         return $this;
     }

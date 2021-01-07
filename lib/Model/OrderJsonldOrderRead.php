@@ -48,7 +48,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Order:jsonld-order:read';
+    protected static $swaggerModelName = 'Order:jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -75,7 +75,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]',
 'logs' => '\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]',
 'date_of_validity' => '\DateTime',
-'additional_properties' => 'object',
 'total_gross_amount' => 'int',
 'total_net_amount' => 'int',
 'total_vat_amount' => 'int'    ];
@@ -105,7 +104,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => null,
 'logs' => null,
 'date_of_validity' => 'date-time',
-'additional_properties' => null,
 'total_gross_amount' => null,
 'total_net_amount' => null,
 'total_vat_amount' => null    ];
@@ -156,7 +154,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'orderProducts',
 'logs' => 'logs',
 'date_of_validity' => 'dateOfValidity',
-'additional_properties' => 'additionalProperties',
 'total_gross_amount' => 'totalGrossAmount',
 'total_net_amount' => 'totalNetAmount',
 'total_vat_amount' => 'totalVatAmount'    ];
@@ -186,7 +183,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'setOrderProducts',
 'logs' => 'setLogs',
 'date_of_validity' => 'setDateOfValidity',
-'additional_properties' => 'setAdditionalProperties',
 'total_gross_amount' => 'setTotalGrossAmount',
 'total_net_amount' => 'setTotalNetAmount',
 'total_vat_amount' => 'setTotalVatAmount'    ];
@@ -216,7 +212,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'getOrderProducts',
 'logs' => 'getLogs',
 'date_of_validity' => 'getDateOfValidity',
-'additional_properties' => 'getAdditionalProperties',
 'total_gross_amount' => 'getTotalGrossAmount',
 'total_net_amount' => 'getTotalNetAmount',
 'total_vat_amount' => 'getTotalVatAmount'    ];
@@ -298,7 +293,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['logs'] = isset($data['logs']) ? $data['logs'] : null;
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
-        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
         $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
         $this->container['total_vat_amount'] = isset($data['total_vat_amount']) ? $data['total_vat_amount'] : null;
@@ -789,30 +783,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setDateOfValidity($date_of_validity)
     {
         $this->container['date_of_validity'] = $date_of_validity;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_properties
-     *
-     * @return object
-     */
-    public function getAdditionalProperties()
-    {
-        return $this->container['additional_properties'];
-    }
-
-    /**
-     * Sets additional_properties
-     *
-     * @param object $additional_properties additional_properties
-     *
-     * @return $this
-     */
-    public function setAdditionalProperties($additional_properties)
-    {
-        $this->container['additional_properties'] = $additional_properties;
 
         return $this;
     }

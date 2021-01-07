@@ -48,7 +48,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Order:jsonld-order:write';
+    protected static $swaggerModelName = 'Order:jsonld-OrderWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -68,8 +68,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'bool',
 'deleted' => 'bool',
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
-'date_of_validity' => '\DateTime',
-'additional_properties' => 'object'    ];
+'date_of_validity' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -89,8 +88,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => null,
 'deleted' => null,
 'order_products' => null,
-'date_of_validity' => 'date-time',
-'additional_properties' => null    ];
+'date_of_validity' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -131,8 +129,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'active',
 'deleted' => 'deleted',
 'order_products' => 'orderProducts',
-'date_of_validity' => 'dateOfValidity',
-'additional_properties' => 'additionalProperties'    ];
+'date_of_validity' => 'dateOfValidity'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -152,8 +149,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'order_products' => 'setOrderProducts',
-'date_of_validity' => 'setDateOfValidity',
-'additional_properties' => 'setAdditionalProperties'    ];
+'date_of_validity' => 'setDateOfValidity'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -173,8 +169,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'order_products' => 'getOrderProducts',
-'date_of_validity' => 'getDateOfValidity',
-'additional_properties' => 'getAdditionalProperties'    ];
+'date_of_validity' => 'getDateOfValidity'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -247,7 +242,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
-        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
     }
 
     /**
@@ -591,30 +585,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setDateOfValidity($date_of_validity)
     {
         $this->container['date_of_validity'] = $date_of_validity;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_properties
-     *
-     * @return object
-     */
-    public function getAdditionalProperties()
-    {
-        return $this->container['additional_properties'];
-    }
-
-    /**
-     * Sets additional_properties
-     *
-     * @param object $additional_properties additional_properties
-     *
-     * @return $this
-     */
-    public function setAdditionalProperties($additional_properties)
-    {
-        $this->container['additional_properties'] = $additional_properties;
 
         return $this;
     }

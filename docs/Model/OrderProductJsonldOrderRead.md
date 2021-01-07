@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **single_net_amount** | **int** |  | 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**additional_properties** | **object** |  | [optional] 
 **single_vat_amount** | **int** |  | [optional] 
 **single_gross_amount** | **int** |  | [optional] 
 

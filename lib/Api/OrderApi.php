@@ -322,7 +322,7 @@ class OrderApi
      * Retrieves the collection of Order resources.
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
-     * @param  string $additional_properties additional_properties (optional)
+     * @param  string $custom_data custom_data (optional)
      * @param  string $internal_comment internal_comment (optional)
      * @param  string $customer_comment customer_comment (optional)
      * @param  string $order_code order_code (optional)
@@ -335,15 +335,17 @@ class OrderApi
      * @param  string $date_of_validity_strictly_before date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after date_of_validity_after (optional)
      * @param  string $date_of_validity_strictly_after date_of_validity_strictly_after (optional)
+     * @param  string $order_created_at order_created_at (optional)
+     * @param  string $order_payment_date order_payment_date (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2002
      */
-    public function getOrderCollection($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
+    public function getOrderCollection($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_created_at = null, $order_payment_date = null, $page = '1')
     {
-        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
+        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page);
         return $response;
     }
 
@@ -353,7 +355,7 @@ class OrderApi
      * Retrieves the collection of Order resources.
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
-     * @param  string $additional_properties (optional)
+     * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
      * @param  string $order_code (optional)
@@ -366,16 +368,18 @@ class OrderApi
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
      * @param  string $date_of_validity_strictly_after (optional)
+     * @param  string $order_created_at (optional)
+     * @param  string $order_payment_date (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderCollectionWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
+    public function getOrderCollectionWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_created_at = null, $order_payment_date = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
+        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -442,7 +446,7 @@ class OrderApi
      * Retrieves the collection of Order resources.
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
-     * @param  string $additional_properties (optional)
+     * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
      * @param  string $order_code (optional)
@@ -455,14 +459,16 @@ class OrderApi
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
      * @param  string $date_of_validity_strictly_after (optional)
+     * @param  string $order_created_at (optional)
+     * @param  string $order_payment_date (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsync($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
+    public function getOrderCollectionAsync($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_created_at = null, $order_payment_date = null, $page = '1')
     {
-        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page)
+        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -476,7 +482,7 @@ class OrderApi
      * Retrieves the collection of Order resources.
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
-     * @param  string $additional_properties (optional)
+     * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
      * @param  string $order_code (optional)
@@ -489,15 +495,17 @@ class OrderApi
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
      * @param  string $date_of_validity_strictly_after (optional)
+     * @param  string $order_created_at (optional)
+     * @param  string $order_payment_date (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
+    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_created_at = null, $order_payment_date = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderCollectionRequest($properties, $additional_properties, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $page);
+        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -540,7 +548,7 @@ class OrderApi
      * Create request for operation 'getOrderCollection'
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
-     * @param  string $additional_properties (optional)
+     * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
      * @param  string $order_code (optional)
@@ -553,12 +561,14 @@ class OrderApi
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
      * @param  string $date_of_validity_strictly_after (optional)
+     * @param  string $order_created_at (optional)
+     * @param  string $order_payment_date (optional)
      * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderCollectionRequest($properties = null, $additional_properties = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $page = '1')
+    protected function getOrderCollectionRequest($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_created_at = null, $order_payment_date = null, $page = '1')
     {
 
         $resourcePath = '/order/orders';
@@ -576,8 +586,8 @@ class OrderApi
             $queryParams['properties[]'] = ObjectSerializer::toQueryValue($properties);
         }
         // query params
-        if ($additional_properties !== null) {
-            $queryParams['additionalProperties'] = ObjectSerializer::toQueryValue($additional_properties);
+        if ($custom_data !== null) {
+            $queryParams['customData'] = ObjectSerializer::toQueryValue($custom_data);
         }
         // query params
         if ($internal_comment !== null) {
@@ -626,6 +636,14 @@ class OrderApi
         // query params
         if ($date_of_validity_strictly_after !== null) {
             $queryParams['dateOfValidity[strictly_after]'] = ObjectSerializer::toQueryValue($date_of_validity_strictly_after);
+        }
+        // query params
+        if ($order_created_at !== null) {
+            $queryParams['order[createdAt]'] = ObjectSerializer::toQueryValue($order_created_at);
+        }
+        // query params
+        if ($order_payment_date !== null) {
+            $queryParams['order[paymentDate]'] = ObjectSerializer::toQueryValue($order_payment_date);
         }
         // query params
         if ($page !== null) {

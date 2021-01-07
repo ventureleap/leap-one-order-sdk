@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductItem**
-> \VentureLeap\OrderService\Model\OrderProductJsonldProductRead getOrderProductItem($id)
+> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead getOrderProductItem($id)
 
 Retrieves a OrderProduct resource.
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\OrderProductJsonldProductRead**](../Model/OrderProductJsonldProductRead.md)
+[**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead**](../Model/OrderProductJsonldOrderProductRead.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postOrderProductCollection**
-> \VentureLeap\OrderService\Model\OrderProductJsonldProductRead postOrderProductCollection($body)
+> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead postOrderProductCollection($body)
 
 Creates a OrderProduct resource.
 
@@ -193,7 +193,7 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite | The new OrderProduct resource
+$body = new \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite | The new OrderProduct resource
 
 try {
     $result = $apiInstance->postOrderProductCollection($body);
@@ -208,11 +208,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldProductWrite**](../Model/OrderProductJsonldProductWrite.md)| The new OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The new OrderProduct resource | [optional]
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\OrderProductJsonldProductRead**](../Model/OrderProductJsonldProductRead.md)
+[**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead**](../Model/OrderProductJsonldOrderProductRead.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putOrderProductItem**
-> \VentureLeap\OrderService\Model\OrderProductJsonldProductRead putOrderProductItem($id, $body)
+> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead putOrderProductItem($id, $body)
 
 Replaces the OrderProduct resource.
 
@@ -246,7 +246,7 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldProductWrite | The updated OrderProduct resource
+$body = new \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite | The updated OrderProduct resource
 
 try {
     $result = $apiInstance->putOrderProductItem($id, $body);
@@ -262,11 +262,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldProductWrite**](../Model/OrderProductJsonldProductWrite.md)| The updated OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The updated OrderProduct resource | [optional]
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\OrderProductJsonldProductRead**](../Model/OrderProductJsonldProductRead.md)
+[**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead**](../Model/OrderProductJsonldOrderProductRead.md)
 
 ### Authorization
 

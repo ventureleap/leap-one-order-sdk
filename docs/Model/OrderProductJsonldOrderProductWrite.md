@@ -1,4 +1,4 @@
-# OrderProductJsonldOrderWrite
+# OrderProductJsonldOrderProductWrite
 
 ## Properties
 Name | Type | Description | Notes
@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
+**order** | **string** | The corresponding order for this product as Iri | 
 **product_id** | **string** | UUID from the product service | 
 **name** | **string** | Name of the product | [optional] 
 **uom** | **string** | Unit of Measurement (UOM) Codes | [optional] 

@@ -48,7 +48,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderLog:jsonld-order:read';
+    protected static $swaggerModelName = 'OrderLog:jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
