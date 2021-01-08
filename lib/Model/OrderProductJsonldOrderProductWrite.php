@@ -66,7 +66,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'float',
 'single_net_amount' => 'int',
 'active' => 'bool',
-'deleted' => 'bool'    ];
+'deleted' => 'bool',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +85,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => null,
 'single_net_amount' => null,
 'active' => null,
-'deleted' => null    ];
+'deleted' => null,
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +125,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'quantity',
 'single_net_amount' => 'singleNetAmount',
 'active' => 'active',
-'deleted' => 'deleted'    ];
+'deleted' => 'deleted',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +144,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'setQuantity',
 'single_net_amount' => 'setSingleNetAmount',
 'active' => 'setActive',
-'deleted' => 'setDeleted'    ];
+'deleted' => 'setDeleted',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +163,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'getQuantity',
 'single_net_amount' => 'getSingleNetAmount',
 'active' => 'getActive',
-'deleted' => 'getDeleted'    ];
+'deleted' => 'getDeleted',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,6 +235,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -525,6 +531,30 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     public function setDeleted($deleted)
     {
         $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

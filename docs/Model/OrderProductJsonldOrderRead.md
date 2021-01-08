@@ -12,8 +12,11 @@ Name | Type | Description | Notes
 **uom** | **string** | Unit of Measurement (UOM) Codes | [optional] 
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
 **single_net_amount** | **int** |  | 
+**application_id** | **string** |  | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
+**custom_data** | **object** |  | [optional] 
 **single_vat_amount** | **int** |  | [optional] 
 **single_gross_amount** | **int** |  | [optional] 
 

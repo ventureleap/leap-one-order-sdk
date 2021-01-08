@@ -65,10 +65,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'customer_uuid' => 'string',
 'internal_comment' => 'string',
 'customer_comment' => 'string',
+'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
+'date_of_validity' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
-'date_of_validity' => '\DateTime'    ];
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -85,10 +86,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'customer_uuid' => 'uuid',
 'internal_comment' => null,
 'customer_comment' => null,
+'order_products' => null,
+'date_of_validity' => 'date-time',
 'active' => null,
 'deleted' => null,
-'order_products' => null,
-'date_of_validity' => 'date-time'    ];
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -126,10 +128,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'customer_uuid' => 'customerUuid',
 'internal_comment' => 'internalComment',
 'customer_comment' => 'customerComment',
+'order_products' => 'orderProducts',
+'date_of_validity' => 'dateOfValidity',
 'active' => 'active',
 'deleted' => 'deleted',
-'order_products' => 'orderProducts',
-'date_of_validity' => 'dateOfValidity'    ];
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -146,10 +149,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'customer_uuid' => 'setCustomerUuid',
 'internal_comment' => 'setInternalComment',
 'customer_comment' => 'setCustomerComment',
+'order_products' => 'setOrderProducts',
+'date_of_validity' => 'setDateOfValidity',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
-'order_products' => 'setOrderProducts',
-'date_of_validity' => 'setDateOfValidity'    ];
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -166,10 +170,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'customer_uuid' => 'getCustomerUuid',
 'internal_comment' => 'getInternalComment',
 'customer_comment' => 'getCustomerComment',
+'order_products' => 'getOrderProducts',
+'date_of_validity' => 'getDateOfValidity',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
-'order_products' => 'getOrderProducts',
-'date_of_validity' => 'getDateOfValidity'    ];
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -238,10 +243,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['customer_uuid'] = isset($data['customer_uuid']) ? $data['customer_uuid'] : null;
         $this->container['internal_comment'] = isset($data['internal_comment']) ? $data['internal_comment'] : null;
         $this->container['customer_comment'] = isset($data['customer_comment']) ? $data['customer_comment'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
-        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -494,6 +500,54 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets order_products
+     *
+     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]
+     */
+    public function getOrderProducts()
+    {
+        return $this->container['order_products'];
+    }
+
+    /**
+     * Sets order_products
+     *
+     * @param \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[] $order_products order_products
+     *
+     * @return $this
+     */
+    public function setOrderProducts($order_products)
+    {
+        $this->container['order_products'] = $order_products;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_of_validity
+     *
+     * @return \DateTime
+     */
+    public function getDateOfValidity()
+    {
+        return $this->container['date_of_validity'];
+    }
+
+    /**
+     * Sets date_of_validity
+     *
+     * @param \DateTime $date_of_validity date_of_validity
+     *
+     * @return $this
+     */
+    public function setDateOfValidity($date_of_validity)
+    {
+        $this->container['date_of_validity'] = $date_of_validity;
+
+        return $this;
+    }
+
+    /**
      * Gets active
      *
      * @return bool
@@ -542,49 +596,25 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets order_products
+     * Gets custom_data
      *
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]
+     * @return object
      */
-    public function getOrderProducts()
+    public function getCustomData()
     {
-        return $this->container['order_products'];
+        return $this->container['custom_data'];
     }
 
     /**
-     * Sets order_products
+     * Sets custom_data
      *
-     * @param \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[] $order_products order_products
+     * @param object $custom_data custom_data
      *
      * @return $this
      */
-    public function setOrderProducts($order_products)
+    public function setCustomData($custom_data)
     {
-        $this->container['order_products'] = $order_products;
-
-        return $this;
-    }
-
-    /**
-     * Gets date_of_validity
-     *
-     * @return \DateTime
-     */
-    public function getDateOfValidity()
-    {
-        return $this->container['date_of_validity'];
-    }
-
-    /**
-     * Sets date_of_validity
-     *
-     * @param \DateTime $date_of_validity date_of_validity
-     *
-     * @return $this
-     */
-    public function setDateOfValidity($date_of_validity)
-    {
-        $this->container['date_of_validity'] = $date_of_validity;
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

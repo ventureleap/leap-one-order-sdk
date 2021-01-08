@@ -65,8 +65,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'uom' => 'string',
 'quantity' => 'float',
 'single_net_amount' => 'int',
+'application_id' => 'string',
+'created_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
+'custom_data' => 'object',
 'single_vat_amount' => 'int',
 'single_gross_amount' => 'int'    ];
 
@@ -85,8 +88,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'uom' => null,
 'quantity' => null,
 'single_net_amount' => null,
+'application_id' => null,
+'created_at' => 'date-time',
 'active' => null,
 'deleted' => null,
+'custom_data' => null,
 'single_vat_amount' => null,
 'single_gross_amount' => null    ];
 
@@ -126,8 +132,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'uom' => 'uom',
 'quantity' => 'quantity',
 'single_net_amount' => 'singleNetAmount',
+'application_id' => 'applicationId',
+'created_at' => 'createdAt',
 'active' => 'active',
 'deleted' => 'deleted',
+'custom_data' => 'customData',
 'single_vat_amount' => 'singleVatAmount',
 'single_gross_amount' => 'singleGrossAmount'    ];
 
@@ -146,8 +155,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
 'single_net_amount' => 'setSingleNetAmount',
+'application_id' => 'setApplicationId',
+'created_at' => 'setCreatedAt',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
+'custom_data' => 'setCustomData',
 'single_vat_amount' => 'setSingleVatAmount',
 'single_gross_amount' => 'setSingleGrossAmount'    ];
 
@@ -166,8 +178,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
 'single_net_amount' => 'getSingleNetAmount',
+'application_id' => 'getApplicationId',
+'created_at' => 'getCreatedAt',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
+'custom_data' => 'getCustomData',
 'single_vat_amount' => 'getSingleVatAmount',
 'single_gross_amount' => 'getSingleGrossAmount'    ];
 
@@ -238,8 +253,11 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
         $this->container['single_vat_amount'] = isset($data['single_vat_amount']) ? $data['single_vat_amount'] : null;
         $this->container['single_gross_amount'] = isset($data['single_gross_amount']) ? $data['single_gross_amount'] : null;
     }
@@ -491,6 +509,54 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
      * Gets active
      *
      * @return bool
@@ -534,6 +600,30 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setDeleted($deleted)
     {
         $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

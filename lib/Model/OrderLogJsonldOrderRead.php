@@ -59,10 +59,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
-'created_at' => '\DateTime',
 'changed' => 'string',
 'old' => 'object',
-'new' => 'object'    ];
+'new' => 'object',
+'application_id' => 'string',
+'created_at' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,10 +74,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'created_at' => 'date-time',
 'changed' => null,
 'old' => null,
-'new' => null    ];
+'new' => null,
+'application_id' => null,
+'created_at' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -108,10 +110,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
-'created_at' => 'createdAt',
 'changed' => 'changed',
 'old' => 'old',
-'new' => 'new'    ];
+'new' => 'new',
+'application_id' => 'applicationId',
+'created_at' => 'createdAt'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,10 +125,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
-'created_at' => 'setCreatedAt',
 'changed' => 'setChanged',
 'old' => 'setOld',
-'new' => 'setNew'    ];
+'new' => 'setNew',
+'application_id' => 'setApplicationId',
+'created_at' => 'setCreatedAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -136,10 +140,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
-'created_at' => 'getCreatedAt',
 'changed' => 'getChanged',
 'old' => 'getOld',
-'new' => 'getNew'    ];
+'new' => 'getNew',
+'application_id' => 'getApplicationId',
+'created_at' => 'getCreatedAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -202,10 +207,11 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['changed'] = isset($data['changed']) ? $data['changed'] : null;
         $this->container['old'] = isset($data['old']) ? $data['old'] : null;
         $this->container['new'] = isset($data['new']) ? $data['new'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
     }
 
     /**
@@ -305,30 +311,6 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets created_at
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime $created_at created_at
-     *
-     * @return $this
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
      * Gets changed
      *
      * @return string
@@ -396,6 +378,54 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setNew($new)
     {
         $this->container['new'] = $new;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **uuid** | **string** |  | [optional] 
-**application_id** | **string** |  | [optional] 
 **order_code** | **string** |  | [optional] 
 **status** | **string** |  | 
 **payment_status** | **string** |  | 
@@ -15,13 +14,15 @@ Name | Type | Description | Notes
 **customer_uuid** | **string** |  | 
 **internal_comment** | **string** |  | [optional] 
 **customer_comment** | **string** |  | [optional] 
-**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**active** | **bool** |  | [optional] 
-**deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]**](OrderProductJsonldOrderRead.md) |  | [optional] 
 **logs** | [**\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]**](OrderLogJsonldOrderRead.md) |  | [optional] 
 **date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**application_id** | **string** |  | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**active** | **bool** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
+**custom_data** | **object** |  | [optional] 
 **total_gross_amount** | **int** |  | [optional] 
 **total_net_amount** | **int** |  | [optional] 
 **total_vat_amount** | **int** |  | [optional] 

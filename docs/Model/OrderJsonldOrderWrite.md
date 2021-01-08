@@ -12,10 +12,11 @@ Name | Type | Description | Notes
 **customer_uuid** | **string** |  | 
 **internal_comment** | **string** |  | [optional] 
 **customer_comment** | **string** |  | [optional] 
-**active** | **bool** |  | [optional] 
-**deleted** | **bool** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]**](OrderProductJsonldOrderWrite.md) |  | [optional] 
 **date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**active** | **bool** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
+**custom_data** | **object** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
