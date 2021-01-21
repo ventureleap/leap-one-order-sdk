@@ -183,6 +183,11 @@ Class | Method | HTTP request | Description
 *OrderProductApi* | [**getOrderProductItem**](docs/Api/OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{id} | Retrieves a OrderProduct resource.
 *OrderProductApi* | [**postOrderProductCollection**](docs/Api/OrderProductApi.md#postorderproductcollection) | **POST** /order/order_products | Creates a OrderProduct resource.
 *OrderProductApi* | [**putOrderProductItem**](docs/Api/OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{id} | Replaces the OrderProduct resource.
+*VoucherApi* | [**deleteVoucherItem**](docs/Api/VoucherApi.md#deletevoucheritem) | **DELETE** /order/vouchers/{id} | Removes the Voucher resource.
+*VoucherApi* | [**getVoucherCollection**](docs/Api/VoucherApi.md#getvouchercollection) | **GET** /order/vouchers | Retrieves the collection of Voucher resources.
+*VoucherApi* | [**getVoucherItem**](docs/Api/VoucherApi.md#getvoucheritem) | **GET** /order/vouchers/{id} | Retrieves a Voucher resource.
+*VoucherApi* | [**postVoucherCollection**](docs/Api/VoucherApi.md#postvouchercollection) | **POST** /order/vouchers | Creates a Voucher resource.
+*VoucherApi* | [**putVoucherItem**](docs/Api/VoucherApi.md#putvoucheritem) | **PUT** /order/vouchers/{id} | Replaces the Voucher resource.
 
 ## Documentation For Models
 
@@ -191,6 +196,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
+ - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [InlineResponse200Hydrasearch](docs/Model/InlineResponse200Hydrasearch.md)
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
@@ -201,6 +207,8 @@ Class | Method | HTTP request | Description
  - [OrderProductJsonldOrderProductWrite](docs/Model/OrderProductJsonldOrderProductWrite.md)
  - [OrderProductJsonldOrderRead](docs/Model/OrderProductJsonldOrderRead.md)
  - [OrderProductJsonldOrderWrite](docs/Model/OrderProductJsonldOrderWrite.md)
+ - [VoucherJsonldVoucherRead](docs/Model/VoucherJsonldVoucherRead.md)
+ - [VoucherJsonldVoucherWrite](docs/Model/VoucherJsonldVoucherWrite.md)
 
 ## Documentation For Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderLogJsonldOrderRead
+ * InlineResponse2003
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderLogJsonldOrderRead Class Doc Comment
+ * InlineResponse2003 Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
+class InlineResponse2003 implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderLog:jsonld-OrderRead';
+    protected static $swaggerModelName = 'inline_response_200_3';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
-'id' => 'string',
-'type' => 'string',
-'changed' => 'string',
-'old' => 'object',
-'new' => 'object',
-'application_id' => 'string',
-'created_at' => '\DateTime'    ];
+        'hydramember' => '\VentureLeap\OrderService\Model\VoucherJsonldVoucherRead[]',
+'hydratotal_items' => 'int',
+'hydraview' => '\VentureLeap\OrderService\Model\InlineResponse200Hydraview',
+'hydrasearch' => '\VentureLeap\OrderService\Model\InlineResponse200Hydrasearch'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +67,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'context' => null,
-'id' => null,
-'type' => null,
-'changed' => null,
-'old' => null,
-'new' => null,
-'application_id' => null,
-'created_at' => 'date-time'    ];
+        'hydramember' => null,
+'hydratotal_items' => null,
+'hydraview' => null,
+'hydrasearch' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +99,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'context' => '@context',
-'id' => '@id',
-'type' => '@type',
-'changed' => 'changed',
-'old' => 'old',
-'new' => 'new',
-'application_id' => 'applicationId',
-'created_at' => 'createdAt'    ];
+        'hydramember' => 'hydra:member',
+'hydratotal_items' => 'hydra:totalItems',
+'hydraview' => 'hydra:view',
+'hydrasearch' => 'hydra:search'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +110,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'context' => 'setContext',
-'id' => 'setId',
-'type' => 'setType',
-'changed' => 'setChanged',
-'old' => 'setOld',
-'new' => 'setNew',
-'application_id' => 'setApplicationId',
-'created_at' => 'setCreatedAt'    ];
+        'hydramember' => 'setHydramember',
+'hydratotal_items' => 'setHydratotalItems',
+'hydraview' => 'setHydraview',
+'hydrasearch' => 'setHydrasearch'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +121,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'context' => 'getContext',
-'id' => 'getId',
-'type' => 'getType',
-'changed' => 'getChanged',
-'old' => 'getOld',
-'new' => 'getNew',
-'application_id' => 'getApplicationId',
-'created_at' => 'getCreatedAt'    ];
+        'hydramember' => 'getHydramember',
+'hydratotal_items' => 'getHydratotalItems',
+'hydraview' => 'getHydraview',
+'hydrasearch' => 'getHydrasearch'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +184,10 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['changed'] = isset($data['changed']) ? $data['changed'] : null;
-        $this->container['old'] = isset($data['old']) ? $data['old'] : null;
-        $this->container['new'] = isset($data['new']) ? $data['new'] : null;
-        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['hydramember'] = isset($data['hydramember']) ? $data['hydramember'] : null;
+        $this->container['hydratotal_items'] = isset($data['hydratotal_items']) ? $data['hydratotal_items'] : null;
+        $this->container['hydraview'] = isset($data['hydraview']) ? $data['hydraview'] : null;
+        $this->container['hydrasearch'] = isset($data['hydrasearch']) ? $data['hydrasearch'] : null;
     }
 
     /**
@@ -223,6 +199,9 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['hydramember'] === null) {
+            $invalidProperties[] = "'hydramember' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -239,193 +218,97 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets context
+     * Gets hydramember
      *
-     * @return string
+     * @return \VentureLeap\OrderService\Model\VoucherJsonldVoucherRead[]
      */
-    public function getContext()
+    public function getHydramember()
     {
-        return $this->container['context'];
+        return $this->container['hydramember'];
     }
 
     /**
-     * Sets context
+     * Sets hydramember
      *
-     * @param string $context context
+     * @param \VentureLeap\OrderService\Model\VoucherJsonldVoucherRead[] $hydramember hydramember
      *
      * @return $this
      */
-    public function setContext($context)
+    public function setHydramember($hydramember)
     {
-        $this->container['context'] = $context;
+        $this->container['hydramember'] = $hydramember;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets hydratotal_items
      *
-     * @return string
+     * @return int
      */
-    public function getId()
+    public function getHydratotalItems()
     {
-        return $this->container['id'];
+        return $this->container['hydratotal_items'];
     }
 
     /**
-     * Sets id
+     * Sets hydratotal_items
      *
-     * @param string $id id
+     * @param int $hydratotal_items hydratotal_items
      *
      * @return $this
      */
-    public function setId($id)
+    public function setHydratotalItems($hydratotal_items)
     {
-        $this->container['id'] = $id;
+        $this->container['hydratotal_items'] = $hydratotal_items;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets hydraview
      *
-     * @return string
+     * @return \VentureLeap\OrderService\Model\InlineResponse200Hydraview
      */
-    public function getType()
+    public function getHydraview()
     {
-        return $this->container['type'];
+        return $this->container['hydraview'];
     }
 
     /**
-     * Sets type
+     * Sets hydraview
      *
-     * @param string $type type
+     * @param \VentureLeap\OrderService\Model\InlineResponse200Hydraview $hydraview hydraview
      *
      * @return $this
      */
-    public function setType($type)
+    public function setHydraview($hydraview)
     {
-        $this->container['type'] = $type;
+        $this->container['hydraview'] = $hydraview;
 
         return $this;
     }
 
     /**
-     * Gets changed
+     * Gets hydrasearch
      *
-     * @return string
+     * @return \VentureLeap\OrderService\Model\InlineResponse200Hydrasearch
      */
-    public function getChanged()
+    public function getHydrasearch()
     {
-        return $this->container['changed'];
+        return $this->container['hydrasearch'];
     }
 
     /**
-     * Sets changed
+     * Sets hydrasearch
      *
-     * @param string $changed changed
+     * @param \VentureLeap\OrderService\Model\InlineResponse200Hydrasearch $hydrasearch hydrasearch
      *
      * @return $this
      */
-    public function setChanged($changed)
+    public function setHydrasearch($hydrasearch)
     {
-        $this->container['changed'] = $changed;
-
-        return $this;
-    }
-
-    /**
-     * Gets old
-     *
-     * @return object
-     */
-    public function getOld()
-    {
-        return $this->container['old'];
-    }
-
-    /**
-     * Sets old
-     *
-     * @param object $old old
-     *
-     * @return $this
-     */
-    public function setOld($old)
-    {
-        $this->container['old'] = $old;
-
-        return $this;
-    }
-
-    /**
-     * Gets new
-     *
-     * @return object
-     */
-    public function getNew()
-    {
-        return $this->container['new'];
-    }
-
-    /**
-     * Sets new
-     *
-     * @param object $new new
-     *
-     * @return $this
-     */
-    public function setNew($new)
-    {
-        $this->container['new'] = $new;
-
-        return $this;
-    }
-
-    /**
-     * Gets application_id
-     *
-     * @return string
-     */
-    public function getApplicationId()
-    {
-        return $this->container['application_id'];
-    }
-
-    /**
-     * Sets application_id
-     *
-     * @param string $application_id application_id
-     *
-     * @return $this
-     */
-    public function setApplicationId($application_id)
-    {
-        $this->container['application_id'] = $application_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['created_at'];
-    }
-
-    /**
-     * Sets created_at
-     *
-     * @param \DateTime $created_at created_at
-     *
-     * @return $this
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->container['created_at'] = $created_at;
+        $this->container['hydrasearch'] = $hydrasearch;
 
         return $this;
     }

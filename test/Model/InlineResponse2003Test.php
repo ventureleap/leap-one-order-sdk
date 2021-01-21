@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2002Test
+ * InlineResponse2003Test
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\OrderService;
 
 /**
- * InlineResponse2002Test Class Doc Comment
+ * InlineResponse2003Test Class Doc Comment
  *
  * @category    Class
- * @description InlineResponse2002
+ * @description InlineResponse2003
  * @package     VentureLeap\OrderService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
+class InlineResponse2003Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse2002"
+     * Test "InlineResponse2003"
      */
-    public function testInlineResponse2002()
+    public function testInlineResponse2003()
     {
     }
 

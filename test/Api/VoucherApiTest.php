@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderProductApiTest
+ * VoucherApiTest
  * PHP version 5
  *
  * @category Class
@@ -32,14 +32,14 @@ use VentureLeap\OrderService\ApiException;
 use VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderProductApiTest Class Doc Comment
+ * VoucherApiTest Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderProductApiTest extends \PHPUnit_Framework_TestCase
+class VoucherApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,52 +71,52 @@ class OrderProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteOrderProductItem
+     * Test case for deleteVoucherItem
      *
-     * Removes the OrderProduct resource..
+     * Removes the Voucher resource..
      *
      */
-    public function testDeleteOrderProductItem()
+    public function testDeleteVoucherItem()
     {
     }
 
     /**
-     * Test case for getOrderProductCollection
+     * Test case for getVoucherCollection
      *
-     * Retrieves the collection of OrderProduct resources..
+     * Retrieves the collection of Voucher resources..
      *
      */
-    public function testGetOrderProductCollection()
+    public function testGetVoucherCollection()
     {
     }
 
     /**
-     * Test case for getOrderProductItem
+     * Test case for getVoucherItem
      *
-     * Retrieves a OrderProduct resource..
+     * Retrieves a Voucher resource..
      *
      */
-    public function testGetOrderProductItem()
+    public function testGetVoucherItem()
     {
     }
 
     /**
-     * Test case for postOrderProductCollection
+     * Test case for postVoucherCollection
      *
-     * Creates a OrderProduct resource..
+     * Creates a Voucher resource..
      *
      */
-    public function testPostOrderProductCollection()
+    public function testPostVoucherCollection()
     {
     }
 
     /**
-     * Test case for putOrderProductItem
+     * Test case for putVoucherItem
      *
-     * Replaces the OrderProduct resource..
+     * Replaces the Voucher resource..
      *
      */
-    public function testPutOrderProductItem()
+    public function testPutVoucherItem()
     {
     }
 }

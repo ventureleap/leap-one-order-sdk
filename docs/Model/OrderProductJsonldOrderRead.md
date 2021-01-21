@@ -14,9 +14,10 @@ Name | Type | Description | Notes
 **single_net_amount** | **int** |  | 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**custom_data** | **object** |  | [optional] 
+**custom_data** | **object[]** |  | [optional] 
 **single_vat_amount** | **int** |  | [optional] 
 **single_gross_amount** | **int** |  | [optional] 
 

@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page)
 
 Retrieves the collection of Order resources.
 
@@ -95,12 +95,17 @@ $date_of_validity_before = "date_of_validity_before_example"; // string |
 $date_of_validity_strictly_before = "date_of_validity_strictly_before_example"; // string | 
 $date_of_validity_after = "date_of_validity_after_example"; // string | 
 $date_of_validity_strictly_after = "date_of_validity_strictly_after_example"; // string | 
+$order_status = "order_status_example"; // string | 
+$order_payment_status = "order_payment_status_example"; // string | 
 $order_created_at = "order_created_at_example"; // string | 
+$order_updated_at = "order_updated_at_example"; // string | 
 $order_payment_date = "order_payment_date_example"; // string | 
+$order_order_code = "order_order_code_example"; // string | 
+$order_customer_uuid = "order_customer_uuid_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_created_at, $order_payment_date, $page);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -126,8 +131,13 @@ Name | Type | Description  | Notes
  **date_of_validity_strictly_before** | **string**|  | [optional]
  **date_of_validity_after** | **string**|  | [optional]
  **date_of_validity_strictly_after** | **string**|  | [optional]
+ **order_status** | **string**|  | [optional]
+ **order_payment_status** | **string**|  | [optional]
  **order_created_at** | **string**|  | [optional]
+ **order_updated_at** | **string**|  | [optional]
  **order_payment_date** | **string**|  | [optional]
+ **order_order_code** | **string**|  | [optional]
+ **order_customer_uuid** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
