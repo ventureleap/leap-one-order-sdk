@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **quantity_per_person** | **int** |  | 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**custom_data** | **object[]** |  | [optional] 
+**custom_data** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

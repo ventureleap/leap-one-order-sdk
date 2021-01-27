@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **single_net_amount** | **int** |  | 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**custom_data** | **object[]** |  | [optional] 
+**custom_data** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

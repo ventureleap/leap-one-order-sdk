@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**custom_data** | **object[]** |  | [optional] 
+**custom_data** | **string[]** |  | [optional] 
 **single_vat_amount** | **int** |  | [optional] 
 **single_gross_amount** | **int** |  | [optional] 
 

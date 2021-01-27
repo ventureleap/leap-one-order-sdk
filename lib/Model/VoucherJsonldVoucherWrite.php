@@ -67,7 +67,7 @@ class VoucherJsonldVoucherWrite implements ModelInterface, ArrayAccess
 'quantity_per_person' => 'int',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object[]'    ];
+'custom_data' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -577,7 +577,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Gets custom_data
      *
-     * @return object[]
+     * @return string[]
      */
     public function getCustomData()
     {
@@ -587,7 +587,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Sets custom_data
      *
-     * @param object[] $custom_data custom_data
+     * @param string[] $custom_data custom_data
      *
      * @return $this
      */
