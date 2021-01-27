@@ -67,7 +67,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'single_net_amount' => 'int',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object[]'    ];
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -538,7 +538,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     /**
      * Gets custom_data
      *
-     * @return object[]
+     * @return object
      */
     public function getCustomData()
     {
@@ -548,7 +548,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     /**
      * Sets custom_data
      *
-     * @param object[] $custom_data custom_data
+     * @param object $custom_data custom_data
      *
      * @return $this
      */

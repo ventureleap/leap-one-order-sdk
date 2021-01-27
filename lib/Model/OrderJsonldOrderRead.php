@@ -75,7 +75,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object[]',
+'custom_data' => 'object',
 'total_gross_amount' => 'int',
 'total_net_amount' => 'int',
 'total_vat_amount' => 'int'    ];
@@ -796,7 +796,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Gets custom_data
      *
-     * @return object[]
+     * @return object
      */
     public function getCustomData()
     {
@@ -806,7 +806,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Sets custom_data
      *
-     * @param object[] $custom_data custom_data
+     * @param object $custom_data custom_data
      *
      * @return $this
      */

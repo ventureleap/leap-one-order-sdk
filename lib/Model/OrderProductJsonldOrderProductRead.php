@@ -71,7 +71,7 @@ class OrderProductJsonldOrderProductRead implements ModelInterface, ArrayAccess
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object[]',
+'custom_data' => 'object',
 'single_vat_amount' => 'int',
 'single_gross_amount' => 'int'    ];
 
@@ -670,7 +670,7 @@ class OrderProductJsonldOrderProductRead implements ModelInterface, ArrayAccess
     /**
      * Gets custom_data
      *
-     * @return object[]
+     * @return object
      */
     public function getCustomData()
     {
@@ -680,7 +680,7 @@ class OrderProductJsonldOrderProductRead implements ModelInterface, ArrayAccess
     /**
      * Sets custom_data
      *
-     * @param object[] $custom_data custom_data
+     * @param object $custom_data custom_data
      *
      * @return $this
      */
