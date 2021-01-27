@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
-**custom_data** | **string[]** |  | [optional] 
+**custom_data** | **object[]** |  | [optional] 
 **total_gross_amount** | **int** |  | [optional] 
 **total_net_amount** | **int** |  | [optional] 
 **total_vat_amount** | **int** |  | [optional] 
