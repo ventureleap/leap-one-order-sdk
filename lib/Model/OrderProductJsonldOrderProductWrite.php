@@ -64,7 +64,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
-'single_net_amount' => 'int',
+'gross_price_per_unit' => 'int',
+'vat_per_unit' => 'int',
 'active' => 'bool',
 'deleted' => 'bool',
 'custom_data' => 'object'    ];
@@ -83,7 +84,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'name' => null,
 'uom' => null,
 'quantity' => null,
-'single_net_amount' => null,
+'gross_price_per_unit' => null,
+'vat_per_unit' => null,
 'active' => null,
 'deleted' => null,
 'custom_data' => null    ];
@@ -123,7 +125,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
-'single_net_amount' => 'singleNetAmount',
+'gross_price_per_unit' => 'grossPricePerUnit',
+'vat_per_unit' => 'vatPerUnit',
 'active' => 'active',
 'deleted' => 'deleted',
 'custom_data' => 'customData'    ];
@@ -142,7 +145,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
-'single_net_amount' => 'setSingleNetAmount',
+'gross_price_per_unit' => 'setGrossPricePerUnit',
+'vat_per_unit' => 'setVatPerUnit',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData'    ];
@@ -161,7 +165,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
-'single_net_amount' => 'getSingleNetAmount',
+'gross_price_per_unit' => 'getGrossPricePerUnit',
+'vat_per_unit' => 'getVatPerUnit',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData'    ];
@@ -232,7 +237,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
+        $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
@@ -253,8 +259,8 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
         if ($this->container['product_id'] === null) {
             $invalidProperties[] = "'product_id' can't be null";
         }
-        if ($this->container['single_net_amount'] === null) {
-            $invalidProperties[] = "'single_net_amount' can't be null";
+        if ($this->container['gross_price_per_unit'] === null) {
+            $invalidProperties[] = "'gross_price_per_unit' can't be null";
         }
         return $invalidProperties;
     }
@@ -464,25 +470,49 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets single_net_amount
+     * Gets gross_price_per_unit
      *
      * @return int
      */
-    public function getSingleNetAmount()
+    public function getGrossPricePerUnit()
     {
-        return $this->container['single_net_amount'];
+        return $this->container['gross_price_per_unit'];
     }
 
     /**
-     * Sets single_net_amount
+     * Sets gross_price_per_unit
      *
-     * @param int $single_net_amount single_net_amount
+     * @param int $gross_price_per_unit gross_price_per_unit
      *
      * @return $this
      */
-    public function setSingleNetAmount($single_net_amount)
+    public function setGrossPricePerUnit($gross_price_per_unit)
     {
-        $this->container['single_net_amount'] = $single_net_amount;
+        $this->container['gross_price_per_unit'] = $gross_price_per_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_per_unit
+     *
+     * @return int
+     */
+    public function getVatPerUnit()
+    {
+        return $this->container['vat_per_unit'];
+    }
+
+    /**
+     * Sets vat_per_unit
+     *
+     * @param int $vat_per_unit vat_per_unit
+     *
+     * @return $this
+     */
+    public function setVatPerUnit($vat_per_unit)
+    {
+        $this->container['vat_per_unit'] = $vat_per_unit;
 
         return $this;
     }

@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **name** | **string** | Name of the product | [optional] 
 **uom** | **string** | Unit of Measurement (UOM) Codes | [optional] 
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
-**single_net_amount** | **int** |  | 
+**gross_price_per_unit** | **int** |  | 
+**vat_per_unit** | **int** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 

@@ -132,9 +132,16 @@ class OrderProductJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "single_net_amount"
+     * Test attribute "gross_price_per_unit"
      */
-    public function testPropertySingleNetAmount()
+    public function testPropertyGrossPricePerUnit()
+    {
+    }
+
+    /**
+     * Test attribute "vat_per_unit"
+     */
+    public function testPropertyVatPerUnit()
     {
     }
 
@@ -181,16 +188,9 @@ class OrderProductJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "single_vat_amount"
+     * Test attribute "net_price_per_unit"
      */
-    public function testPropertySingleVatAmount()
-    {
-    }
-
-    /**
-     * Test attribute "single_gross_amount"
-     */
-    public function testPropertySingleGrossAmount()
+    public function testPropertyNetPricePerUnit()
     {
     }
 }

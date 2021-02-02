@@ -64,15 +64,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'name' => 'string',
 'uom' => 'string',
 'quantity' => 'float',
-'single_net_amount' => 'int',
+'gross_price_per_unit' => 'int',
+'vat_per_unit' => 'int',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
 'custom_data' => 'object',
-'single_vat_amount' => 'int',
-'single_gross_amount' => 'int'    ];
+'net_price_per_unit' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -88,15 +88,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'name' => null,
 'uom' => null,
 'quantity' => null,
-'single_net_amount' => null,
+'gross_price_per_unit' => null,
+'vat_per_unit' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
 'active' => null,
 'deleted' => null,
 'custom_data' => null,
-'single_vat_amount' => null,
-'single_gross_amount' => null    ];
+'net_price_per_unit' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -133,15 +133,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'name' => 'name',
 'uom' => 'uom',
 'quantity' => 'quantity',
-'single_net_amount' => 'singleNetAmount',
+'gross_price_per_unit' => 'grossPricePerUnit',
+'vat_per_unit' => 'vatPerUnit',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
 'active' => 'active',
 'deleted' => 'deleted',
 'custom_data' => 'customData',
-'single_vat_amount' => 'singleVatAmount',
-'single_gross_amount' => 'singleGrossAmount'    ];
+'net_price_per_unit' => 'netPricePerUnit'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -157,15 +157,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'uom' => 'setUom',
 'quantity' => 'setQuantity',
-'single_net_amount' => 'setSingleNetAmount',
+'gross_price_per_unit' => 'setGrossPricePerUnit',
+'vat_per_unit' => 'setVatPerUnit',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData',
-'single_vat_amount' => 'setSingleVatAmount',
-'single_gross_amount' => 'setSingleGrossAmount'    ];
+'net_price_per_unit' => 'setNetPricePerUnit'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -181,15 +181,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'uom' => 'getUom',
 'quantity' => 'getQuantity',
-'single_net_amount' => 'getSingleNetAmount',
+'gross_price_per_unit' => 'getGrossPricePerUnit',
+'vat_per_unit' => 'getVatPerUnit',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData',
-'single_vat_amount' => 'getSingleVatAmount',
-'single_gross_amount' => 'getSingleGrossAmount'    ];
+'net_price_per_unit' => 'getNetPricePerUnit'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -257,15 +257,15 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['uom'] = isset($data['uom']) ? $data['uom'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['single_net_amount'] = isset($data['single_net_amount']) ? $data['single_net_amount'] : null;
+        $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
+        $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
-        $this->container['single_vat_amount'] = isset($data['single_vat_amount']) ? $data['single_vat_amount'] : null;
-        $this->container['single_gross_amount'] = isset($data['single_gross_amount']) ? $data['single_gross_amount'] : null;
+        $this->container['net_price_per_unit'] = isset($data['net_price_per_unit']) ? $data['net_price_per_unit'] : null;
     }
 
     /**
@@ -280,8 +280,8 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         if ($this->container['product_id'] === null) {
             $invalidProperties[] = "'product_id' can't be null";
         }
-        if ($this->container['single_net_amount'] === null) {
-            $invalidProperties[] = "'single_net_amount' can't be null";
+        if ($this->container['gross_price_per_unit'] === null) {
+            $invalidProperties[] = "'gross_price_per_unit' can't be null";
         }
         return $invalidProperties;
     }
@@ -491,25 +491,49 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets single_net_amount
+     * Gets gross_price_per_unit
      *
      * @return int
      */
-    public function getSingleNetAmount()
+    public function getGrossPricePerUnit()
     {
-        return $this->container['single_net_amount'];
+        return $this->container['gross_price_per_unit'];
     }
 
     /**
-     * Sets single_net_amount
+     * Sets gross_price_per_unit
      *
-     * @param int $single_net_amount single_net_amount
+     * @param int $gross_price_per_unit gross_price_per_unit
      *
      * @return $this
      */
-    public function setSingleNetAmount($single_net_amount)
+    public function setGrossPricePerUnit($gross_price_per_unit)
     {
-        $this->container['single_net_amount'] = $single_net_amount;
+        $this->container['gross_price_per_unit'] = $gross_price_per_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_per_unit
+     *
+     * @return int
+     */
+    public function getVatPerUnit()
+    {
+        return $this->container['vat_per_unit'];
+    }
+
+    /**
+     * Sets vat_per_unit
+     *
+     * @param int $vat_per_unit vat_per_unit
+     *
+     * @return $this
+     */
+    public function setVatPerUnit($vat_per_unit)
+    {
+        $this->container['vat_per_unit'] = $vat_per_unit;
 
         return $this;
     }
@@ -659,49 +683,25 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets single_vat_amount
+     * Gets net_price_per_unit
      *
      * @return int
      */
-    public function getSingleVatAmount()
+    public function getNetPricePerUnit()
     {
-        return $this->container['single_vat_amount'];
+        return $this->container['net_price_per_unit'];
     }
 
     /**
-     * Sets single_vat_amount
+     * Sets net_price_per_unit
      *
-     * @param int $single_vat_amount single_vat_amount
+     * @param int $net_price_per_unit net_price_per_unit
      *
      * @return $this
      */
-    public function setSingleVatAmount($single_vat_amount)
+    public function setNetPricePerUnit($net_price_per_unit)
     {
-        $this->container['single_vat_amount'] = $single_vat_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets single_gross_amount
-     *
-     * @return int
-     */
-    public function getSingleGrossAmount()
-    {
-        return $this->container['single_gross_amount'];
-    }
-
-    /**
-     * Sets single_gross_amount
-     *
-     * @param int $single_gross_amount single_gross_amount
-     *
-     * @return $this
-     */
-    public function setSingleGrossAmount($single_gross_amount)
-    {
-        $this->container['single_gross_amount'] = $single_gross_amount;
+        $this->container['net_price_per_unit'] = $net_price_per_unit;
 
         return $this;
     }

@@ -125,9 +125,16 @@ class OrderProductJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "single_net_amount"
+     * Test attribute "gross_price_per_unit"
      */
-    public function testPropertySingleNetAmount()
+    public function testPropertyGrossPricePerUnit()
+    {
+    }
+
+    /**
+     * Test attribute "vat_per_unit"
+     */
+    public function testPropertyVatPerUnit()
     {
     }
 
