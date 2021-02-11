@@ -1,6 +1,6 @@
 <?php
 /**
- * VoucherJsonldVoucherReadTest
+ * OrderVoucherJsonldOrderVoucherWriteTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\OrderService;
 
 /**
- * VoucherJsonldVoucherReadTest Class Doc Comment
+ * OrderVoucherJsonldOrderVoucherWriteTest Class Doc Comment
  *
  * @category    Class
- * @description VoucherJsonldVoucherRead
+ * @description OrderVoucherJsonldOrderVoucherWrite
  * @package     VentureLeap\OrderService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class VoucherJsonldVoucherReadTest extends \PHPUnit_Framework_TestCase
+class OrderVoucherJsonldOrderVoucherWriteTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class VoucherJsonldVoucherReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "VoucherJsonldVoucherRead"
+     * Test "OrderVoucherJsonldOrderVoucherWrite"
      */
-    public function testVoucherJsonldVoucherRead()
+    public function testOrderVoucherJsonldOrderVoucherWrite()
     {
     }
 
@@ -97,86 +97,16 @@ class VoucherJsonldVoucherReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "uuid"
+     * Test attribute "order"
      */
-    public function testPropertyUuid()
+    public function testPropertyOrder()
     {
     }
 
     /**
-     * Test attribute "voucher_code"
+     * Test attribute "voucher"
      */
-    public function testPropertyVoucherCode()
-    {
-    }
-
-    /**
-     * Test attribute "value"
-     */
-    public function testPropertyValue()
-    {
-    }
-
-    /**
-     * Test attribute "voucher_type"
-     */
-    public function testPropertyVoucherType()
-    {
-    }
-
-    /**
-     * Test attribute "valid_from"
-     */
-    public function testPropertyValidFrom()
-    {
-    }
-
-    /**
-     * Test attribute "valid_to"
-     */
-    public function testPropertyValidTo()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "quantity_per_person"
-     */
-    public function testPropertyQuantityPerPerson()
-    {
-    }
-
-    /**
-     * Test attribute "order_vouchers"
-     */
-    public function testPropertyOrderVouchers()
-    {
-    }
-
-    /**
-     * Test attribute "application_id"
-     */
-    public function testPropertyApplicationId()
-    {
-    }
-
-    /**
-     * Test attribute "created_at"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
+    public function testPropertyVoucher()
     {
     }
 

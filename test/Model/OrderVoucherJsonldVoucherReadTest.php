@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderJsonldOrderReadTest
+ * OrderVoucherJsonldVoucherReadTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\OrderService;
 
 /**
- * OrderJsonldOrderReadTest Class Doc Comment
+ * OrderVoucherJsonldVoucherReadTest Class Doc Comment
  *
  * @category    Class
- * @description OrderJsonldOrderRead
+ * @description OrderVoucherJsonldVoucherRead
  * @package     VentureLeap\OrderService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
+class OrderVoucherJsonldVoucherReadTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderJsonldOrderRead"
+     * Test "OrderVoucherJsonldVoucherRead"
      */
-    public function testOrderJsonldOrderRead()
+    public function testOrderVoucherJsonldVoucherRead()
     {
     }
 
@@ -97,86 +97,44 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "uuid"
+     * Test attribute "voucher_uuid"
      */
-    public function testPropertyUuid()
+    public function testPropertyVoucherUuid()
     {
     }
 
     /**
-     * Test attribute "order_code"
+     * Test attribute "voucher_code"
      */
-    public function testPropertyOrderCode()
+    public function testPropertyVoucherCode()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "value"
      */
-    public function testPropertyStatus()
+    public function testPropertyValue()
     {
     }
 
     /**
-     * Test attribute "payment_status"
+     * Test attribute "voucher_type"
      */
-    public function testPropertyPaymentStatus()
+    public function testPropertyVoucherType()
     {
     }
 
     /**
-     * Test attribute "payment_date"
+     * Test attribute "valid_from"
      */
-    public function testPropertyPaymentDate()
+    public function testPropertyValidFrom()
     {
     }
 
     /**
-     * Test attribute "customer_uuid"
+     * Test attribute "valid_to"
      */
-    public function testPropertyCustomerUuid()
-    {
-    }
-
-    /**
-     * Test attribute "internal_comment"
-     */
-    public function testPropertyInternalComment()
-    {
-    }
-
-    /**
-     * Test attribute "customer_comment"
-     */
-    public function testPropertyCustomerComment()
-    {
-    }
-
-    /**
-     * Test attribute "order_products"
-     */
-    public function testPropertyOrderProducts()
-    {
-    }
-
-    /**
-     * Test attribute "logs"
-     */
-    public function testPropertyLogs()
-    {
-    }
-
-    /**
-     * Test attribute "date_of_validity"
-     */
-    public function testPropertyDateOfValidity()
-    {
-    }
-
-    /**
-     * Test attribute "order_vouchers"
-     */
-    public function testPropertyOrderVouchers()
+    public function testPropertyValidTo()
     {
     }
 
@@ -219,27 +177,6 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
      * Test attribute "custom_data"
      */
     public function testPropertyCustomData()
-    {
-    }
-
-    /**
-     * Test attribute "total_gross_amount"
-     */
-    public function testPropertyTotalGrossAmount()
-    {
-    }
-
-    /**
-     * Test attribute "total_net_amount"
-     */
-    public function testPropertyTotalNetAmount()
-    {
-    }
-
-    /**
-     * Test attribute "total_vat_amount"
-     */
-    public function testPropertyTotalVatAmount()
     {
     }
 }

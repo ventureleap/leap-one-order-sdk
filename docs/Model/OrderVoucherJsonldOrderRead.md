@@ -1,4 +1,4 @@
-# VoucherJsonldVoucherRead
+# OrderVoucherJsonldOrderRead
 
 ## Properties
 Name | Type | Description | Notes
@@ -6,15 +6,12 @@ Name | Type | Description | Notes
 **context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
-**uuid** | **string** |  | [optional] 
+**voucher_uuid** | **string** |  | [optional] 
 **voucher_code** | **string** |  | [optional] 
-**value** | **int** |  | 
-**voucher_type** | **string** | percentage/ammount | 
-**valid_from** | [**\DateTime**](\DateTime.md) |  | 
-**valid_to** | [**\DateTime**](\DateTime.md) |  | 
-**quantity** | **int** |  | 
-**quantity_per_person** | **int** |  | 
-**order_vouchers** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldVoucherRead[]**](OrderVoucherJsonldVoucherRead.md) |  | [optional] 
+**value** | **int** |  | [optional] 
+**voucher_type** | **string** |  | [optional] 
+**valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**valid_to** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

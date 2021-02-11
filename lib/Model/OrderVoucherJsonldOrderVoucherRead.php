@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderJsonldOrderRead
+ * OrderVoucherJsonldOrderVoucherRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderJsonldOrderRead Class Doc Comment
+ * OrderVoucherJsonldOrderVoucherRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
+class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Order:jsonld-OrderRead';
+    protected static $swaggerModelName = 'OrderVoucher:jsonld-OrderVoucherRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,27 +59,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'order' => 'string',
+'voucher' => 'string',
+'voucher_uuid' => 'string',
+'voucher_code' => 'string',
+'value' => 'int',
+'voucher_type' => 'string',
+'valid_from' => '\DateTime',
+'valid_to' => '\DateTime',
 'uuid' => 'string',
-'order_code' => 'string',
-'status' => 'string',
-'payment_status' => 'string',
-'payment_date' => '\DateTime',
-'customer_uuid' => 'string',
-'internal_comment' => 'string',
-'customer_comment' => 'string',
-'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]',
-'logs' => '\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]',
-'date_of_validity' => '\DateTime',
-'order_vouchers' => '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[]',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object',
-'total_gross_amount' => 'int',
-'total_net_amount' => 'int',
-'total_vat_amount' => 'int'    ];
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -90,27 +84,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'uuid' => 'uuid',
-'order_code' => null,
-'status' => null,
-'payment_status' => null,
-'payment_date' => 'date-time',
-'customer_uuid' => 'uuid',
-'internal_comment' => null,
-'customer_comment' => null,
-'order_products' => null,
-'logs' => null,
-'date_of_validity' => 'date-time',
-'order_vouchers' => null,
+'order' => 'iri-reference',
+'voucher' => 'iri-reference',
+'voucher_uuid' => null,
+'voucher_code' => null,
+'value' => null,
+'voucher_type' => null,
+'valid_from' => 'date-time',
+'valid_to' => 'date-time',
+'uuid' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
 'active' => null,
 'deleted' => null,
-'custom_data' => null,
-'total_gross_amount' => null,
-'total_net_amount' => null,
-'total_vat_amount' => null    ];
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -142,27 +130,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'order' => 'order',
+'voucher' => 'voucher',
+'voucher_uuid' => 'voucherUuid',
+'voucher_code' => 'voucherCode',
+'value' => 'value',
+'voucher_type' => 'voucherType',
+'valid_from' => 'validFrom',
+'valid_to' => 'validTo',
 'uuid' => 'uuid',
-'order_code' => 'orderCode',
-'status' => 'status',
-'payment_status' => 'paymentStatus',
-'payment_date' => 'paymentDate',
-'customer_uuid' => 'customerUuid',
-'internal_comment' => 'internalComment',
-'customer_comment' => 'customerComment',
-'order_products' => 'orderProducts',
-'logs' => 'logs',
-'date_of_validity' => 'dateOfValidity',
-'order_vouchers' => 'orderVouchers',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
 'active' => 'active',
 'deleted' => 'deleted',
-'custom_data' => 'customData',
-'total_gross_amount' => 'totalGrossAmount',
-'total_net_amount' => 'totalNetAmount',
-'total_vat_amount' => 'totalVatAmount'    ];
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -173,27 +155,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'order' => 'setOrder',
+'voucher' => 'setVoucher',
+'voucher_uuid' => 'setVoucherUuid',
+'voucher_code' => 'setVoucherCode',
+'value' => 'setValue',
+'voucher_type' => 'setVoucherType',
+'valid_from' => 'setValidFrom',
+'valid_to' => 'setValidTo',
 'uuid' => 'setUuid',
-'order_code' => 'setOrderCode',
-'status' => 'setStatus',
-'payment_status' => 'setPaymentStatus',
-'payment_date' => 'setPaymentDate',
-'customer_uuid' => 'setCustomerUuid',
-'internal_comment' => 'setInternalComment',
-'customer_comment' => 'setCustomerComment',
-'order_products' => 'setOrderProducts',
-'logs' => 'setLogs',
-'date_of_validity' => 'setDateOfValidity',
-'order_vouchers' => 'setOrderVouchers',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
-'custom_data' => 'setCustomData',
-'total_gross_amount' => 'setTotalGrossAmount',
-'total_net_amount' => 'setTotalNetAmount',
-'total_vat_amount' => 'setTotalVatAmount'    ];
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -204,27 +180,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'order' => 'getOrder',
+'voucher' => 'getVoucher',
+'voucher_uuid' => 'getVoucherUuid',
+'voucher_code' => 'getVoucherCode',
+'value' => 'getValue',
+'voucher_type' => 'getVoucherType',
+'valid_from' => 'getValidFrom',
+'valid_to' => 'getValidTo',
 'uuid' => 'getUuid',
-'order_code' => 'getOrderCode',
-'status' => 'getStatus',
-'payment_status' => 'getPaymentStatus',
-'payment_date' => 'getPaymentDate',
-'customer_uuid' => 'getCustomerUuid',
-'internal_comment' => 'getInternalComment',
-'customer_comment' => 'getCustomerComment',
-'order_products' => 'getOrderProducts',
-'logs' => 'getLogs',
-'date_of_validity' => 'getDateOfValidity',
-'order_vouchers' => 'getOrderVouchers',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
-'custom_data' => 'getCustomData',
-'total_gross_amount' => 'getTotalGrossAmount',
-'total_net_amount' => 'getTotalNetAmount',
-'total_vat_amount' => 'getTotalVatAmount'    ];
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -267,7 +237,20 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
+    const VOUCHER_TYPE_PERCENTAGE = 'percentage';
+const VOUCHER_TYPE_AMOUNT = 'amount';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVoucherTypeAllowableValues()
+    {
+        return [
+            self::VOUCHER_TYPE_PERCENTAGE,
+self::VOUCHER_TYPE_AMOUNT,        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -287,27 +270,21 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
+        $this->container['voucher_uuid'] = isset($data['voucher_uuid']) ? $data['voucher_uuid'] : null;
+        $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
-        $this->container['order_code'] = isset($data['order_code']) ? $data['order_code'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['payment_status'] = isset($data['payment_status']) ? $data['payment_status'] : null;
-        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
-        $this->container['customer_uuid'] = isset($data['customer_uuid']) ? $data['customer_uuid'] : null;
-        $this->container['internal_comment'] = isset($data['internal_comment']) ? $data['internal_comment'] : null;
-        $this->container['customer_comment'] = isset($data['customer_comment']) ? $data['customer_comment'] : null;
-        $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
-        $this->container['logs'] = isset($data['logs']) ? $data['logs'] : null;
-        $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
-        $this->container['order_vouchers'] = isset($data['order_vouchers']) ? $data['order_vouchers'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
-        $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
-        $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
-        $this->container['total_vat_amount'] = isset($data['total_vat_amount']) ? $data['total_vat_amount'] : null;
     }
 
     /**
@@ -319,15 +296,20 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
         }
-        if ($this->container['payment_status'] === null) {
-            $invalidProperties[] = "'payment_status' can't be null";
+        if ($this->container['voucher'] === null) {
+            $invalidProperties[] = "'voucher' can't be null";
         }
-        if ($this->container['customer_uuid'] === null) {
-            $invalidProperties[] = "'customer_uuid' can't be null";
+        $allowedValues = $this->getVoucherTypeAllowableValues();
+        if (!is_null($this->container['voucher_type']) && !in_array($this->container['voucher_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'voucher_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
+
         return $invalidProperties;
     }
 
@@ -416,6 +398,207 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher
+     *
+     * @return string
+     */
+    public function getVoucher()
+    {
+        return $this->container['voucher'];
+    }
+
+    /**
+     * Sets voucher
+     *
+     * @param string $voucher voucher
+     *
+     * @return $this
+     */
+    public function setVoucher($voucher)
+    {
+        $this->container['voucher'] = $voucher;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher_uuid
+     *
+     * @return string
+     */
+    public function getVoucherUuid()
+    {
+        return $this->container['voucher_uuid'];
+    }
+
+    /**
+     * Sets voucher_uuid
+     *
+     * @param string $voucher_uuid voucher_uuid
+     *
+     * @return $this
+     */
+    public function setVoucherUuid($voucher_uuid)
+    {
+        $this->container['voucher_uuid'] = $voucher_uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher_code
+     *
+     * @return string
+     */
+    public function getVoucherCode()
+    {
+        return $this->container['voucher_code'];
+    }
+
+    /**
+     * Sets voucher_code
+     *
+     * @param string $voucher_code voucher_code
+     *
+     * @return $this
+     */
+    public function setVoucherCode($voucher_code)
+    {
+        $this->container['voucher_code'] = $voucher_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return int
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param int $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher_type
+     *
+     * @return string
+     */
+    public function getVoucherType()
+    {
+        return $this->container['voucher_type'];
+    }
+
+    /**
+     * Sets voucher_type
+     *
+     * @param string $voucher_type voucher_type
+     *
+     * @return $this
+     */
+    public function setVoucherType($voucher_type)
+    {
+        $allowedValues = $this->getVoucherTypeAllowableValues();
+        if (!is_null($voucher_type) && !in_array($voucher_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'voucher_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['voucher_type'] = $voucher_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_from
+     *
+     * @return \DateTime
+     */
+    public function getValidFrom()
+    {
+        return $this->container['valid_from'];
+    }
+
+    /**
+     * Sets valid_from
+     *
+     * @param \DateTime $valid_from valid_from
+     *
+     * @return $this
+     */
+    public function setValidFrom($valid_from)
+    {
+        $this->container['valid_from'] = $valid_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_to
+     *
+     * @return \DateTime
+     */
+    public function getValidTo()
+    {
+        return $this->container['valid_to'];
+    }
+
+    /**
+     * Sets valid_to
+     *
+     * @param \DateTime $valid_to valid_to
+     *
+     * @return $this
+     */
+    public function setValidTo($valid_to)
+    {
+        $this->container['valid_to'] = $valid_to;
+
+        return $this;
+    }
+
+    /**
      * Gets uuid
      *
      * @return string
@@ -435,270 +618,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_code
-     *
-     * @return string
-     */
-    public function getOrderCode()
-    {
-        return $this->container['order_code'];
-    }
-
-    /**
-     * Sets order_code
-     *
-     * @param string $order_code order_code
-     *
-     * @return $this
-     */
-    public function setOrderCode($order_code)
-    {
-        $this->container['order_code'] = $order_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_status
-     *
-     * @return string
-     */
-    public function getPaymentStatus()
-    {
-        return $this->container['payment_status'];
-    }
-
-    /**
-     * Sets payment_status
-     *
-     * @param string $payment_status payment_status
-     *
-     * @return $this
-     */
-    public function setPaymentStatus($payment_status)
-    {
-        $this->container['payment_status'] = $payment_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_date
-     *
-     * @return \DateTime
-     */
-    public function getPaymentDate()
-    {
-        return $this->container['payment_date'];
-    }
-
-    /**
-     * Sets payment_date
-     *
-     * @param \DateTime $payment_date payment_date
-     *
-     * @return $this
-     */
-    public function setPaymentDate($payment_date)
-    {
-        $this->container['payment_date'] = $payment_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_uuid
-     *
-     * @return string
-     */
-    public function getCustomerUuid()
-    {
-        return $this->container['customer_uuid'];
-    }
-
-    /**
-     * Sets customer_uuid
-     *
-     * @param string $customer_uuid customer_uuid
-     *
-     * @return $this
-     */
-    public function setCustomerUuid($customer_uuid)
-    {
-        $this->container['customer_uuid'] = $customer_uuid;
-
-        return $this;
-    }
-
-    /**
-     * Gets internal_comment
-     *
-     * @return string
-     */
-    public function getInternalComment()
-    {
-        return $this->container['internal_comment'];
-    }
-
-    /**
-     * Sets internal_comment
-     *
-     * @param string $internal_comment internal_comment
-     *
-     * @return $this
-     */
-    public function setInternalComment($internal_comment)
-    {
-        $this->container['internal_comment'] = $internal_comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_comment
-     *
-     * @return string
-     */
-    public function getCustomerComment()
-    {
-        return $this->container['customer_comment'];
-    }
-
-    /**
-     * Sets customer_comment
-     *
-     * @param string $customer_comment customer_comment
-     *
-     * @return $this
-     */
-    public function setCustomerComment($customer_comment)
-    {
-        $this->container['customer_comment'] = $customer_comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_products
-     *
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]
-     */
-    public function getOrderProducts()
-    {
-        return $this->container['order_products'];
-    }
-
-    /**
-     * Sets order_products
-     *
-     * @param \VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[] $order_products order_products
-     *
-     * @return $this
-     */
-    public function setOrderProducts($order_products)
-    {
-        $this->container['order_products'] = $order_products;
-
-        return $this;
-    }
-
-    /**
-     * Gets logs
-     *
-     * @return \VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]
-     */
-    public function getLogs()
-    {
-        return $this->container['logs'];
-    }
-
-    /**
-     * Sets logs
-     *
-     * @param \VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[] $logs logs
-     *
-     * @return $this
-     */
-    public function setLogs($logs)
-    {
-        $this->container['logs'] = $logs;
-
-        return $this;
-    }
-
-    /**
-     * Gets date_of_validity
-     *
-     * @return \DateTime
-     */
-    public function getDateOfValidity()
-    {
-        return $this->container['date_of_validity'];
-    }
-
-    /**
-     * Sets date_of_validity
-     *
-     * @param \DateTime $date_of_validity date_of_validity
-     *
-     * @return $this
-     */
-    public function setDateOfValidity($date_of_validity)
-    {
-        $this->container['date_of_validity'] = $date_of_validity;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_vouchers
-     *
-     * @return \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[]
-     */
-    public function getOrderVouchers()
-    {
-        return $this->container['order_vouchers'];
-    }
-
-    /**
-     * Sets order_vouchers
-     *
-     * @param \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[] $order_vouchers order_vouchers
-     *
-     * @return $this
-     */
-    public function setOrderVouchers($order_vouchers)
-    {
-        $this->container['order_vouchers'] = $order_vouchers;
 
         return $this;
     }
@@ -843,78 +762,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setCustomData($custom_data)
     {
         $this->container['custom_data'] = $custom_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_gross_amount
-     *
-     * @return int
-     */
-    public function getTotalGrossAmount()
-    {
-        return $this->container['total_gross_amount'];
-    }
-
-    /**
-     * Sets total_gross_amount
-     *
-     * @param int $total_gross_amount total_gross_amount
-     *
-     * @return $this
-     */
-    public function setTotalGrossAmount($total_gross_amount)
-    {
-        $this->container['total_gross_amount'] = $total_gross_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_net_amount
-     *
-     * @return int
-     */
-    public function getTotalNetAmount()
-    {
-        return $this->container['total_net_amount'];
-    }
-
-    /**
-     * Sets total_net_amount
-     *
-     * @param int $total_net_amount total_net_amount
-     *
-     * @return $this
-     */
-    public function setTotalNetAmount($total_net_amount)
-    {
-        $this->container['total_net_amount'] = $total_net_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_vat_amount
-     *
-     * @return int
-     */
-    public function getTotalVatAmount()
-    {
-        return $this->container['total_vat_amount'];
-    }
-
-    /**
-     * Sets total_vat_amount
-     *
-     * @param int $total_vat_amount total_vat_amount
-     *
-     * @return $this
-     */
-    public function setTotalVatAmount($total_vat_amount)
-    {
-        $this->container['total_vat_amount'] = $total_vat_amount;
 
         return $this;
     }

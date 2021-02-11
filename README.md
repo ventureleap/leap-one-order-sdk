@@ -183,6 +183,11 @@ Class | Method | HTTP request | Description
 *OrderProductApi* | [**getOrderProductItem**](docs/Api/OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{id} | Retrieves a OrderProduct resource.
 *OrderProductApi* | [**postOrderProductCollection**](docs/Api/OrderProductApi.md#postorderproductcollection) | **POST** /order/order_products | Creates a OrderProduct resource.
 *OrderProductApi* | [**putOrderProductItem**](docs/Api/OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{id} | Replaces the OrderProduct resource.
+*OrderVoucherApi* | [**deleteOrderVoucherItem**](docs/Api/OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{id} | Removes the OrderVoucher resource.
+*OrderVoucherApi* | [**getOrderVoucherCollection**](docs/Api/OrderVoucherApi.md#getordervouchercollection) | **GET** /order/order_vouchers | Retrieves the collection of OrderVoucher resources.
+*OrderVoucherApi* | [**getOrderVoucherItem**](docs/Api/OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{id} | Retrieves a OrderVoucher resource.
+*OrderVoucherApi* | [**postOrderVoucherCollection**](docs/Api/OrderVoucherApi.md#postordervouchercollection) | **POST** /order/order_vouchers | Creates a OrderVoucher resource.
+*OrderVoucherApi* | [**putOrderVoucherItem**](docs/Api/OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{id} | Replaces the OrderVoucher resource.
 *VoucherApi* | [**deleteVoucherItem**](docs/Api/VoucherApi.md#deletevoucheritem) | **DELETE** /order/vouchers/{id} | Removes the Voucher resource.
 *VoucherApi* | [**getVoucherCollection**](docs/Api/VoucherApi.md#getvouchercollection) | **GET** /order/vouchers | Retrieves the collection of Voucher resources.
 *VoucherApi* | [**getVoucherItem**](docs/Api/VoucherApi.md#getvoucheritem) | **GET** /order/vouchers/{id} | Retrieves a Voucher resource.
@@ -197,6 +202,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+ - [InlineResponse2004](docs/Model/InlineResponse2004.md)
  - [InlineResponse200Hydrasearch](docs/Model/InlineResponse200Hydrasearch.md)
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
@@ -207,6 +213,10 @@ Class | Method | HTTP request | Description
  - [OrderProductJsonldOrderProductWrite](docs/Model/OrderProductJsonldOrderProductWrite.md)
  - [OrderProductJsonldOrderRead](docs/Model/OrderProductJsonldOrderRead.md)
  - [OrderProductJsonldOrderWrite](docs/Model/OrderProductJsonldOrderWrite.md)
+ - [OrderVoucherJsonldOrderRead](docs/Model/OrderVoucherJsonldOrderRead.md)
+ - [OrderVoucherJsonldOrderVoucherRead](docs/Model/OrderVoucherJsonldOrderVoucherRead.md)
+ - [OrderVoucherJsonldOrderVoucherWrite](docs/Model/OrderVoucherJsonldOrderVoucherWrite.md)
+ - [OrderVoucherJsonldVoucherRead](docs/Model/OrderVoucherJsonldVoucherRead.md)
  - [VoucherJsonldVoucherRead](docs/Model/VoucherJsonldVoucherRead.md)
  - [VoucherJsonldVoucherWrite](docs/Model/VoucherJsonldVoucherWrite.md)
 

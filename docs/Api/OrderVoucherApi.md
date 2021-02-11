@@ -1,19 +1,19 @@
-# VentureLeap\OrderService\VoucherApi
+# VentureLeap\OrderService\OrderVoucherApi
 
 All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteVoucherItem**](VoucherApi.md#deletevoucheritem) | **DELETE** /order/vouchers/{id} | Removes the Voucher resource.
-[**getVoucherCollection**](VoucherApi.md#getvouchercollection) | **GET** /order/vouchers | Retrieves the collection of Voucher resources.
-[**getVoucherItem**](VoucherApi.md#getvoucheritem) | **GET** /order/vouchers/{id} | Retrieves a Voucher resource.
-[**postVoucherCollection**](VoucherApi.md#postvouchercollection) | **POST** /order/vouchers | Creates a Voucher resource.
-[**putVoucherItem**](VoucherApi.md#putvoucheritem) | **PUT** /order/vouchers/{id} | Replaces the Voucher resource.
+[**deleteOrderVoucherItem**](OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{id} | Removes the OrderVoucher resource.
+[**getOrderVoucherCollection**](OrderVoucherApi.md#getordervouchercollection) | **GET** /order/order_vouchers | Retrieves the collection of OrderVoucher resources.
+[**getOrderVoucherItem**](OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{id} | Retrieves a OrderVoucher resource.
+[**postOrderVoucherCollection**](OrderVoucherApi.md#postordervouchercollection) | **POST** /order/order_vouchers | Creates a OrderVoucher resource.
+[**putOrderVoucherItem**](OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{id} | Replaces the OrderVoucher resource.
 
-# **deleteVoucherItem**
-> deleteVoucherItem($id)
+# **deleteOrderVoucherItem**
+> deleteOrderVoucherItem($id)
 
-Removes the Voucher resource.
+Removes the OrderVoucher resource.
 
 ### Example
 ```php
@@ -24,7 +24,7 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
+$apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -33,9 +33,9 @@ $apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->deleteVoucherItem($id);
+    $apiInstance->deleteOrderVoucherItem($id);
 } catch (Exception $e) {
-    echo 'Exception when calling VoucherApi->deleteVoucherItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderVoucherApi->deleteOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,10 +61,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getVoucherCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
+# **getOrderVoucherCollection**
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderVoucherCollection($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
 
-Retrieves the collection of Voucher resources.
+Retrieves the collection of OrderVoucher resources.
 
 ### Example
 ```php
@@ -75,7 +75,7 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
+$apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -83,13 +83,32 @@ $apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
 );
 $properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 $custom_data = "custom_data_example"; // string | 
+$voucher_uuid = "voucher_uuid_example"; // string | 
+$voucher_uuid = array("voucher_uuid_example"); // string[] | 
 $voucher_code = "voucher_code_example"; // string | 
+$voucher_code = array("voucher_code_example"); // string[] | 
+$value = 56; // int | 
+$value = array(56); // int[] | 
 $voucher_type = "voucher_type_example"; // string | 
-$voucher_code = "voucher_code_example"; // string | 
-$voucher_type = "voucher_type_example"; // string | 
-$value = "value_example"; // string | 
-$quantity = "quantity_example"; // string | 
-$quantity_per_person = "quantity_per_person_example"; // string | 
+$voucher_type = array("voucher_type_example"); // string[] | 
+$valid_from = "valid_from_example"; // string | 
+$valid_from = "valid_from_example"; // string | 
+$valid_to = "valid_to_example"; // string | 
+$valid_to = "valid_to_example"; // string | 
+$uuid = "uuid_example"; // string | 
+$uuid = array("uuid_example"); // string[] | 
+$application_id = "application_id_example"; // string | 
+$application_id = array("application_id_example"); // string[] | 
+$created_at = "created_at_example"; // string | 
+$created_at = "created_at_example"; // string | 
+$updated_at = "updated_at_example"; // string | 
+$updated_at = "updated_at_example"; // string | 
+$active = true; // bool | 
+$active = array(True); // bool[] | 
+$deleted = true; // bool | 
+$deleted = array(True); // bool[] | 
+$custom_data = "custom_data_example"; // string | 
+$custom_data = array("custom_data_example"); // string[] | 
 $active = true; // bool | 
 $deleted = true; // bool | 
 $created_at_before = "created_at_before_example"; // string | 
@@ -100,29 +119,17 @@ $updated_at_before = "updated_at_before_example"; // string |
 $updated_at_strictly_before = "updated_at_strictly_before_example"; // string | 
 $updated_at_after = "updated_at_after_example"; // string | 
 $updated_at_strictly_after = "updated_at_strictly_after_example"; // string | 
-$valid_from_before = "valid_from_before_example"; // string | 
-$valid_from_strictly_before = "valid_from_strictly_before_example"; // string | 
-$valid_from_after = "valid_from_after_example"; // string | 
-$valid_from_strictly_after = "valid_from_strictly_after_example"; // string | 
-$valid_to_before = "valid_to_before_example"; // string | 
-$valid_to_strictly_before = "valid_to_strictly_before_example"; // string | 
-$valid_to_after = "valid_to_after_example"; // string | 
-$valid_to_strictly_after = "valid_to_strictly_after_example"; // string | 
-$order_voucher_type = "order_voucher_type_example"; // string | 
-$order_voucher_code = "order_voucher_code_example"; // string | 
 $order_created_at = "order_created_at_example"; // string | 
 $order_updated_at = "order_updated_at_example"; // string | 
 $order_active = "order_active_example"; // string | 
 $order_deleted = "order_deleted_example"; // string | 
-$order_valid_from = "order_valid_from_example"; // string | 
-$order_valid_to = "order_valid_to_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
+    $result = $apiInstance->getOrderVoucherCollection($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VoucherApi->getVoucherCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderVoucherApi->getOrderVoucherCollection: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -133,13 +140,32 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
  **custom_data** | **string**|  | [optional]
+ **voucher_uuid** | **string**|  | [optional]
+ **voucher_uuid** | [**string[]**](../Model/string.md)|  | [optional]
  **voucher_code** | **string**|  | [optional]
+ **voucher_code** | [**string[]**](../Model/string.md)|  | [optional]
+ **value** | **int**|  | [optional]
+ **value** | [**int[]**](../Model/int.md)|  | [optional]
  **voucher_type** | **string**|  | [optional]
- **voucher_code** | **string**|  | [optional]
- **voucher_type** | **string**|  | [optional]
- **value** | **string**|  | [optional]
- **quantity** | **string**|  | [optional]
- **quantity_per_person** | **string**|  | [optional]
+ **voucher_type** | [**string[]**](../Model/string.md)|  | [optional]
+ **valid_from** | **string**|  | [optional]
+ **valid_from** | **string**|  | [optional]
+ **valid_to** | **string**|  | [optional]
+ **valid_to** | **string**|  | [optional]
+ **uuid** | **string**|  | [optional]
+ **uuid** | [**string[]**](../Model/string.md)|  | [optional]
+ **application_id** | **string**|  | [optional]
+ **application_id** | [**string[]**](../Model/string.md)|  | [optional]
+ **created_at** | **string**|  | [optional]
+ **created_at** | **string**|  | [optional]
+ **updated_at** | **string**|  | [optional]
+ **updated_at** | **string**|  | [optional]
+ **active** | **bool**|  | [optional]
+ **active** | [**bool[]**](../Model/bool.md)|  | [optional]
+ **deleted** | **bool**|  | [optional]
+ **deleted** | [**bool[]**](../Model/bool.md)|  | [optional]
+ **custom_data** | **string**|  | [optional]
+ **custom_data** | [**string[]**](../Model/string.md)|  | [optional]
  **active** | **bool**|  | [optional]
  **deleted** | **bool**|  | [optional]
  **created_at_before** | **string**|  | [optional]
@@ -150,27 +176,15 @@ Name | Type | Description  | Notes
  **updated_at_strictly_before** | **string**|  | [optional]
  **updated_at_after** | **string**|  | [optional]
  **updated_at_strictly_after** | **string**|  | [optional]
- **valid_from_before** | **string**|  | [optional]
- **valid_from_strictly_before** | **string**|  | [optional]
- **valid_from_after** | **string**|  | [optional]
- **valid_from_strictly_after** | **string**|  | [optional]
- **valid_to_before** | **string**|  | [optional]
- **valid_to_strictly_before** | **string**|  | [optional]
- **valid_to_after** | **string**|  | [optional]
- **valid_to_strictly_after** | **string**|  | [optional]
- **order_voucher_type** | **string**|  | [optional]
- **order_voucher_code** | **string**|  | [optional]
  **order_created_at** | **string**|  | [optional]
  **order_updated_at** | **string**|  | [optional]
  **order_active** | **string**|  | [optional]
  **order_deleted** | **string**|  | [optional]
- **order_valid_from** | **string**|  | [optional]
- **order_valid_to** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\VentureLeap\OrderService\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -183,10 +197,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getVoucherItem**
-> \VentureLeap\OrderService\Model\VoucherJsonldVoucherRead getVoucherItem($id)
+# **getOrderVoucherItem**
+> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead getOrderVoucherItem($id)
 
-Retrieves a Voucher resource.
+Retrieves a OrderVoucher resource.
 
 ### Example
 ```php
@@ -197,7 +211,7 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
+$apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -206,10 +220,10 @@ $apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->getVoucherItem($id);
+    $result = $apiInstance->getOrderVoucherItem($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VoucherApi->getVoucherItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderVoucherApi->getOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -222,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\VoucherJsonldVoucherRead**](../Model/VoucherJsonldVoucherRead.md)
+[**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead**](../Model/OrderVoucherJsonldOrderVoucherRead.md)
 
 ### Authorization
 
@@ -235,10 +249,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **postVoucherCollection**
-> \VentureLeap\OrderService\Model\VoucherJsonldVoucherRead postVoucherCollection($body)
+# **postOrderVoucherCollection**
+> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead postOrderVoucherCollection($body)
 
-Creates a Voucher resource.
+Creates a OrderVoucher resource.
 
 ### Example
 ```php
@@ -249,19 +263,19 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
+$apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite(); // \VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite | The new Voucher resource
+$body = new \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite(); // \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite | The new OrderVoucher resource
 
 try {
-    $result = $apiInstance->postVoucherCollection($body);
+    $result = $apiInstance->postOrderVoucherCollection($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VoucherApi->postVoucherCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderVoucherApi->postOrderVoucherCollection: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -270,11 +284,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite**](../Model/VoucherJsonldVoucherWrite.md)| The new Voucher resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The new OrderVoucher resource | [optional]
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\VoucherJsonldVoucherRead**](../Model/VoucherJsonldVoucherRead.md)
+[**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead**](../Model/OrderVoucherJsonldOrderVoucherRead.md)
 
 ### Authorization
 
@@ -287,10 +301,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **putVoucherItem**
-> \VentureLeap\OrderService\Model\VoucherJsonldVoucherRead putVoucherItem($id, $body)
+# **putOrderVoucherItem**
+> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead putOrderVoucherItem($id, $body)
 
-Replaces the Voucher resource.
+Replaces the OrderVoucher resource.
 
 ### Example
 ```php
@@ -301,20 +315,20 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
+$apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite(); // \VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite | The updated Voucher resource
+$body = new \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite(); // \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite | The updated OrderVoucher resource
 
 try {
-    $result = $apiInstance->putVoucherItem($id, $body);
+    $result = $apiInstance->putOrderVoucherItem($id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VoucherApi->putVoucherItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderVoucherApi->putOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -324,11 +338,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\VoucherJsonldVoucherWrite**](../Model/VoucherJsonldVoucherWrite.md)| The updated Voucher resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The updated OrderVoucher resource | [optional]
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\VoucherJsonldVoucherRead**](../Model/VoucherJsonldVoucherRead.md)
+[**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead**](../Model/OrderVoucherJsonldOrderVoucherRead.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2003
+ * OrderVoucherJsonldOrderVoucherWrite
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * InlineResponse2003 Class Doc Comment
+ * OrderVoucherJsonldOrderVoucherWrite Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2003 implements ModelInterface, ArrayAccess
+class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_3';
+    protected static $swaggerModelName = 'OrderVoucher:jsonld-OrderVoucherWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +56,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hydramember' => '\VentureLeap\OrderService\Model\OrderJsonldOrderRead[]',
-'hydratotal_items' => 'int',
-'hydraview' => '\VentureLeap\OrderService\Model\InlineResponse200Hydraview',
-'hydrasearch' => '\VentureLeap\OrderService\Model\InlineResponse200Hydrasearch'    ];
+        'context' => 'string',
+'id' => 'string',
+'type' => 'string',
+'order' => 'string',
+'voucher' => 'string',
+'active' => 'bool',
+'deleted' => 'bool',
+'custom_data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,10 +71,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'hydramember' => null,
-'hydratotal_items' => null,
-'hydraview' => null,
-'hydrasearch' => null    ];
+        'context' => null,
+'id' => null,
+'type' => null,
+'order' => 'iri-reference',
+'voucher' => 'iri-reference',
+'active' => null,
+'deleted' => null,
+'custom_data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,10 +107,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'hydramember' => 'hydra:member',
-'hydratotal_items' => 'hydra:totalItems',
-'hydraview' => 'hydra:view',
-'hydrasearch' => 'hydra:search'    ];
+        'context' => '@context',
+'id' => '@id',
+'type' => '@type',
+'order' => 'order',
+'voucher' => 'voucher',
+'active' => 'active',
+'deleted' => 'deleted',
+'custom_data' => 'customData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -110,10 +122,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'hydramember' => 'setHydramember',
-'hydratotal_items' => 'setHydratotalItems',
-'hydraview' => 'setHydraview',
-'hydrasearch' => 'setHydrasearch'    ];
+        'context' => 'setContext',
+'id' => 'setId',
+'type' => 'setType',
+'order' => 'setOrder',
+'voucher' => 'setVoucher',
+'active' => 'setActive',
+'deleted' => 'setDeleted',
+'custom_data' => 'setCustomData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -121,10 +137,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'hydramember' => 'getHydramember',
-'hydratotal_items' => 'getHydratotalItems',
-'hydraview' => 'getHydraview',
-'hydrasearch' => 'getHydrasearch'    ];
+        'context' => 'getContext',
+'id' => 'getId',
+'type' => 'getType',
+'order' => 'getOrder',
+'voucher' => 'getVoucher',
+'active' => 'getActive',
+'deleted' => 'getDeleted',
+'custom_data' => 'getCustomData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -184,10 +204,14 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hydramember'] = isset($data['hydramember']) ? $data['hydramember'] : null;
-        $this->container['hydratotal_items'] = isset($data['hydratotal_items']) ? $data['hydratotal_items'] : null;
-        $this->container['hydraview'] = isset($data['hydraview']) ? $data['hydraview'] : null;
-        $this->container['hydrasearch'] = isset($data['hydrasearch']) ? $data['hydrasearch'] : null;
+        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
 
     /**
@@ -199,8 +223,11 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['hydramember'] === null) {
-            $invalidProperties[] = "'hydramember' can't be null";
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
+        }
+        if ($this->container['voucher'] === null) {
+            $invalidProperties[] = "'voucher' can't be null";
         }
         return $invalidProperties;
     }
@@ -218,97 +245,193 @@ class InlineResponse2003 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets hydramember
+     * Gets context
      *
-     * @return \VentureLeap\OrderService\Model\OrderJsonldOrderRead[]
+     * @return string
      */
-    public function getHydramember()
+    public function getContext()
     {
-        return $this->container['hydramember'];
+        return $this->container['context'];
     }
 
     /**
-     * Sets hydramember
+     * Sets context
      *
-     * @param \VentureLeap\OrderService\Model\OrderJsonldOrderRead[] $hydramember hydramember
+     * @param string $context context
      *
      * @return $this
      */
-    public function setHydramember($hydramember)
+    public function setContext($context)
     {
-        $this->container['hydramember'] = $hydramember;
+        $this->container['context'] = $context;
 
         return $this;
     }
 
     /**
-     * Gets hydratotal_items
+     * Gets id
      *
-     * @return int
+     * @return string
      */
-    public function getHydratotalItems()
+    public function getId()
     {
-        return $this->container['hydratotal_items'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets hydratotal_items
+     * Sets id
      *
-     * @param int $hydratotal_items hydratotal_items
+     * @param string $id id
      *
      * @return $this
      */
-    public function setHydratotalItems($hydratotal_items)
+    public function setId($id)
     {
-        $this->container['hydratotal_items'] = $hydratotal_items;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets hydraview
+     * Gets type
      *
-     * @return \VentureLeap\OrderService\Model\InlineResponse200Hydraview
+     * @return string
      */
-    public function getHydraview()
+    public function getType()
     {
-        return $this->container['hydraview'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets hydraview
+     * Sets type
      *
-     * @param \VentureLeap\OrderService\Model\InlineResponse200Hydraview $hydraview hydraview
+     * @param string $type type
      *
      * @return $this
      */
-    public function setHydraview($hydraview)
+    public function setType($type)
     {
-        $this->container['hydraview'] = $hydraview;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets hydrasearch
+     * Gets order
      *
-     * @return \VentureLeap\OrderService\Model\InlineResponse200Hydrasearch
+     * @return string
      */
-    public function getHydrasearch()
+    public function getOrder()
     {
-        return $this->container['hydrasearch'];
+        return $this->container['order'];
     }
 
     /**
-     * Sets hydrasearch
+     * Sets order
      *
-     * @param \VentureLeap\OrderService\Model\InlineResponse200Hydrasearch $hydrasearch hydrasearch
+     * @param string $order order
      *
      * @return $this
      */
-    public function setHydrasearch($hydrasearch)
+    public function setOrder($order)
     {
-        $this->container['hydrasearch'] = $hydrasearch;
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher
+     *
+     * @return string
+     */
+    public function getVoucher()
+    {
+        return $this->container['voucher'];
+    }
+
+    /**
+     * Sets voucher
+     *
+     * @param string $voucher voucher
+     *
+     * @return $this
+     */
+    public function setVoucher($voucher)
+    {
+        $this->container['voucher'] = $voucher;
+
+        return $this;
+    }
+
+    /**
+     * Gets active
+     *
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->container['active'];
+    }
+
+    /**
+     * Sets active
+     *
+     * @param bool $active active
+     *
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted deleted
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return object
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param object $custom_data custom_data
+     *
+     * @return $this
+     */
+    public function setCustomData($custom_data)
+    {
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

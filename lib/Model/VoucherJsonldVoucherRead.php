@@ -67,6 +67,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'valid_to' => '\DateTime',
 'quantity' => 'int',
 'quantity_per_person' => 'int',
+'order_vouchers' => '\VentureLeap\OrderService\Model\OrderVoucherJsonldVoucherRead[]',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -91,6 +92,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'valid_to' => 'date-time',
 'quantity' => null,
 'quantity_per_person' => null,
+'order_vouchers' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -136,6 +138,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'valid_to' => 'validTo',
 'quantity' => 'quantity',
 'quantity_per_person' => 'quantityPerPerson',
+'order_vouchers' => 'orderVouchers',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -160,6 +163,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'valid_to' => 'setValidTo',
 'quantity' => 'setQuantity',
 'quantity_per_person' => 'setQuantityPerPerson',
+'order_vouchers' => 'setOrderVouchers',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -184,6 +188,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'valid_to' => 'getValidTo',
 'quantity' => 'getQuantity',
 'quantity_per_person' => 'getQuantityPerPerson',
+'order_vouchers' => 'getOrderVouchers',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -273,6 +278,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['quantity_per_person'] = isset($data['quantity_per_person']) ? $data['quantity_per_person'] : null;
+        $this->container['order_vouchers'] = isset($data['order_vouchers']) ? $data['order_vouchers'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -600,6 +606,30 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setQuantityPerPerson($quantity_per_person)
     {
         $this->container['quantity_per_person'] = $quantity_per_person;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_vouchers
+     *
+     * @return \VentureLeap\OrderService\Model\OrderVoucherJsonldVoucherRead[]
+     */
+    public function getOrderVouchers()
+    {
+        return $this->container['order_vouchers'];
+    }
+
+    /**
+     * Sets order_vouchers
+     *
+     * @param \VentureLeap\OrderService\Model\OrderVoucherJsonldVoucherRead[] $order_vouchers order_vouchers
+     *
+     * @return $this
+     */
+    public function setOrderVouchers($order_vouchers)
+    {
+        $this->container['order_vouchers'] = $order_vouchers;
 
         return $this;
     }
