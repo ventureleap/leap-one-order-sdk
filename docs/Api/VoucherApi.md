@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVoucherCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
 
 Retrieves the collection of Voucher resources.
 
@@ -83,8 +83,6 @@ $apiInstance = new VentureLeap\OrderService\Api\VoucherApi(
 );
 $properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
 $custom_data = "custom_data_example"; // string | 
-$voucher_code = "voucher_code_example"; // string | 
-$voucher_type = "voucher_type_example"; // string | 
 $voucher_code = "voucher_code_example"; // string | 
 $voucher_type = "voucher_type_example"; // string | 
 $value = "value_example"; // string | 
@@ -119,7 +117,7 @@ $order_valid_to = "order_valid_to_example"; // string |
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
+    $result = $apiInstance->getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VoucherApi->getVoucherCollection: ', $e->getMessage(), PHP_EOL;
@@ -133,8 +131,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
  **custom_data** | **string**|  | [optional]
- **voucher_code** | **string**|  | [optional]
- **voucher_type** | **string**|  | [optional]
  **voucher_code** | **string**|  | [optional]
  **voucher_type** | **string**|  | [optional]
  **value** | **string**|  | [optional]

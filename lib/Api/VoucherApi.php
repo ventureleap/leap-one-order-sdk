@@ -325,8 +325,6 @@ class VoucherApi
      * @param  string $custom_data custom_data (optional)
      * @param  string $voucher_code voucher_code (optional)
      * @param  string $voucher_type voucher_type (optional)
-     * @param  string $voucher_code voucher_code (optional)
-     * @param  string $voucher_type voucher_type (optional)
      * @param  string $value value (optional)
      * @param  string $quantity quantity (optional)
      * @param  string $quantity_per_person quantity_per_person (optional)
@@ -362,9 +360,9 @@ class VoucherApi
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2004
      */
-    public function getVoucherCollection($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
+    public function getVoucherCollection($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
     {
-        list($response) = $this->getVoucherCollectionWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
+        list($response) = $this->getVoucherCollectionWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
         return $response;
     }
 
@@ -375,8 +373,6 @@ class VoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data (optional)
-     * @param  string $voucher_code (optional)
-     * @param  string $voucher_type (optional)
      * @param  string $voucher_code (optional)
      * @param  string $voucher_type (optional)
      * @param  string $value (optional)
@@ -414,10 +410,10 @@ class VoucherApi
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
+    public function getVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
+        $request = $this->getVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -487,8 +483,6 @@ class VoucherApi
      * @param  string $custom_data (optional)
      * @param  string $voucher_code (optional)
      * @param  string $voucher_type (optional)
-     * @param  string $voucher_code (optional)
-     * @param  string $voucher_type (optional)
      * @param  string $value (optional)
      * @param  string $quantity (optional)
      * @param  string $quantity_per_person (optional)
@@ -523,9 +517,9 @@ class VoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVoucherCollectionAsync($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
+    public function getVoucherCollectionAsync($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
     {
-        return $this->getVoucherCollectionAsyncWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
+        return $this->getVoucherCollectionAsyncWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -542,8 +536,6 @@ class VoucherApi
      * @param  string $custom_data (optional)
      * @param  string $voucher_code (optional)
      * @param  string $voucher_type (optional)
-     * @param  string $voucher_code (optional)
-     * @param  string $voucher_type (optional)
      * @param  string $value (optional)
      * @param  string $quantity (optional)
      * @param  string $quantity_per_person (optional)
@@ -578,10 +570,10 @@ class VoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
+    public function getVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_type, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
+        $request = $this->getVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -627,8 +619,6 @@ class VoucherApi
      * @param  string $custom_data (optional)
      * @param  string $voucher_code (optional)
      * @param  string $voucher_type (optional)
-     * @param  string $voucher_code (optional)
-     * @param  string $voucher_type (optional)
      * @param  string $value (optional)
      * @param  string $quantity (optional)
      * @param  string $quantity_per_person (optional)
@@ -663,7 +653,7 @@ class VoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getVoucherCollectionRequest($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
+    protected function getVoucherCollectionRequest($properties = null, $custom_data = null, $voucher_code = null, $voucher_type = null, $value = null, $quantity = null, $quantity_per_person = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $valid_from_before = null, $valid_from_strictly_before = null, $valid_from_after = null, $valid_from_strictly_after = null, $valid_to_before = null, $valid_to_strictly_before = null, $valid_to_after = null, $valid_to_strictly_after = null, $order_voucher_type = null, $order_voucher_code = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $order_valid_from = null, $order_valid_to = null, $page = '1')
     {
 
         $resourcePath = '/order/vouchers';
@@ -683,14 +673,6 @@ class VoucherApi
         // query params
         if ($custom_data !== null) {
             $queryParams['customData'] = ObjectSerializer::toQueryValue($custom_data, null);
-        }
-        // query params
-        if ($voucher_code !== null) {
-            $queryParams['voucherCode'] = ObjectSerializer::toQueryValue($voucher_code, null);
-        }
-        // query params
-        if ($voucher_type !== null) {
-            $queryParams['voucherType'] = ObjectSerializer::toQueryValue($voucher_type, null);
         }
         // query params
         if ($voucher_code !== null) {
