@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **type** | **string** |  | [optional] 
 **order** | **string** |  | 
 **voucher** | **string** |  | 
-**voucher_uuid** | **string** |  | [optional] 
 **voucher_code** | **string** |  | [optional] 
 **value** | **int** |  | [optional] 
 **voucher_type** | **string** |  | [optional] 

@@ -111,13 +111,6 @@ class OrderVoucherJsonldOrderVoucherReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "voucher_uuid"
-     */
-    public function testPropertyVoucherUuid()
-    {
-    }
-
-    /**
      * Test attribute "voucher_code"
      */
     public function testPropertyVoucherCode()

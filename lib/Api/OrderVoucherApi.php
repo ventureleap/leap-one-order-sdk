@@ -323,8 +323,6 @@ class OrderVoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data custom_data (optional)
-     * @param  string $voucher_uuid voucher_uuid (optional)
-     * @param  string[] $voucher_uuid voucher_uuid (optional)
      * @param  string $voucher_code voucher_code (optional)
      * @param  string[] $voucher_code voucher_code (optional)
      * @param  int $value value (optional)
@@ -369,9 +367,9 @@ class OrderVoucherApi
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2002
      */
-    public function getOrderVoucherCollection($properties = null, $custom_data = null, $voucher_uuid = null, $voucher_uuid = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollection($properties = null, $custom_data = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
-        list($response) = $this->getOrderVoucherCollectionWithHttpInfo($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        list($response) = $this->getOrderVoucherCollectionWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
         return $response;
     }
 
@@ -382,8 +380,6 @@ class OrderVoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data (optional)
-     * @param  string $voucher_uuid (optional)
-     * @param  string[] $voucher_uuid (optional)
      * @param  string $voucher_code (optional)
      * @param  string[] $voucher_code (optional)
      * @param  int $value (optional)
@@ -428,10 +424,10 @@ class OrderVoucherApi
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $voucher_uuid = null, $voucher_uuid = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -499,8 +495,6 @@ class OrderVoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data (optional)
-     * @param  string $voucher_uuid (optional)
-     * @param  string[] $voucher_uuid (optional)
      * @param  string $voucher_code (optional)
      * @param  string[] $voucher_code (optional)
      * @param  int $value (optional)
@@ -544,9 +538,9 @@ class OrderVoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherCollectionAsync($properties = null, $custom_data = null, $voucher_uuid = null, $voucher_uuid = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionAsync($properties = null, $custom_data = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
-        return $this->getOrderVoucherCollectionAsyncWithHttpInfo($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
+        return $this->getOrderVoucherCollectionAsyncWithHttpInfo($properties, $custom_data, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -561,8 +555,6 @@ class OrderVoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data (optional)
-     * @param  string $voucher_uuid (optional)
-     * @param  string[] $voucher_uuid (optional)
      * @param  string $voucher_code (optional)
      * @param  string[] $voucher_code (optional)
      * @param  int $value (optional)
@@ -606,10 +598,10 @@ class OrderVoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $voucher_uuid = null, $voucher_uuid = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $voucher_uuid, $voucher_uuid, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $voucher_code, $voucher_code, $value, $value, $voucher_type, $voucher_type, $valid_from, $valid_from, $valid_to, $valid_to, $uuid, $uuid, $application_id, $application_id, $created_at, $created_at, $updated_at, $updated_at, $active, $active, $deleted, $deleted, $custom_data, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -653,8 +645,6 @@ class OrderVoucherApi
      *
      * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
      * @param  string $custom_data (optional)
-     * @param  string $voucher_uuid (optional)
-     * @param  string[] $voucher_uuid (optional)
      * @param  string $voucher_code (optional)
      * @param  string[] $voucher_code (optional)
      * @param  int $value (optional)
@@ -698,7 +688,7 @@ class OrderVoucherApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderVoucherCollectionRequest($properties = null, $custom_data = null, $voucher_uuid = null, $voucher_uuid = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    protected function getOrderVoucherCollectionRequest($properties = null, $custom_data = null, $voucher_code = null, $voucher_code = null, $value = null, $value = null, $voucher_type = null, $voucher_type = null, $valid_from = null, $valid_from = null, $valid_to = null, $valid_to = null, $uuid = null, $uuid = null, $application_id = null, $application_id = null, $created_at = null, $created_at = null, $updated_at = null, $updated_at = null, $active = null, $active = null, $deleted = null, $deleted = null, $custom_data = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
 
         $resourcePath = '/order/order_vouchers';
@@ -718,17 +708,6 @@ class OrderVoucherApi
         // query params
         if ($custom_data !== null) {
             $queryParams['customData'] = ObjectSerializer::toQueryValue($custom_data, null);
-        }
-        // query params
-        if ($voucher_uuid !== null) {
-            $queryParams['voucherUuid'] = ObjectSerializer::toQueryValue($voucher_uuid, null);
-        }
-        // query params
-        if (is_array($voucher_uuid)) {
-            $voucher_uuid = ObjectSerializer::serializeCollection($voucher_uuid, 'multi', true);
-        }
-        if ($voucher_uuid !== null) {
-            $queryParams['voucherUuid[]'] = ObjectSerializer::toQueryValue($voucher_uuid, null);
         }
         // query params
         if ($voucher_code !== null) {

@@ -61,7 +61,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'string',
 'order' => 'string',
 'voucher' => 'string',
-'voucher_uuid' => 'string',
 'voucher_code' => 'string',
 'value' => 'int',
 'voucher_type' => 'string',
@@ -86,7 +85,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'type' => null,
 'order' => 'iri-reference',
 'voucher' => 'iri-reference',
-'voucher_uuid' => null,
 'voucher_code' => null,
 'value' => null,
 'voucher_type' => null,
@@ -132,7 +130,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'type' => '@type',
 'order' => 'order',
 'voucher' => 'voucher',
-'voucher_uuid' => 'voucherUuid',
 'voucher_code' => 'voucherCode',
 'value' => 'value',
 'voucher_type' => 'voucherType',
@@ -157,7 +154,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'setType',
 'order' => 'setOrder',
 'voucher' => 'setVoucher',
-'voucher_uuid' => 'setVoucherUuid',
 'voucher_code' => 'setVoucherCode',
 'value' => 'setValue',
 'voucher_type' => 'setVoucherType',
@@ -182,7 +178,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'getType',
 'order' => 'getOrder',
 'voucher' => 'getVoucher',
-'voucher_uuid' => 'getVoucherUuid',
 'voucher_code' => 'getVoucherCode',
 'value' => 'getValue',
 'voucher_type' => 'getVoucherType',
@@ -272,7 +267,6 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
-        $this->container['voucher_uuid'] = isset($data['voucher_uuid']) ? $data['voucher_uuid'] : null;
         $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
@@ -441,30 +435,6 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setVoucher($voucher)
     {
         $this->container['voucher'] = $voucher;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucher_uuid
-     *
-     * @return string
-     */
-    public function getVoucherUuid()
-    {
-        return $this->container['voucher_uuid'];
-    }
-
-    /**
-     * Sets voucher_uuid
-     *
-     * @param string $voucher_uuid voucher_uuid
-     *
-     * @return $this
-     */
-    public function setVoucherUuid($voucher_uuid)
-    {
-        $this->container['voucher_uuid'] = $voucher_uuid;
 
         return $this;
     }

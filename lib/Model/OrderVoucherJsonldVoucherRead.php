@@ -59,7 +59,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
-'voucher_uuid' => 'string',
+'voucher' => 'string',
 'voucher_code' => 'string',
 'value' => 'int',
 'voucher_type' => 'string',
@@ -81,7 +81,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'voucher_uuid' => null,
+'voucher' => 'iri-reference',
 'voucher_code' => null,
 'value' => null,
 'voucher_type' => null,
@@ -124,7 +124,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
-'voucher_uuid' => 'voucherUuid',
+'voucher' => 'voucher',
 'voucher_code' => 'voucherCode',
 'value' => 'value',
 'voucher_type' => 'voucherType',
@@ -146,7 +146,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
-'voucher_uuid' => 'setVoucherUuid',
+'voucher' => 'setVoucher',
 'voucher_code' => 'setVoucherCode',
 'value' => 'setValue',
 'voucher_type' => 'setVoucherType',
@@ -168,7 +168,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
-'voucher_uuid' => 'getVoucherUuid',
+'voucher' => 'getVoucher',
 'voucher_code' => 'getVoucherCode',
 'value' => 'getValue',
 'voucher_type' => 'getVoucherType',
@@ -255,7 +255,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['voucher_uuid'] = isset($data['voucher_uuid']) ? $data['voucher_uuid'] : null;
+        $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
         $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
@@ -278,6 +278,9 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     {
         $invalidProperties = [];
 
+        if ($this->container['voucher'] === null) {
+            $invalidProperties[] = "'voucher' can't be null";
+        }
         $allowedValues = $this->getVoucherTypeAllowableValues();
         if (!is_null($this->container['voucher_type']) && !in_array($this->container['voucher_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -374,25 +377,25 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     }
 
     /**
-     * Gets voucher_uuid
+     * Gets voucher
      *
      * @return string
      */
-    public function getVoucherUuid()
+    public function getVoucher()
     {
-        return $this->container['voucher_uuid'];
+        return $this->container['voucher'];
     }
 
     /**
-     * Sets voucher_uuid
+     * Sets voucher
      *
-     * @param string $voucher_uuid voucher_uuid
+     * @param string $voucher voucher
      *
      * @return $this
      */
-    public function setVoucherUuid($voucher_uuid)
+    public function setVoucher($voucher)
     {
-        $this->container['voucher_uuid'] = $voucher_uuid;
+        $this->container['voucher'] = $voucher;
 
         return $this;
     }
