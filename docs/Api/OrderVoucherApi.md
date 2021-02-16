@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderVoucherCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderVoucherCollection($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2003 getOrderVoucherCollection($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
 
 Retrieves the collection of OrderVoucher resources.
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\VentureLeap\OrderService\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

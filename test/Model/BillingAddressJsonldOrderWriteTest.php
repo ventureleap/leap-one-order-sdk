@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderJsonldOrderWriteTest
+ * BillingAddressJsonldOrderWriteTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\OrderService;
 
 /**
- * OrderJsonldOrderWriteTest Class Doc Comment
+ * BillingAddressJsonldOrderWriteTest Class Doc Comment
  *
  * @category    Class
- * @description OrderJsonldOrderWrite
+ * @description BillingAddressJsonldOrderWrite
  * @package     VentureLeap\OrderService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
+class BillingAddressJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderJsonldOrderWrite"
+     * Test "BillingAddressJsonldOrderWrite"
      */
-    public function testOrderJsonldOrderWrite()
+    public function testBillingAddressJsonldOrderWrite()
     {
     }
 
@@ -97,65 +97,58 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "full_name"
      */
-    public function testPropertyStatus()
+    public function testPropertyFullName()
     {
     }
 
     /**
-     * Test attribute "payment_status"
+     * Test attribute "company_name"
      */
-    public function testPropertyPaymentStatus()
+    public function testPropertyCompanyName()
     {
     }
 
     /**
-     * Test attribute "payment_date"
+     * Test attribute "street"
      */
-    public function testPropertyPaymentDate()
+    public function testPropertyStreet()
     {
     }
 
     /**
-     * Test attribute "customer_uuid"
+     * Test attribute "house_number"
      */
-    public function testPropertyCustomerUuid()
+    public function testPropertyHouseNumber()
     {
     }
 
     /**
-     * Test attribute "internal_comment"
+     * Test attribute "zip_code"
      */
-    public function testPropertyInternalComment()
+    public function testPropertyZipCode()
     {
     }
 
     /**
-     * Test attribute "customer_comment"
+     * Test attribute "city"
      */
-    public function testPropertyCustomerComment()
+    public function testPropertyCity()
     {
     }
 
     /**
-     * Test attribute "order_products"
+     * Test attribute "country"
      */
-    public function testPropertyOrderProducts()
+    public function testPropertyCountry()
     {
     }
 
     /**
-     * Test attribute "date_of_validity"
+     * Test attribute "email_address"
      */
-    public function testPropertyDateOfValidity()
-    {
-    }
-
-    /**
-     * Test attribute "billing_address"
-     */
-    public function testPropertyBillingAddress()
+    public function testPropertyEmailAddress()
     {
     }
 

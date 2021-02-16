@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getConfigurationEntryCollection**
-> \VentureLeap\OrderService\Model\InlineResponse200 getConfigurationEntryCollection($key, $sub_key, $value, $application_id, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2001 getConfigurationEntryCollection($key, $sub_key, $value, $application_id, $page)
 
 Retrieves the collection of ConfigurationEntry resources.
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\VentureLeap\OrderService\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

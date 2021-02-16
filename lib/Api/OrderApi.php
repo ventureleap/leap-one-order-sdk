@@ -346,7 +346,7 @@ class OrderApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\InlineResponse2003
+     * @return \VentureLeap\OrderService\Model\InlineResponse2004
      */
     public function getOrderCollection($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1')
     {
@@ -384,11 +384,11 @@ class OrderApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderCollectionWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
         $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
 
         try {
@@ -440,7 +440,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\InlineResponse2003',
+                        '\VentureLeap\OrderService\Model\InlineResponse2004',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -524,7 +524,7 @@ class OrderApi
      */
     public function getOrderCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
         $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
 
         return $this->client

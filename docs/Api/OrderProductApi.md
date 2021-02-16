@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2001 getOrderProductCollection($properties, $name, $uom, $product_id, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderProductCollection($properties, $name, $uom, $product_id, $page)
 
 Retrieves the collection of OrderProduct resources.
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\VentureLeap\OrderService\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

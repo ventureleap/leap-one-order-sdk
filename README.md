@@ -61,42 +61,19 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
+$apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
-
-try {
-    $apiInstance->deleteConfigurationEntryItem($id);
-} catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->deleteConfigurationEntryItem: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiKey
-$config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$key = "key_example"; // string | 
-$sub_key = "sub_key_example"; // string | 
-$value = "value_example"; // string | 
-$application_id = "application_id_example"; // string | 
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getConfigurationEntryCollection($key, $sub_key, $value, $application_id, $page);
+    $result = $apiInstance->getBillingAddressCollection($page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->getConfigurationEntryCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingAddressApi->getBillingAddressCollection: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKey
@@ -104,7 +81,7 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
+$apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,10 +90,10 @@ $apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->getConfigurationEntryItem($id);
+    $result = $apiInstance->getBillingAddressItem($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->getConfigurationEntryItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingAddressApi->getBillingAddressItem: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKey
@@ -124,19 +101,19 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
+$apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The new ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite(); // \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite | The new BillingAddress resource
 
 try {
-    $result = $apiInstance->postConfigurationEntryCollection($body);
+    $result = $apiInstance->postBillingAddressCollection($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->postConfigurationEntryCollection: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingAddressApi->postBillingAddressCollection: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiKey
@@ -144,20 +121,20 @@ $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->set
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = VentureLeap\OrderService\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new VentureLeap\OrderService\Api\ConfigurationEntryApi(
+$apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = "id_example"; // string | 
-$body = new \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite(); // \VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationWrite | The updated ConfigurationEntry resource
+$body = new \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite(); // \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite | The updated BillingAddress resource
 
 try {
-    $result = $apiInstance->putConfigurationEntryItem($id, $body);
+    $result = $apiInstance->putBillingAddressItem($id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConfigurationEntryApi->putConfigurationEntryItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingAddressApi->putBillingAddressItem: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -168,6 +145,10 @@ All URIs are relative to */*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BillingAddressApi* | [**getBillingAddressCollection**](docs/Api/BillingAddressApi.md#getbillingaddresscollection) | **GET** /order/billing_addresses | Retrieves the collection of BillingAddress resources.
+*BillingAddressApi* | [**getBillingAddressItem**](docs/Api/BillingAddressApi.md#getbillingaddressitem) | **GET** /order/billing_addresses/{id} | Retrieves a BillingAddress resource.
+*BillingAddressApi* | [**postBillingAddressCollection**](docs/Api/BillingAddressApi.md#postbillingaddresscollection) | **POST** /order/billing_addresses | Creates a BillingAddress resource.
+*BillingAddressApi* | [**putBillingAddressItem**](docs/Api/BillingAddressApi.md#putbillingaddressitem) | **PUT** /order/billing_addresses/{id} | Replaces the BillingAddress resource.
 *ConfigurationEntryApi* | [**deleteConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#deleteconfigurationentryitem) | **DELETE** /order/configuration_entries/{id} | Removes the ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**getConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#getconfigurationentrycollection) | **GET** /order/configuration_entries | Retrieves the collection of ConfigurationEntry resources.
 *ConfigurationEntryApi* | [**getConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#getconfigurationentryitem) | **GET** /order/configuration_entries/{id} | Retrieves a ConfigurationEntry resource.
@@ -196,6 +177,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [BillingAddressJsonldBillingAddressRead](docs/Model/BillingAddressJsonldBillingAddressRead.md)
+ - [BillingAddressJsonldBillingAddressWrite](docs/Model/BillingAddressJsonldBillingAddressWrite.md)
+ - [BillingAddressJsonldOrderRead](docs/Model/BillingAddressJsonldOrderRead.md)
+ - [BillingAddressJsonldOrderWrite](docs/Model/BillingAddressJsonldOrderWrite.md)
  - [ConfigurationEntryJsonldConfigurationRead](docs/Model/ConfigurationEntryJsonldConfigurationRead.md)
  - [ConfigurationEntryJsonldConfigurationWrite](docs/Model/ConfigurationEntryJsonldConfigurationWrite.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
@@ -203,6 +188,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [InlineResponse2004](docs/Model/InlineResponse2004.md)
+ - [InlineResponse2005](docs/Model/InlineResponse2005.md)
  - [InlineResponse200Hydrasearch](docs/Model/InlineResponse200Hydrasearch.md)
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)

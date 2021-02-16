@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getVoucherCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2005 getVoucherCollection($properties, $custom_data, $voucher_code, $voucher_type, $value, $quantity, $quantity_per_person, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $valid_from_before, $valid_from_strictly_before, $valid_from_after, $valid_from_strictly_after, $valid_to_before, $valid_to_strictly_before, $valid_to_after, $valid_to_strictly_after, $order_voucher_type, $order_voucher_code, $order_created_at, $order_updated_at, $order_active, $order_deleted, $order_valid_from, $order_valid_to, $page)
 
 Retrieves the collection of Voucher resources.
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\VentureLeap\OrderService\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 

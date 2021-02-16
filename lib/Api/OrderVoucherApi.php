@@ -341,7 +341,7 @@ class OrderVoucherApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\InlineResponse2002
+     * @return \VentureLeap\OrderService\Model\InlineResponse2003
      */
     public function getOrderVoucherCollection($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
@@ -374,11 +374,11 @@ class OrderVoucherApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
         $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
 
         try {
@@ -430,7 +430,7 @@ class OrderVoucherApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\InlineResponse2002',
+                        '\VentureLeap\OrderService\Model\InlineResponse2003',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,7 +504,7 @@ class OrderVoucherApi
      */
     public function getOrderVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
         $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
 
         return $this->client

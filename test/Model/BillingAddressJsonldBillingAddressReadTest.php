@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderJsonldOrderWriteTest
+ * BillingAddressJsonldBillingAddressReadTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace VentureLeap\OrderService;
 
 /**
- * OrderJsonldOrderWriteTest Class Doc Comment
+ * BillingAddressJsonldBillingAddressReadTest Class Doc Comment
  *
  * @category    Class
- * @description OrderJsonldOrderWrite
+ * @description BillingAddressJsonldBillingAddressRead
  * @package     VentureLeap\OrderService
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
+class BillingAddressJsonldBillingAddressReadTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderJsonldOrderWrite"
+     * Test "BillingAddressJsonldBillingAddressRead"
      */
-    public function testOrderJsonldOrderWrite()
+    public function testBillingAddressJsonldBillingAddressRead()
     {
     }
 
@@ -97,65 +97,65 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "uuid"
      */
-    public function testPropertyStatus()
+    public function testPropertyUuid()
     {
     }
 
     /**
-     * Test attribute "payment_status"
+     * Test attribute "full_name"
      */
-    public function testPropertyPaymentStatus()
+    public function testPropertyFullName()
     {
     }
 
     /**
-     * Test attribute "payment_date"
+     * Test attribute "company_name"
      */
-    public function testPropertyPaymentDate()
+    public function testPropertyCompanyName()
     {
     }
 
     /**
-     * Test attribute "customer_uuid"
+     * Test attribute "street"
      */
-    public function testPropertyCustomerUuid()
+    public function testPropertyStreet()
     {
     }
 
     /**
-     * Test attribute "internal_comment"
+     * Test attribute "house_number"
      */
-    public function testPropertyInternalComment()
+    public function testPropertyHouseNumber()
     {
     }
 
     /**
-     * Test attribute "customer_comment"
+     * Test attribute "zip_code"
      */
-    public function testPropertyCustomerComment()
+    public function testPropertyZipCode()
     {
     }
 
     /**
-     * Test attribute "order_products"
+     * Test attribute "city"
      */
-    public function testPropertyOrderProducts()
+    public function testPropertyCity()
     {
     }
 
     /**
-     * Test attribute "date_of_validity"
+     * Test attribute "country"
      */
-    public function testPropertyDateOfValidity()
+    public function testPropertyCountry()
     {
     }
 
     /**
-     * Test attribute "billing_address"
+     * Test attribute "email_address"
      */
-    public function testPropertyBillingAddress()
+    public function testPropertyEmailAddress()
     {
     }
 
@@ -163,6 +163,27 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
      * Test attribute "active"
      */
     public function testPropertyActive()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "application_id"
+     */
+    public function testPropertyApplicationId()
     {
     }
 

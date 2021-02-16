@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **customer_comment** | **string** |  | [optional] 
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]**](OrderProductJsonldOrderWrite.md) |  | [optional] 
 **date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**billing_address** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite**](BillingAddressJsonldOrderWrite.md) |  | 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 

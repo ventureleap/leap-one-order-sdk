@@ -329,7 +329,7 @@ class ConfigurationEntryApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\InlineResponse200
+     * @return \VentureLeap\OrderService\Model\InlineResponse2001
      */
     public function getConfigurationEntryCollection($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
     {
@@ -350,11 +350,11 @@ class ConfigurationEntryApi
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function getConfigurationEntryCollectionWithHttpInfo($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse200';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2001';
         $request = $this->getConfigurationEntryCollectionRequest($key, $sub_key, $value, $application_id, $page);
 
         try {
@@ -406,7 +406,7 @@ class ConfigurationEntryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\InlineResponse200',
+                        '\VentureLeap\OrderService\Model\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -456,7 +456,7 @@ class ConfigurationEntryApi
      */
     public function getConfigurationEntryCollectionAsyncWithHttpInfo($key = null, $sub_key = null, $value = null, $application_id = null, $page = '1')
     {
-        $returnType = '\VentureLeap\OrderService\Model\InlineResponse200';
+        $returnType = '\VentureLeap\OrderService\Model\InlineResponse2001';
         $request = $this->getConfigurationEntryCollectionRequest($key, $sub_key, $value, $application_id, $page);
 
         return $this->client

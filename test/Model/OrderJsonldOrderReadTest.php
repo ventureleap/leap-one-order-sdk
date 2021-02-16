@@ -174,6 +174,13 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "billing_address"
+     */
+    public function testPropertyBillingAddress()
+    {
+    }
+
+    /**
      * Test attribute "order_vouchers"
      */
     public function testPropertyOrderVouchers()

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hydramember** | [**\VentureLeap\OrderService\Model\ConfigurationEntryJsonldConfigurationRead[]**](ConfigurationEntryJsonldConfigurationRead.md) |  | 
+**hydramember** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead[]**](BillingAddressJsonldBillingAddressRead.md) |  | 
 **hydratotal_items** | **int** |  | [optional] 
 **hydraview** | [**\VentureLeap\OrderService\Model\InlineResponse200Hydraview**](InlineResponse200Hydraview.md) |  | [optional] 
 **hydrasearch** | [**\VentureLeap\OrderService\Model\InlineResponse200Hydrasearch**](InlineResponse200Hydrasearch.md) |  | [optional] 

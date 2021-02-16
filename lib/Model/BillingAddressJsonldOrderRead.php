@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderJsonldOrderWrite
+ * BillingAddressJsonldOrderRead
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \VentureLeap\OrderService\ObjectSerializer;
 
 /**
- * OrderJsonldOrderWrite Class Doc Comment
+ * BillingAddressJsonldOrderRead Class Doc Comment
  *
  * @category Class
  * @package  VentureLeap\OrderService
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
+class BillingAddressJsonldOrderRead implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Order:jsonld-OrderWrite';
+    protected static $swaggerModelName = 'BillingAddress:jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,16 +59,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
-'status' => 'string',
-'payment_status' => 'string',
-'payment_date' => '\DateTime',
-'customer_uuid' => 'string',
-'internal_comment' => 'string',
-'customer_comment' => 'string',
-'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
-'date_of_validity' => '\DateTime',
-'billing_address' => '\VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite',
+'uuid' => 'string',
+'full_name' => 'string',
+'company_name' => 'string',
+'street' => 'string',
+'house_number' => 'string',
+'zip_code' => 'string',
+'city' => 'string',
+'country' => 'string',
+'email_address' => 'string',
 'active' => 'bool',
+'created_at' => '\DateTime',
+'updated_at' => '\DateTime',
+'application_id' => 'string',
 'deleted' => 'bool',
 'custom_data' => 'object'    ];
 
@@ -81,16 +84,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'status' => null,
-'payment_status' => null,
-'payment_date' => 'date-time',
-'customer_uuid' => 'uuid',
-'internal_comment' => null,
-'customer_comment' => null,
-'order_products' => null,
-'date_of_validity' => 'date-time',
-'billing_address' => null,
+'uuid' => 'uuid',
+'full_name' => null,
+'company_name' => null,
+'street' => null,
+'house_number' => null,
+'zip_code' => null,
+'city' => null,
+'country' => null,
+'email_address' => null,
 'active' => null,
+'created_at' => 'date-time',
+'updated_at' => 'date-time',
+'application_id' => null,
 'deleted' => null,
 'custom_data' => null    ];
 
@@ -124,16 +130,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
-'status' => 'status',
-'payment_status' => 'paymentStatus',
-'payment_date' => 'paymentDate',
-'customer_uuid' => 'customerUuid',
-'internal_comment' => 'internalComment',
-'customer_comment' => 'customerComment',
-'order_products' => 'orderProducts',
-'date_of_validity' => 'dateOfValidity',
-'billing_address' => 'billingAddress',
+'uuid' => 'uuid',
+'full_name' => 'fullName',
+'company_name' => 'companyName',
+'street' => 'street',
+'house_number' => 'houseNumber',
+'zip_code' => 'zipCode',
+'city' => 'city',
+'country' => 'country',
+'email_address' => 'emailAddress',
 'active' => 'active',
+'created_at' => 'createdAt',
+'updated_at' => 'updatedAt',
+'application_id' => 'applicationId',
 'deleted' => 'deleted',
 'custom_data' => 'customData'    ];
 
@@ -146,16 +155,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
-'status' => 'setStatus',
-'payment_status' => 'setPaymentStatus',
-'payment_date' => 'setPaymentDate',
-'customer_uuid' => 'setCustomerUuid',
-'internal_comment' => 'setInternalComment',
-'customer_comment' => 'setCustomerComment',
-'order_products' => 'setOrderProducts',
-'date_of_validity' => 'setDateOfValidity',
-'billing_address' => 'setBillingAddress',
+'uuid' => 'setUuid',
+'full_name' => 'setFullName',
+'company_name' => 'setCompanyName',
+'street' => 'setStreet',
+'house_number' => 'setHouseNumber',
+'zip_code' => 'setZipCode',
+'city' => 'setCity',
+'country' => 'setCountry',
+'email_address' => 'setEmailAddress',
 'active' => 'setActive',
+'created_at' => 'setCreatedAt',
+'updated_at' => 'setUpdatedAt',
+'application_id' => 'setApplicationId',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData'    ];
 
@@ -168,16 +180,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
-'status' => 'getStatus',
-'payment_status' => 'getPaymentStatus',
-'payment_date' => 'getPaymentDate',
-'customer_uuid' => 'getCustomerUuid',
-'internal_comment' => 'getInternalComment',
-'customer_comment' => 'getCustomerComment',
-'order_products' => 'getOrderProducts',
-'date_of_validity' => 'getDateOfValidity',
-'billing_address' => 'getBillingAddress',
+'uuid' => 'getUuid',
+'full_name' => 'getFullName',
+'company_name' => 'getCompanyName',
+'street' => 'getStreet',
+'house_number' => 'getHouseNumber',
+'zip_code' => 'getZipCode',
+'city' => 'getCity',
+'country' => 'getCountry',
+'email_address' => 'getEmailAddress',
 'active' => 'getActive',
+'created_at' => 'getCreatedAt',
+'updated_at' => 'getUpdatedAt',
+'application_id' => 'getApplicationId',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData'    ];
 
@@ -242,16 +257,19 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['payment_status'] = isset($data['payment_status']) ? $data['payment_status'] : null;
-        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
-        $this->container['customer_uuid'] = isset($data['customer_uuid']) ? $data['customer_uuid'] : null;
-        $this->container['internal_comment'] = isset($data['internal_comment']) ? $data['internal_comment'] : null;
-        $this->container['customer_comment'] = isset($data['customer_comment']) ? $data['customer_comment'] : null;
-        $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
-        $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
-        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
+        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
+        $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['house_number'] = isset($data['house_number']) ? $data['house_number'] : null;
+        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
@@ -265,18 +283,6 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['payment_status'] === null) {
-            $invalidProperties[] = "'payment_status' can't be null";
-        }
-        if ($this->container['customer_uuid'] === null) {
-            $invalidProperties[] = "'customer_uuid' can't be null";
-        }
-        if ($this->container['billing_address'] === null) {
-            $invalidProperties[] = "'billing_address' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -365,217 +371,217 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets status
+     * Gets uuid
      *
      * @return string
      */
-    public function getStatus()
+    public function getUuid()
     {
-        return $this->container['status'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets status
+     * Sets uuid
      *
-     * @param string $status status
+     * @param string $uuid uuid
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setUuid($uuid)
     {
-        $this->container['status'] = $status;
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
 
     /**
-     * Gets payment_status
+     * Gets full_name
      *
      * @return string
      */
-    public function getPaymentStatus()
+    public function getFullName()
     {
-        return $this->container['payment_status'];
+        return $this->container['full_name'];
     }
 
     /**
-     * Sets payment_status
+     * Sets full_name
      *
-     * @param string $payment_status payment_status
+     * @param string $full_name full_name
      *
      * @return $this
      */
-    public function setPaymentStatus($payment_status)
+    public function setFullName($full_name)
     {
-        $this->container['payment_status'] = $payment_status;
+        $this->container['full_name'] = $full_name;
 
         return $this;
     }
 
     /**
-     * Gets payment_date
-     *
-     * @return \DateTime
-     */
-    public function getPaymentDate()
-    {
-        return $this->container['payment_date'];
-    }
-
-    /**
-     * Sets payment_date
-     *
-     * @param \DateTime $payment_date payment_date
-     *
-     * @return $this
-     */
-    public function setPaymentDate($payment_date)
-    {
-        $this->container['payment_date'] = $payment_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_uuid
+     * Gets company_name
      *
      * @return string
      */
-    public function getCustomerUuid()
+    public function getCompanyName()
     {
-        return $this->container['customer_uuid'];
+        return $this->container['company_name'];
     }
 
     /**
-     * Sets customer_uuid
+     * Sets company_name
      *
-     * @param string $customer_uuid customer_uuid
+     * @param string $company_name company_name
      *
      * @return $this
      */
-    public function setCustomerUuid($customer_uuid)
+    public function setCompanyName($company_name)
     {
-        $this->container['customer_uuid'] = $customer_uuid;
+        $this->container['company_name'] = $company_name;
 
         return $this;
     }
 
     /**
-     * Gets internal_comment
+     * Gets street
      *
      * @return string
      */
-    public function getInternalComment()
+    public function getStreet()
     {
-        return $this->container['internal_comment'];
+        return $this->container['street'];
     }
 
     /**
-     * Sets internal_comment
+     * Sets street
      *
-     * @param string $internal_comment internal_comment
+     * @param string $street street
      *
      * @return $this
      */
-    public function setInternalComment($internal_comment)
+    public function setStreet($street)
     {
-        $this->container['internal_comment'] = $internal_comment;
+        $this->container['street'] = $street;
 
         return $this;
     }
 
     /**
-     * Gets customer_comment
+     * Gets house_number
      *
      * @return string
      */
-    public function getCustomerComment()
+    public function getHouseNumber()
     {
-        return $this->container['customer_comment'];
+        return $this->container['house_number'];
     }
 
     /**
-     * Sets customer_comment
+     * Sets house_number
      *
-     * @param string $customer_comment customer_comment
+     * @param string $house_number house_number
      *
      * @return $this
      */
-    public function setCustomerComment($customer_comment)
+    public function setHouseNumber($house_number)
     {
-        $this->container['customer_comment'] = $customer_comment;
+        $this->container['house_number'] = $house_number;
 
         return $this;
     }
 
     /**
-     * Gets order_products
+     * Gets zip_code
      *
-     * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]
+     * @return string
      */
-    public function getOrderProducts()
+    public function getZipCode()
     {
-        return $this->container['order_products'];
+        return $this->container['zip_code'];
     }
 
     /**
-     * Sets order_products
+     * Sets zip_code
      *
-     * @param \VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[] $order_products order_products
+     * @param string $zip_code zip_code
      *
      * @return $this
      */
-    public function setOrderProducts($order_products)
+    public function setZipCode($zip_code)
     {
-        $this->container['order_products'] = $order_products;
+        $this->container['zip_code'] = $zip_code;
 
         return $this;
     }
 
     /**
-     * Gets date_of_validity
+     * Gets city
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDateOfValidity()
+    public function getCity()
     {
-        return $this->container['date_of_validity'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets date_of_validity
+     * Sets city
      *
-     * @param \DateTime $date_of_validity date_of_validity
+     * @param string $city city
      *
      * @return $this
      */
-    public function setDateOfValidity($date_of_validity)
+    public function setCity($city)
     {
-        $this->container['date_of_validity'] = $date_of_validity;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets billing_address
+     * Gets country
      *
-     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite
+     * @return string
      */
-    public function getBillingAddress()
+    public function getCountry()
     {
-        return $this->container['billing_address'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets billing_address
+     * Sets country
      *
-     * @param \VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite $billing_address billing_address
+     * @param string $country country
      *
      * @return $this
      */
-    public function setBillingAddress($billing_address)
+    public function setCountry($country)
     {
-        $this->container['billing_address'] = $billing_address;
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets email_address
+     *
+     * @return string
+     */
+    public function getEmailAddress()
+    {
+        return $this->container['email_address'];
+    }
+
+    /**
+     * Sets email_address
+     *
+     * @param string $email_address email_address
+     *
+     * @return $this
+     */
+    public function setEmailAddress($email_address)
+    {
+        $this->container['email_address'] = $email_address;
 
         return $this;
     }
@@ -600,6 +606,78 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setActive($active)
     {
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime $created_at created_at
+     *
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at updated_at
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets application_id
+     *
+     * @return string
+     */
+    public function getApplicationId()
+    {
+        return $this->container['application_id'];
+    }
+
+    /**
+     * Sets application_id
+     *
+     * @param string $application_id application_id
+     *
+     * @return $this
+     */
+    public function setApplicationId($application_id)
+    {
+        $this->container['application_id'] = $application_id;
 
         return $this;
     }

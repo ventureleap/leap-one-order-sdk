@@ -70,6 +70,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderRead[]',
 'logs' => '\VentureLeap\OrderService\Model\OrderLogJsonldOrderRead[]',
 'date_of_validity' => '\DateTime',
+'billing_address' => '\VentureLeap\OrderService\Model\BillingAddressJsonldOrderRead',
 'order_vouchers' => '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[]',
 'application_id' => 'string',
 'created_at' => '\DateTime',
@@ -101,6 +102,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => null,
 'logs' => null,
 'date_of_validity' => 'date-time',
+'billing_address' => null,
 'order_vouchers' => null,
 'application_id' => null,
 'created_at' => 'date-time',
@@ -153,6 +155,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'orderProducts',
 'logs' => 'logs',
 'date_of_validity' => 'dateOfValidity',
+'billing_address' => 'billingAddress',
 'order_vouchers' => 'orderVouchers',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
@@ -184,6 +187,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'setOrderProducts',
 'logs' => 'setLogs',
 'date_of_validity' => 'setDateOfValidity',
+'billing_address' => 'setBillingAddress',
 'order_vouchers' => 'setOrderVouchers',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
@@ -215,6 +219,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'order_products' => 'getOrderProducts',
 'logs' => 'getLogs',
 'date_of_validity' => 'getDateOfValidity',
+'billing_address' => 'getBillingAddress',
 'order_vouchers' => 'getOrderVouchers',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
@@ -298,6 +303,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['logs'] = isset($data['logs']) ? $data['logs'] : null;
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
         $this->container['order_vouchers'] = isset($data['order_vouchers']) ? $data['order_vouchers'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
@@ -327,6 +333,9 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         }
         if ($this->container['customer_uuid'] === null) {
             $invalidProperties[] = "'customer_uuid' can't be null";
+        }
+        if ($this->container['billing_address'] === null) {
+            $invalidProperties[] = "'billing_address' can't be null";
         }
         return $invalidProperties;
     }
@@ -675,6 +684,30 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setDateOfValidity($date_of_validity)
     {
         $this->container['date_of_validity'] = $date_of_validity;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing_address
+     *
+     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldOrderRead
+     */
+    public function getBillingAddress()
+    {
+        return $this->container['billing_address'];
+    }
+
+    /**
+     * Sets billing_address
+     *
+     * @param \VentureLeap\OrderService\Model\BillingAddressJsonldOrderRead $billing_address billing_address
+     *
+     * @return $this
+     */
+    public function setBillingAddress($billing_address)
+    {
+        $this->container['billing_address'] = $billing_address;
 
         return $this;
     }
