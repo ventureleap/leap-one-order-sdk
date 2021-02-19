@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page)
 
 Retrieves the collection of Order resources.
 
@@ -86,6 +86,7 @@ $custom_data = "custom_data_example"; // string |
 $internal_comment = "internal_comment_example"; // string | 
 $customer_comment = "customer_comment_example"; // string | 
 $billing_address_full_name = "billing_address_full_name_example"; // string | 
+$billing_address_company_name = "billing_address_company_name_example"; // string | 
 $order_code = "order_code_example"; // string | 
 $status = "status_example"; // string | 
 $payment_status = "payment_status_example"; // string | 
@@ -106,7 +107,7 @@ $order_customer_uuid = "order_customer_uuid_example"; // string |
 $page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -123,6 +124,7 @@ Name | Type | Description  | Notes
  **internal_comment** | **string**|  | [optional]
  **customer_comment** | **string**|  | [optional]
  **billing_address_full_name** | **string**|  | [optional]
+ **billing_address_company_name** | **string**|  | [optional]
  **order_code** | **string**|  | [optional]
  **status** | **string**|  | [optional]
  **payment_status** | **string**|  | [optional]
