@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
 
 Retrieves the collection of Order resources.
 
@@ -105,9 +105,11 @@ $order_payment_date = "order_payment_date_example"; // string |
 $order_order_code = "order_order_code_example"; // string | 
 $order_customer_uuid = "order_customer_uuid_example"; // string | 
 $page = 1; // int | The collection page number
+$items_per_page = 30; // int | The number of items per page
+$pagination = true; // bool | Enable or disable pagination
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -143,6 +145,8 @@ Name | Type | Description  | Notes
  **order_order_code** | **string**|  | [optional]
  **order_customer_uuid** | **string**|  | [optional]
  **page** | **int**| The collection page number | [optional] [default to 1]
+ **items_per_page** | **int**| The number of items per page | [optional] [default to 30]
+ **pagination** | **bool**| Enable or disable pagination | [optional]
 
 ### Return type
 
