@@ -193,4 +193,25 @@ class OrderVoucherJsonldOrderVoucherReadTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCustomData()
     {
     }
+
+    /**
+     * Test attribute "total_gross_amount"
+     */
+    public function testPropertyTotalGrossAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_net_amount"
+     */
+    public function testPropertyTotalNetAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_vat_amount"
+     */
+    public function testPropertyTotalVatAmount()
+    {
+    }
 }

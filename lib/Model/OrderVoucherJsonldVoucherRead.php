@@ -70,7 +70,10 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object'    ];
+'custom_data' => 'object',
+'total_gross_amount' => 'int',
+'total_net_amount' => 'int',
+'total_vat_amount' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -92,7 +95,10 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'date-time',
 'active' => null,
 'deleted' => null,
-'custom_data' => null    ];
+'custom_data' => null,
+'total_gross_amount' => null,
+'total_net_amount' => null,
+'total_vat_amount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -135,7 +141,10 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'updatedAt',
 'active' => 'active',
 'deleted' => 'deleted',
-'custom_data' => 'customData'    ];
+'custom_data' => 'customData',
+'total_gross_amount' => 'totalGrossAmount',
+'total_net_amount' => 'totalNetAmount',
+'total_vat_amount' => 'totalVatAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -157,7 +166,10 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'setUpdatedAt',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
-'custom_data' => 'setCustomData'    ];
+'custom_data' => 'setCustomData',
+'total_gross_amount' => 'setTotalGrossAmount',
+'total_net_amount' => 'setTotalNetAmount',
+'total_vat_amount' => 'setTotalVatAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -179,7 +191,10 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'getUpdatedAt',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
-'custom_data' => 'getCustomData'    ];
+'custom_data' => 'getCustomData',
+'total_gross_amount' => 'getTotalGrossAmount',
+'total_net_amount' => 'getTotalNetAmount',
+'total_vat_amount' => 'getTotalVatAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -267,6 +282,9 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
+        $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
+        $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
+        $this->container['total_vat_amount'] = isset($data['total_vat_amount']) ? $data['total_vat_amount'] : null;
     }
 
     /**
@@ -669,6 +687,78 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setCustomData($custom_data)
     {
         $this->container['custom_data'] = $custom_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_gross_amount
+     *
+     * @return int
+     */
+    public function getTotalGrossAmount()
+    {
+        return $this->container['total_gross_amount'];
+    }
+
+    /**
+     * Sets total_gross_amount
+     *
+     * @param int $total_gross_amount total_gross_amount
+     *
+     * @return $this
+     */
+    public function setTotalGrossAmount($total_gross_amount)
+    {
+        $this->container['total_gross_amount'] = $total_gross_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_net_amount
+     *
+     * @return int
+     */
+    public function getTotalNetAmount()
+    {
+        return $this->container['total_net_amount'];
+    }
+
+    /**
+     * Sets total_net_amount
+     *
+     * @param int $total_net_amount total_net_amount
+     *
+     * @return $this
+     */
+    public function setTotalNetAmount($total_net_amount)
+    {
+        $this->container['total_net_amount'] = $total_net_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_vat_amount
+     *
+     * @return int
+     */
+    public function getTotalVatAmount()
+    {
+        return $this->container['total_vat_amount'];
+    }
+
+    /**
+     * Sets total_vat_amount
+     *
+     * @param int $total_vat_amount total_vat_amount
+     *
+     * @return $this
+     */
+    public function setTotalVatAmount($total_vat_amount)
+    {
+        $this->container['total_vat_amount'] = $total_vat_amount;
 
         return $this;
     }

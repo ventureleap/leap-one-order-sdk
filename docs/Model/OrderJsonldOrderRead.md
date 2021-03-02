@@ -28,6 +28,12 @@ Name | Type | Description | Notes
 **total_gross_amount** | **int** |  | [optional] 
 **total_net_amount** | **int** |  | [optional] 
 **total_vat_amount** | **int** |  | [optional] 
+**total_voucher_gross_amount** | **int** |  | [optional] 
+**total_voucher_net_amount** | **int** |  | [optional] 
+**total_voucher_vat_amount** | **int** |  | [optional] 
+**total_products_gross_amount** | **int** |  | [optional] 
+**total_products_net_amount** | **int** |  | [optional] 
+**total_products_vat_amount** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

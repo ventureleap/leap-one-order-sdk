@@ -80,7 +80,13 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'custom_data' => 'object',
 'total_gross_amount' => 'int',
 'total_net_amount' => 'int',
-'total_vat_amount' => 'int'    ];
+'total_vat_amount' => 'int',
+'total_voucher_gross_amount' => 'int',
+'total_voucher_net_amount' => 'int',
+'total_voucher_vat_amount' => 'int',
+'total_products_gross_amount' => 'int',
+'total_products_net_amount' => 'int',
+'total_products_vat_amount' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -112,7 +118,13 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'custom_data' => null,
 'total_gross_amount' => null,
 'total_net_amount' => null,
-'total_vat_amount' => null    ];
+'total_vat_amount' => null,
+'total_voucher_gross_amount' => null,
+'total_voucher_net_amount' => null,
+'total_voucher_vat_amount' => null,
+'total_products_gross_amount' => null,
+'total_products_net_amount' => null,
+'total_products_vat_amount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -165,7 +177,13 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'custom_data' => 'customData',
 'total_gross_amount' => 'totalGrossAmount',
 'total_net_amount' => 'totalNetAmount',
-'total_vat_amount' => 'totalVatAmount'    ];
+'total_vat_amount' => 'totalVatAmount',
+'total_voucher_gross_amount' => 'totalVoucherGrossAmount',
+'total_voucher_net_amount' => 'totalVoucherNetAmount',
+'total_voucher_vat_amount' => 'totalVoucherVatAmount',
+'total_products_gross_amount' => 'totalProductsGrossAmount',
+'total_products_net_amount' => 'totalProductsNetAmount',
+'total_products_vat_amount' => 'totalProductsVatAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -197,7 +215,13 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'custom_data' => 'setCustomData',
 'total_gross_amount' => 'setTotalGrossAmount',
 'total_net_amount' => 'setTotalNetAmount',
-'total_vat_amount' => 'setTotalVatAmount'    ];
+'total_vat_amount' => 'setTotalVatAmount',
+'total_voucher_gross_amount' => 'setTotalVoucherGrossAmount',
+'total_voucher_net_amount' => 'setTotalVoucherNetAmount',
+'total_voucher_vat_amount' => 'setTotalVoucherVatAmount',
+'total_products_gross_amount' => 'setTotalProductsGrossAmount',
+'total_products_net_amount' => 'setTotalProductsNetAmount',
+'total_products_vat_amount' => 'setTotalProductsVatAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -229,7 +253,13 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'custom_data' => 'getCustomData',
 'total_gross_amount' => 'getTotalGrossAmount',
 'total_net_amount' => 'getTotalNetAmount',
-'total_vat_amount' => 'getTotalVatAmount'    ];
+'total_vat_amount' => 'getTotalVatAmount',
+'total_voucher_gross_amount' => 'getTotalVoucherGrossAmount',
+'total_voucher_net_amount' => 'getTotalVoucherNetAmount',
+'total_voucher_vat_amount' => 'getTotalVoucherVatAmount',
+'total_products_gross_amount' => 'getTotalProductsGrossAmount',
+'total_products_net_amount' => 'getTotalProductsNetAmount',
+'total_products_vat_amount' => 'getTotalProductsVatAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -314,6 +344,12 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
         $this->container['total_net_amount'] = isset($data['total_net_amount']) ? $data['total_net_amount'] : null;
         $this->container['total_vat_amount'] = isset($data['total_vat_amount']) ? $data['total_vat_amount'] : null;
+        $this->container['total_voucher_gross_amount'] = isset($data['total_voucher_gross_amount']) ? $data['total_voucher_gross_amount'] : null;
+        $this->container['total_voucher_net_amount'] = isset($data['total_voucher_net_amount']) ? $data['total_voucher_net_amount'] : null;
+        $this->container['total_voucher_vat_amount'] = isset($data['total_voucher_vat_amount']) ? $data['total_voucher_vat_amount'] : null;
+        $this->container['total_products_gross_amount'] = isset($data['total_products_gross_amount']) ? $data['total_products_gross_amount'] : null;
+        $this->container['total_products_net_amount'] = isset($data['total_products_net_amount']) ? $data['total_products_net_amount'] : null;
+        $this->container['total_products_vat_amount'] = isset($data['total_products_vat_amount']) ? $data['total_products_vat_amount'] : null;
     }
 
     /**
@@ -948,6 +984,150 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setTotalVatAmount($total_vat_amount)
     {
         $this->container['total_vat_amount'] = $total_vat_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_voucher_gross_amount
+     *
+     * @return int
+     */
+    public function getTotalVoucherGrossAmount()
+    {
+        return $this->container['total_voucher_gross_amount'];
+    }
+
+    /**
+     * Sets total_voucher_gross_amount
+     *
+     * @param int $total_voucher_gross_amount total_voucher_gross_amount
+     *
+     * @return $this
+     */
+    public function setTotalVoucherGrossAmount($total_voucher_gross_amount)
+    {
+        $this->container['total_voucher_gross_amount'] = $total_voucher_gross_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_voucher_net_amount
+     *
+     * @return int
+     */
+    public function getTotalVoucherNetAmount()
+    {
+        return $this->container['total_voucher_net_amount'];
+    }
+
+    /**
+     * Sets total_voucher_net_amount
+     *
+     * @param int $total_voucher_net_amount total_voucher_net_amount
+     *
+     * @return $this
+     */
+    public function setTotalVoucherNetAmount($total_voucher_net_amount)
+    {
+        $this->container['total_voucher_net_amount'] = $total_voucher_net_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_voucher_vat_amount
+     *
+     * @return int
+     */
+    public function getTotalVoucherVatAmount()
+    {
+        return $this->container['total_voucher_vat_amount'];
+    }
+
+    /**
+     * Sets total_voucher_vat_amount
+     *
+     * @param int $total_voucher_vat_amount total_voucher_vat_amount
+     *
+     * @return $this
+     */
+    public function setTotalVoucherVatAmount($total_voucher_vat_amount)
+    {
+        $this->container['total_voucher_vat_amount'] = $total_voucher_vat_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_products_gross_amount
+     *
+     * @return int
+     */
+    public function getTotalProductsGrossAmount()
+    {
+        return $this->container['total_products_gross_amount'];
+    }
+
+    /**
+     * Sets total_products_gross_amount
+     *
+     * @param int $total_products_gross_amount total_products_gross_amount
+     *
+     * @return $this
+     */
+    public function setTotalProductsGrossAmount($total_products_gross_amount)
+    {
+        $this->container['total_products_gross_amount'] = $total_products_gross_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_products_net_amount
+     *
+     * @return int
+     */
+    public function getTotalProductsNetAmount()
+    {
+        return $this->container['total_products_net_amount'];
+    }
+
+    /**
+     * Sets total_products_net_amount
+     *
+     * @param int $total_products_net_amount total_products_net_amount
+     *
+     * @return $this
+     */
+    public function setTotalProductsNetAmount($total_products_net_amount)
+    {
+        $this->container['total_products_net_amount'] = $total_products_net_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_products_vat_amount
+     *
+     * @return int
+     */
+    public function getTotalProductsVatAmount()
+    {
+        return $this->container['total_products_vat_amount'];
+    }
+
+    /**
+     * Sets total_products_vat_amount
+     *
+     * @param int $total_products_vat_amount total_products_vat_amount
+     *
+     * @return $this
+     */
+    public function setTotalProductsVatAmount($total_products_vat_amount)
+    {
+        $this->container['total_products_vat_amount'] = $total_products_vat_amount;
 
         return $this;
     }

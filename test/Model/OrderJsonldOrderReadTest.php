@@ -249,4 +249,46 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTotalVatAmount()
     {
     }
+
+    /**
+     * Test attribute "total_voucher_gross_amount"
+     */
+    public function testPropertyTotalVoucherGrossAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_voucher_net_amount"
+     */
+    public function testPropertyTotalVoucherNetAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_voucher_vat_amount"
+     */
+    public function testPropertyTotalVoucherVatAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_products_gross_amount"
+     */
+    public function testPropertyTotalProductsGrossAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_products_net_amount"
+     */
+    public function testPropertyTotalProductsNetAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_products_vat_amount"
+     */
+    public function testPropertyTotalProductsVatAmount()
+    {
+    }
 }

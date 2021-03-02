@@ -200,4 +200,11 @@ class VoucherJsonldVoucherReadTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCustomData()
     {
     }
+
+    /**
+     * Test attribute "quantity_used"
+     */
+    public function testPropertyQuantityUsed()
+    {
+    }
 }

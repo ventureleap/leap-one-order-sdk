@@ -73,7 +73,8 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => '\DateTime',
 'active' => 'bool',
 'deleted' => 'bool',
-'custom_data' => 'object'    ];
+'custom_data' => 'object',
+'quantity_used' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -98,7 +99,8 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'date-time',
 'active' => null,
 'deleted' => null,
-'custom_data' => null    ];
+'custom_data' => null,
+'quantity_used' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -144,7 +146,8 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'updatedAt',
 'active' => 'active',
 'deleted' => 'deleted',
-'custom_data' => 'customData'    ];
+'custom_data' => 'customData',
+'quantity_used' => 'quantityUsed'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -169,7 +172,8 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'setUpdatedAt',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
-'custom_data' => 'setCustomData'    ];
+'custom_data' => 'setCustomData',
+'quantity_used' => 'setQuantityUsed'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -194,7 +198,8 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'updated_at' => 'getUpdatedAt',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
-'custom_data' => 'getCustomData'    ];
+'custom_data' => 'getCustomData',
+'quantity_used' => 'getQuantityUsed'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -285,6 +290,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
+        $this->container['quantity_used'] = isset($data['quantity_used']) ? $data['quantity_used'] : null;
     }
 
     /**
@@ -774,6 +780,30 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setCustomData($custom_data)
     {
         $this->container['custom_data'] = $custom_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_used
+     *
+     * @return int
+     */
+    public function getQuantityUsed()
+    {
+        return $this->container['quantity_used'];
+    }
+
+    /**
+     * Sets quantity_used
+     *
+     * @param int $quantity_used quantity_used
+     *
+     * @return $this
+     */
+    public function setQuantityUsed($quantity_used)
+    {
+        $this->container['quantity_used'] = $quantity_used;
 
         return $this;
     }
