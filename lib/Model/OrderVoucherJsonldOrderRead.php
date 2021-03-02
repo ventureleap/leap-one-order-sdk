@@ -59,6 +59,7 @@ class OrderVoucherJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'uuid' => 'string',
 'voucher' => 'string',
 'voucher_code' => 'string',
 'value' => 'int',
@@ -84,6 +85,7 @@ class OrderVoucherJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'uuid' => null,
 'voucher' => 'iri-reference',
 'voucher_code' => null,
 'value' => null,
@@ -130,6 +132,7 @@ class OrderVoucherJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'uuid' => 'uuid',
 'voucher' => 'voucher',
 'voucher_code' => 'voucherCode',
 'value' => 'value',
@@ -155,6 +158,7 @@ class OrderVoucherJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'uuid' => 'setUuid',
 'voucher' => 'setVoucher',
 'voucher_code' => 'setVoucherCode',
 'value' => 'setValue',
@@ -180,6 +184,7 @@ class OrderVoucherJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'uuid' => 'getUuid',
 'voucher' => 'getVoucher',
 'voucher_code' => 'getVoucherCode',
 'value' => 'getValue',
@@ -270,6 +275,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
         $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
@@ -390,6 +396,30 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }

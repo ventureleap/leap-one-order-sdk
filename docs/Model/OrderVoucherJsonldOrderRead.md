@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
+**uuid** | **string** |  | [optional] 
 **voucher** | **string** |  | 
 **voucher_code** | **string** |  | [optional] 
 **value** | **int** |  | [optional] 

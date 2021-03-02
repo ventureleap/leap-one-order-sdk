@@ -59,6 +59,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'string',
 'id' => 'string',
 'type' => 'string',
+'uuid' => 'string',
 'order' => 'string',
 'voucher' => 'string',
 'voucher_code' => 'string',
@@ -66,7 +67,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'voucher_type' => 'string',
 'valid_from' => '\DateTime',
 'valid_to' => '\DateTime',
-'uuid' => 'string',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -86,6 +86,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
+'uuid' => null,
 'order' => 'iri-reference',
 'voucher' => 'iri-reference',
 'voucher_code' => null,
@@ -93,7 +94,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'voucher_type' => null,
 'valid_from' => 'date-time',
 'valid_to' => 'date-time',
-'uuid' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -134,6 +134,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
         'context' => '@context',
 'id' => '@id',
 'type' => '@type',
+'uuid' => 'uuid',
 'order' => 'order',
 'voucher' => 'voucher',
 'voucher_code' => 'voucherCode',
@@ -141,7 +142,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'voucher_type' => 'voucherType',
 'valid_from' => 'validFrom',
 'valid_to' => 'validTo',
-'uuid' => 'uuid',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -161,6 +161,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'setContext',
 'id' => 'setId',
 'type' => 'setType',
+'uuid' => 'setUuid',
 'order' => 'setOrder',
 'voucher' => 'setVoucher',
 'voucher_code' => 'setVoucherCode',
@@ -168,7 +169,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'voucher_type' => 'setVoucherType',
 'valid_from' => 'setValidFrom',
 'valid_to' => 'setValidTo',
-'uuid' => 'setUuid',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -188,6 +188,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
         'context' => 'getContext',
 'id' => 'getId',
 'type' => 'getType',
+'uuid' => 'getUuid',
 'order' => 'getOrder',
 'voucher' => 'getVoucher',
 'voucher_code' => 'getVoucherCode',
@@ -195,7 +196,6 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
 'voucher_type' => 'getVoucherType',
 'valid_from' => 'getValidFrom',
 'valid_to' => 'getValidTo',
-'uuid' => 'getUuid',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -280,6 +280,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
         $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
@@ -287,7 +288,6 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
-        $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -405,6 +405,30 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid
+     *
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->container['uuid'];
+    }
+
+    /**
+     * Sets uuid
+     *
+     * @param string $uuid uuid
+     *
+     * @return $this
+     */
+    public function setUuid($uuid)
+    {
+        $this->container['uuid'] = $uuid;
 
         return $this;
     }
@@ -582,30 +606,6 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setValidTo($valid_to)
     {
         $this->container['valid_to'] = $valid_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets uuid
-     *
-     * @return string
-     */
-    public function getUuid()
-    {
-        return $this->container['uuid'];
-    }
-
-    /**
-     * Sets uuid
-     *
-     * @param string $uuid uuid
-     *
-     * @return $this
-     */
-    public function setUuid($uuid)
-    {
-        $this->container['uuid'] = $uuid;
 
         return $this;
     }
