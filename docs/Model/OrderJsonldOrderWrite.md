@@ -15,6 +15,11 @@ Name | Type | Description | Notes
 **order_products** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]**](OrderProductJsonldOrderWrite.md) |  | [optional] 
 **date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **billing_address** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite**](BillingAddressJsonldOrderWrite.md) |  | 
+**payment_provider** | **string** |  | [optional] 
+**payment_method** | **string** |  | [optional] 
+**payment_reference** | **string** |  | [optional] 
+**payment_comment** | **string** |  | [optional] 
+**is_b2_b** | **bool** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 

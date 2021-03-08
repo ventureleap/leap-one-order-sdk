@@ -72,6 +72,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'date_of_validity' => '\DateTime',
 'billing_address' => '\VentureLeap\OrderService\Model\BillingAddressJsonldOrderRead',
 'order_vouchers' => '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[]',
+'payment_provider' => 'string',
+'payment_method' => 'string',
+'payment_reference' => 'string',
+'payment_comment' => 'string',
+'is_b2_b' => 'bool',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -110,6 +115,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'date_of_validity' => 'date-time',
 'billing_address' => null,
 'order_vouchers' => null,
+'payment_provider' => null,
+'payment_method' => null,
+'payment_reference' => null,
+'payment_comment' => null,
+'is_b2_b' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -169,6 +179,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'date_of_validity' => 'dateOfValidity',
 'billing_address' => 'billingAddress',
 'order_vouchers' => 'orderVouchers',
+'payment_provider' => 'paymentProvider',
+'payment_method' => 'paymentMethod',
+'payment_reference' => 'paymentReference',
+'payment_comment' => 'paymentComment',
+'is_b2_b' => 'isB2B',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -207,6 +222,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'date_of_validity' => 'setDateOfValidity',
 'billing_address' => 'setBillingAddress',
 'order_vouchers' => 'setOrderVouchers',
+'payment_provider' => 'setPaymentProvider',
+'payment_method' => 'setPaymentMethod',
+'payment_reference' => 'setPaymentReference',
+'payment_comment' => 'setPaymentComment',
+'is_b2_b' => 'setIsB2B',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -245,6 +265,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'date_of_validity' => 'getDateOfValidity',
 'billing_address' => 'getBillingAddress',
 'order_vouchers' => 'getOrderVouchers',
+'payment_provider' => 'getPaymentProvider',
+'payment_method' => 'getPaymentMethod',
+'payment_reference' => 'getPaymentReference',
+'payment_comment' => 'getPaymentComment',
+'is_b2_b' => 'getIsB2B',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -335,6 +360,11 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
         $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
         $this->container['order_vouchers'] = isset($data['order_vouchers']) ? $data['order_vouchers'] : null;
+        $this->container['payment_provider'] = isset($data['payment_provider']) ? $data['payment_provider'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
+        $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
+        $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
+        $this->container['is_b2_b'] = isset($data['is_b2_b']) ? $data['is_b2_b'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -768,6 +798,126 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setOrderVouchers($order_vouchers)
     {
         $this->container['order_vouchers'] = $order_vouchers;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_provider
+     *
+     * @return string
+     */
+    public function getPaymentProvider()
+    {
+        return $this->container['payment_provider'];
+    }
+
+    /**
+     * Sets payment_provider
+     *
+     * @param string $payment_provider payment_provider
+     *
+     * @return $this
+     */
+    public function setPaymentProvider($payment_provider)
+    {
+        $this->container['payment_provider'] = $payment_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method
+     *
+     * @return string
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string $payment_method payment_method
+     *
+     * @return $this
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_reference
+     *
+     * @return string
+     */
+    public function getPaymentReference()
+    {
+        return $this->container['payment_reference'];
+    }
+
+    /**
+     * Sets payment_reference
+     *
+     * @param string $payment_reference payment_reference
+     *
+     * @return $this
+     */
+    public function setPaymentReference($payment_reference)
+    {
+        $this->container['payment_reference'] = $payment_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_comment
+     *
+     * @return string
+     */
+    public function getPaymentComment()
+    {
+        return $this->container['payment_comment'];
+    }
+
+    /**
+     * Sets payment_comment
+     *
+     * @param string $payment_comment payment_comment
+     *
+     * @return $this
+     */
+    public function setPaymentComment($payment_comment)
+    {
+        $this->container['payment_comment'] = $payment_comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_b2_b
+     *
+     * @return bool
+     */
+    public function getIsB2B()
+    {
+        return $this->container['is_b2_b'];
+    }
+
+    /**
+     * Sets is_b2_b
+     *
+     * @param bool $is_b2_b is_b2_b
+     *
+     * @return $this
+     */
+    public function setIsB2B($is_b2_b)
+    {
+        $this->container['is_b2_b'] = $is_b2_b;
 
         return $this;
     }

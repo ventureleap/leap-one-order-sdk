@@ -160,6 +160,41 @@ class OrderJsonldOrderWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "payment_provider"
+     */
+    public function testPropertyPaymentProvider()
+    {
+    }
+
+    /**
+     * Test attribute "payment_method"
+     */
+    public function testPropertyPaymentMethod()
+    {
+    }
+
+    /**
+     * Test attribute "payment_reference"
+     */
+    public function testPropertyPaymentReference()
+    {
+    }
+
+    /**
+     * Test attribute "payment_comment"
+     */
+    public function testPropertyPaymentComment()
+    {
+    }
+
+    /**
+     * Test attribute "is_b2_b"
+     */
+    public function testPropertyIsB2B()
+    {
+    }
+
+    /**
      * Test attribute "active"
      */
     public function testPropertyActive()

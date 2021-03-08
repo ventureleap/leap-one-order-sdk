@@ -19,6 +19,11 @@ Name | Type | Description | Notes
 **date_of_validity** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **billing_address** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldOrderRead**](BillingAddressJsonldOrderRead.md) |  | 
 **order_vouchers** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderRead[]**](OrderVoucherJsonldOrderRead.md) |  | [optional] 
+**payment_provider** | **string** |  | [optional] 
+**payment_method** | **string** |  | [optional] 
+**payment_reference** | **string** |  | [optional] 
+**payment_comment** | **string** |  | [optional] 
+**is_b2_b** | **bool** |  | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

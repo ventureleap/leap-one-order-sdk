@@ -68,6 +68,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'order_products' => '\VentureLeap\OrderService\Model\OrderProductJsonldOrderWrite[]',
 'date_of_validity' => '\DateTime',
 'billing_address' => '\VentureLeap\OrderService\Model\BillingAddressJsonldOrderWrite',
+'payment_provider' => 'string',
+'payment_method' => 'string',
+'payment_reference' => 'string',
+'payment_comment' => 'string',
+'is_b2_b' => 'bool',
 'active' => 'bool',
 'deleted' => 'bool',
 'custom_data' => 'object'    ];
@@ -90,6 +95,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'order_products' => null,
 'date_of_validity' => 'date-time',
 'billing_address' => null,
+'payment_provider' => null,
+'payment_method' => null,
+'payment_reference' => null,
+'payment_comment' => null,
+'is_b2_b' => null,
 'active' => null,
 'deleted' => null,
 'custom_data' => null    ];
@@ -133,6 +143,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'order_products' => 'orderProducts',
 'date_of_validity' => 'dateOfValidity',
 'billing_address' => 'billingAddress',
+'payment_provider' => 'paymentProvider',
+'payment_method' => 'paymentMethod',
+'payment_reference' => 'paymentReference',
+'payment_comment' => 'paymentComment',
+'is_b2_b' => 'isB2B',
 'active' => 'active',
 'deleted' => 'deleted',
 'custom_data' => 'customData'    ];
@@ -155,6 +170,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'order_products' => 'setOrderProducts',
 'date_of_validity' => 'setDateOfValidity',
 'billing_address' => 'setBillingAddress',
+'payment_provider' => 'setPaymentProvider',
+'payment_method' => 'setPaymentMethod',
+'payment_reference' => 'setPaymentReference',
+'payment_comment' => 'setPaymentComment',
+'is_b2_b' => 'setIsB2B',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData'    ];
@@ -177,6 +197,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'order_products' => 'getOrderProducts',
 'date_of_validity' => 'getDateOfValidity',
 'billing_address' => 'getBillingAddress',
+'payment_provider' => 'getPaymentProvider',
+'payment_method' => 'getPaymentMethod',
+'payment_reference' => 'getPaymentReference',
+'payment_comment' => 'getPaymentComment',
+'is_b2_b' => 'getIsB2B',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData'    ];
@@ -251,6 +276,11 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['order_products'] = isset($data['order_products']) ? $data['order_products'] : null;
         $this->container['date_of_validity'] = isset($data['date_of_validity']) ? $data['date_of_validity'] : null;
         $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['payment_provider'] = isset($data['payment_provider']) ? $data['payment_provider'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
+        $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
+        $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
+        $this->container['is_b2_b'] = isset($data['is_b2_b']) ? $data['is_b2_b'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
@@ -576,6 +606,126 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     public function setBillingAddress($billing_address)
     {
         $this->container['billing_address'] = $billing_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_provider
+     *
+     * @return string
+     */
+    public function getPaymentProvider()
+    {
+        return $this->container['payment_provider'];
+    }
+
+    /**
+     * Sets payment_provider
+     *
+     * @param string $payment_provider payment_provider
+     *
+     * @return $this
+     */
+    public function setPaymentProvider($payment_provider)
+    {
+        $this->container['payment_provider'] = $payment_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method
+     *
+     * @return string
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string $payment_method payment_method
+     *
+     * @return $this
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_reference
+     *
+     * @return string
+     */
+    public function getPaymentReference()
+    {
+        return $this->container['payment_reference'];
+    }
+
+    /**
+     * Sets payment_reference
+     *
+     * @param string $payment_reference payment_reference
+     *
+     * @return $this
+     */
+    public function setPaymentReference($payment_reference)
+    {
+        $this->container['payment_reference'] = $payment_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_comment
+     *
+     * @return string
+     */
+    public function getPaymentComment()
+    {
+        return $this->container['payment_comment'];
+    }
+
+    /**
+     * Sets payment_comment
+     *
+     * @param string $payment_comment payment_comment
+     *
+     * @return $this
+     */
+    public function setPaymentComment($payment_comment)
+    {
+        $this->container['payment_comment'] = $payment_comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_b2_b
+     *
+     * @return bool
+     */
+    public function getIsB2B()
+    {
+        return $this->container['is_b2_b'];
+    }
+
+    /**
+     * Sets is_b2_b
+     *
+     * @param bool $is_b2_b is_b2_b
+     *
+     * @return $this
+     */
+    public function setIsB2B($is_b2_b)
+    {
+        $this->container['is_b2_b'] = $is_b2_b;
 
         return $this;
     }
