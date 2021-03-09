@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **payment_method** | **string** |  | [optional] 
 **payment_reference** | **string** |  | [optional] 
 **payment_comment** | **string** |  | [optional] 
-**is_b2_b** | **bool** |  | [optional] 
+**is_b_to_b** | **bool** |  | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

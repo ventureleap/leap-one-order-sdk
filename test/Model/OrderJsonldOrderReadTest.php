@@ -216,9 +216,9 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "is_b2_b"
+     * Test attribute "is_b_to_b"
      */
-    public function testPropertyIsB2B()
+    public function testPropertyIsBToB()
     {
     }
 

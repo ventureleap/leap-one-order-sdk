@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **payment_method** | **string** |  | [optional] 
 **payment_reference** | **string** |  | [optional] 
 **payment_comment** | **string** |  | [optional] 
-**is_b2_b** | **bool** |  | [optional] 
+**is_b_to_b** | **bool** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 

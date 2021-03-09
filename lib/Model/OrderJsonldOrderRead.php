@@ -76,7 +76,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_method' => 'string',
 'payment_reference' => 'string',
 'payment_comment' => 'string',
-'is_b2_b' => 'bool',
+'is_b_to_b' => 'bool',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -119,7 +119,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_method' => null,
 'payment_reference' => null,
 'payment_comment' => null,
-'is_b2_b' => null,
+'is_b_to_b' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -183,7 +183,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_method' => 'paymentMethod',
 'payment_reference' => 'paymentReference',
 'payment_comment' => 'paymentComment',
-'is_b2_b' => 'isB2B',
+'is_b_to_b' => 'isBToB',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -226,7 +226,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_method' => 'setPaymentMethod',
 'payment_reference' => 'setPaymentReference',
 'payment_comment' => 'setPaymentComment',
-'is_b2_b' => 'setIsB2B',
+'is_b_to_b' => 'setIsBToB',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -269,7 +269,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_method' => 'getPaymentMethod',
 'payment_reference' => 'getPaymentReference',
 'payment_comment' => 'getPaymentComment',
-'is_b2_b' => 'getIsB2B',
+'is_b_to_b' => 'getIsBToB',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -364,7 +364,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
-        $this->container['is_b2_b'] = isset($data['is_b2_b']) ? $data['is_b2_b'] : null;
+        $this->container['is_b_to_b'] = isset($data['is_b_to_b']) ? $data['is_b_to_b'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -899,25 +899,25 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_b2_b
+     * Gets is_b_to_b
      *
      * @return bool
      */
-    public function getIsB2B()
+    public function getIsBToB()
     {
-        return $this->container['is_b2_b'];
+        return $this->container['is_b_to_b'];
     }
 
     /**
-     * Sets is_b2_b
+     * Sets is_b_to_b
      *
-     * @param bool $is_b2_b is_b2_b
+     * @param bool $is_b_to_b is_b_to_b
      *
      * @return $this
      */
-    public function setIsB2B($is_b2_b)
+    public function setIsBToB($is_b_to_b)
     {
-        $this->container['is_b2_b'] = $is_b2_b;
+        $this->container['is_b_to_b'] = $is_b_to_b;
 
         return $this;
     }

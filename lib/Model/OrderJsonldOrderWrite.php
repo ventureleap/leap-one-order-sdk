@@ -72,7 +72,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'payment_method' => 'string',
 'payment_reference' => 'string',
 'payment_comment' => 'string',
-'is_b2_b' => 'bool',
+'is_b_to_b' => 'bool',
 'active' => 'bool',
 'deleted' => 'bool',
 'custom_data' => 'object'    ];
@@ -99,7 +99,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'payment_method' => null,
 'payment_reference' => null,
 'payment_comment' => null,
-'is_b2_b' => null,
+'is_b_to_b' => null,
 'active' => null,
 'deleted' => null,
 'custom_data' => null    ];
@@ -147,7 +147,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'payment_method' => 'paymentMethod',
 'payment_reference' => 'paymentReference',
 'payment_comment' => 'paymentComment',
-'is_b2_b' => 'isB2B',
+'is_b_to_b' => 'isBToB',
 'active' => 'active',
 'deleted' => 'deleted',
 'custom_data' => 'customData'    ];
@@ -174,7 +174,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'payment_method' => 'setPaymentMethod',
 'payment_reference' => 'setPaymentReference',
 'payment_comment' => 'setPaymentComment',
-'is_b2_b' => 'setIsB2B',
+'is_b_to_b' => 'setIsBToB',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData'    ];
@@ -201,7 +201,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
 'payment_method' => 'getPaymentMethod',
 'payment_reference' => 'getPaymentReference',
 'payment_comment' => 'getPaymentComment',
-'is_b2_b' => 'getIsB2B',
+'is_b_to_b' => 'getIsBToB',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData'    ];
@@ -280,7 +280,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
-        $this->container['is_b2_b'] = isset($data['is_b2_b']) ? $data['is_b2_b'] : null;
+        $this->container['is_b_to_b'] = isset($data['is_b_to_b']) ? $data['is_b_to_b'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
@@ -707,25 +707,25 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_b2_b
+     * Gets is_b_to_b
      *
      * @return bool
      */
-    public function getIsB2B()
+    public function getIsBToB()
     {
-        return $this->container['is_b2_b'];
+        return $this->container['is_b_to_b'];
     }
 
     /**
-     * Sets is_b2_b
+     * Sets is_b_to_b
      *
-     * @param bool $is_b2_b is_b2_b
+     * @param bool $is_b_to_b is_b_to_b
      *
      * @return $this
      */
-    public function setIsB2B($is_b2_b)
+    public function setIsBToB($is_b_to_b)
     {
-        $this->container['is_b2_b'] = $is_b2_b;
+        $this->container['is_b_to_b'] = $is_b_to_b;
 
         return $this;
     }
