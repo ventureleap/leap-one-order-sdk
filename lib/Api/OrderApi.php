@@ -331,8 +331,12 @@ class OrderApi
      * @param  string $status status (optional)
      * @param  string $payment_status payment_status (optional)
      * @param  string $customer_uuid customer_uuid (optional)
+     * @param  string $payment_provider payment_provider (optional)
+     * @param  string $payment_method payment_method (optional)
+     * @param  string $payment_comment payment_comment (optional)
      * @param  bool $active active (optional)
      * @param  bool $deleted deleted (optional)
+     * @param  bool $is_b_to_b is_b_to_b (optional)
      * @param  string $date_of_validity_before date_of_validity_before (optional)
      * @param  string $date_of_validity_strictly_before date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after date_of_validity_after (optional)
@@ -352,9 +356,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2004
      */
-    public function getOrderCollection($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollection($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $payment_comment = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
     {
-        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
         return $response;
     }
 
@@ -373,8 +377,12 @@ class OrderApi
      * @param  string $status (optional)
      * @param  string $payment_status (optional)
      * @param  string $customer_uuid (optional)
+     * @param  string $payment_provider (optional)
+     * @param  string $payment_method (optional)
+     * @param  string $payment_comment (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  bool $is_b_to_b (optional)
      * @param  string $date_of_validity_before (optional)
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
@@ -394,10 +402,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderCollectionWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $payment_comment = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
 
         try {
             $options = $this->createHttpClientOption();
@@ -473,8 +481,12 @@ class OrderApi
      * @param  string $status (optional)
      * @param  string $payment_status (optional)
      * @param  string $customer_uuid (optional)
+     * @param  string $payment_provider (optional)
+     * @param  string $payment_method (optional)
+     * @param  string $payment_comment (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  bool $is_b_to_b (optional)
      * @param  string $date_of_validity_before (optional)
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
@@ -493,9 +505,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsync($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionAsync($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $payment_comment = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
     {
-        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
+        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -518,8 +530,12 @@ class OrderApi
      * @param  string $status (optional)
      * @param  string $payment_status (optional)
      * @param  string $customer_uuid (optional)
+     * @param  string $payment_provider (optional)
+     * @param  string $payment_method (optional)
+     * @param  string $payment_comment (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  bool $is_b_to_b (optional)
      * @param  string $date_of_validity_before (optional)
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
@@ -538,10 +554,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $payment_comment = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $active, $deleted, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -593,8 +609,12 @@ class OrderApi
      * @param  string $status (optional)
      * @param  string $payment_status (optional)
      * @param  string $customer_uuid (optional)
+     * @param  string $payment_provider (optional)
+     * @param  string $payment_method (optional)
+     * @param  string $payment_comment (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
+     * @param  bool $is_b_to_b (optional)
      * @param  string $date_of_validity_before (optional)
      * @param  string $date_of_validity_strictly_before (optional)
      * @param  string $date_of_validity_after (optional)
@@ -613,7 +633,7 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderCollectionRequest($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $active = null, $deleted = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    protected function getOrderCollectionRequest($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $payment_comment = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
     {
 
         $resourcePath = '/order/orders';
@@ -667,12 +687,28 @@ class OrderApi
             $queryParams['customerUuid'] = ObjectSerializer::toQueryValue($customer_uuid, null);
         }
         // query params
+        if ($payment_provider !== null) {
+            $queryParams['paymentProvider'] = ObjectSerializer::toQueryValue($payment_provider, null);
+        }
+        // query params
+        if ($payment_method !== null) {
+            $queryParams['paymentMethod'] = ObjectSerializer::toQueryValue($payment_method, null);
+        }
+        // query params
+        if ($payment_comment !== null) {
+            $queryParams['paymentComment'] = ObjectSerializer::toQueryValue($payment_comment, null);
+        }
+        // query params
         if ($active !== null) {
             $queryParams['active'] = ObjectSerializer::toQueryValue($active, null);
         }
         // query params
         if ($deleted !== null) {
             $queryParams['deleted'] = ObjectSerializer::toQueryValue($deleted, null);
+        }
+        // query params
+        if ($is_b_to_b !== null) {
+            $queryParams['isBToB'] = ObjectSerializer::toQueryValue($is_b_to_b, null);
         }
         // query params
         if ($date_of_validity_before !== null) {
