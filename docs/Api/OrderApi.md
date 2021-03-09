@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
 
 Retrieves the collection of Order resources.
 
@@ -87,13 +87,13 @@ $internal_comment = "internal_comment_example"; // string |
 $customer_comment = "customer_comment_example"; // string | 
 $billing_address_full_name = "billing_address_full_name_example"; // string | 
 $billing_address_company_name = "billing_address_company_name_example"; // string | 
+$payment_comment = "payment_comment_example"; // string | 
 $order_code = "order_code_example"; // string | 
 $status = "status_example"; // string | 
 $payment_status = "payment_status_example"; // string | 
 $customer_uuid = "customer_uuid_example"; // string | 
 $payment_provider = "payment_provider_example"; // string | 
 $payment_method = "payment_method_example"; // string | 
-$payment_comment = "payment_comment_example"; // string | 
 $active = true; // bool | 
 $deleted = true; // bool | 
 $is_b_to_b = true; // bool | 
@@ -113,7 +113,7 @@ $items_per_page = 30; // int | The number of items per page
 $pagination = true; // bool | Enable or disable pagination
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $payment_comment, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -131,13 +131,13 @@ Name | Type | Description  | Notes
  **customer_comment** | **string**|  | [optional]
  **billing_address_full_name** | **string**|  | [optional]
  **billing_address_company_name** | **string**|  | [optional]
+ **payment_comment** | **string**|  | [optional]
  **order_code** | **string**|  | [optional]
  **status** | **string**|  | [optional]
  **payment_status** | **string**|  | [optional]
  **customer_uuid** | **string**|  | [optional]
  **payment_provider** | **string**|  | [optional]
  **payment_method** | **string**|  | [optional]
- **payment_comment** | **string**|  | [optional]
  **active** | **bool**|  | [optional]
  **deleted** | **bool**|  | [optional]
  **is_b_to_b** | **bool**|  | [optional]
