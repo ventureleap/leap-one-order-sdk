@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **uuid** | **string** |  | [optional] 
 **voucher** | **string** |  | 
 **voucher_code** | **string** |  | [optional] 
+**voucher_comment** | **string** |  | [optional] 
 **value** | **int** |  | [optional] 
 **voucher_type** | **string** |  | [optional] 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 

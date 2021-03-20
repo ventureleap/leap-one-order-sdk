@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **type** | **string** |  | [optional] 
 **uuid** | **string** |  | [optional] 
 **voucher_code** | **string** |  | [optional] 
+**voucher_comment** | **string** |  | [optional] 
 **value** | **int** |  | 
 **voucher_type** | **string** | percentage/ammount | 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | 

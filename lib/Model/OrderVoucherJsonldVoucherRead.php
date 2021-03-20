@@ -61,6 +61,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'string',
 'voucher' => 'string',
 'voucher_code' => 'string',
+'voucher_comment' => 'string',
 'value' => 'int',
 'voucher_type' => 'string',
 'valid_from' => '\DateTime',
@@ -86,6 +87,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'type' => null,
 'voucher' => 'iri-reference',
 'voucher_code' => null,
+'voucher_comment' => null,
 'value' => null,
 'voucher_type' => null,
 'valid_from' => 'date-time',
@@ -132,6 +134,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'type' => '@type',
 'voucher' => 'voucher',
 'voucher_code' => 'voucherCode',
+'voucher_comment' => 'voucherComment',
 'value' => 'value',
 'voucher_type' => 'voucherType',
 'valid_from' => 'validFrom',
@@ -157,6 +160,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'setType',
 'voucher' => 'setVoucher',
 'voucher_code' => 'setVoucherCode',
+'voucher_comment' => 'setVoucherComment',
 'value' => 'setValue',
 'voucher_type' => 'setVoucherType',
 'valid_from' => 'setValidFrom',
@@ -182,6 +186,7 @@ class OrderVoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
 'type' => 'getType',
 'voucher' => 'getVoucher',
 'voucher_code' => 'getVoucherCode',
+'voucher_comment' => 'getVoucherComment',
 'value' => 'getValue',
 'voucher_type' => 'getVoucherType',
 'valid_from' => 'getValidFrom',
@@ -272,6 +277,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
         $this->container['voucher_code'] = isset($data['voucher_code']) ? $data['voucher_code'] : null;
+        $this->container['voucher_comment'] = isset($data['voucher_comment']) ? $data['voucher_comment'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
@@ -438,6 +444,30 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     public function setVoucherCode($voucher_code)
     {
         $this->container['voucher_code'] = $voucher_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucher_comment
+     *
+     * @return string
+     */
+    public function getVoucherComment()
+    {
+        return $this->container['voucher_comment'];
+    }
+
+    /**
+     * Sets voucher_comment
+     *
+     * @param string $voucher_comment voucher_comment
+     *
+     * @return $this
+     */
+    public function setVoucherComment($voucher_comment)
+    {
+        $this->container['voucher_comment'] = $voucher_comment;
 
         return $this;
     }

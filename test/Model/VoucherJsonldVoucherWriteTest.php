@@ -97,6 +97,13 @@ class VoucherJsonldVoucherWriteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "voucher_comment"
+     */
+    public function testPropertyVoucherComment()
+    {
+    }
+
+    /**
      * Test attribute "value"
      */
     public function testPropertyValue()

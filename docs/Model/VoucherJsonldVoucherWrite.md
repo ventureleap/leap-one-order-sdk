@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
+**voucher_comment** | **string** |  | [optional] 
 **value** | **int** |  | 
 **voucher_type** | **string** | percentage/ammount | 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | 
