@@ -62,7 +62,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
 
 Retrieves the collection of Order resources.
 
@@ -101,6 +101,10 @@ $date_of_validity_before = "date_of_validity_before_example"; // string |
 $date_of_validity_strictly_before = "date_of_validity_strictly_before_example"; // string | 
 $date_of_validity_after = "date_of_validity_after_example"; // string | 
 $date_of_validity_strictly_after = "date_of_validity_strictly_after_example"; // string | 
+$created_at_before = "created_at_before_example"; // string | 
+$created_at_strictly_before = "created_at_strictly_before_example"; // string | 
+$created_at_after = "created_at_after_example"; // string | 
+$created_at_strictly_after = "created_at_strictly_after_example"; // string | 
 $order_status = "order_status_example"; // string | 
 $order_payment_status = "order_payment_status_example"; // string | 
 $order_created_at = "order_created_at_example"; // string | 
@@ -113,7 +117,7 @@ $items_per_page = 30; // int | The number of items per page
 $pagination = true; // bool | Enable or disable pagination
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -145,6 +149,10 @@ Name | Type | Description  | Notes
  **date_of_validity_strictly_before** | **string**|  | [optional]
  **date_of_validity_after** | **string**|  | [optional]
  **date_of_validity_strictly_after** | **string**|  | [optional]
+ **created_at_before** | **string**|  | [optional]
+ **created_at_strictly_before** | **string**|  | [optional]
+ **created_at_after** | **string**|  | [optional]
+ **created_at_strictly_after** | **string**|  | [optional]
  **order_status** | **string**|  | [optional]
  **order_payment_status** | **string**|  | [optional]
  **order_created_at** | **string**|  | [optional]
