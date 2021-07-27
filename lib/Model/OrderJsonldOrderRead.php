@@ -77,6 +77,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'string',
 'payment_comment' => 'string',
 'is_b_to_b' => 'bool',
+'invoice_number' => 'string',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -120,6 +121,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => null,
 'payment_comment' => null,
 'is_b_to_b' => null,
+'invoice_number' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -184,6 +186,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'paymentReference',
 'payment_comment' => 'paymentComment',
 'is_b_to_b' => 'isBToB',
+'invoice_number' => 'invoiceNumber',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -227,6 +230,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'setPaymentReference',
 'payment_comment' => 'setPaymentComment',
 'is_b_to_b' => 'setIsBToB',
+'invoice_number' => 'setInvoiceNumber',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -270,6 +274,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'getPaymentReference',
 'payment_comment' => 'getPaymentComment',
 'is_b_to_b' => 'getIsBToB',
+'invoice_number' => 'getInvoiceNumber',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -365,6 +370,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
         $this->container['is_b_to_b'] = isset($data['is_b_to_b']) ? $data['is_b_to_b'] : null;
+        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -918,6 +924,30 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setIsBToB($is_b_to_b)
     {
         $this->container['is_b_to_b'] = $is_b_to_b;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_number
+     *
+     * @return string
+     */
+    public function getInvoiceNumber()
+    {
+        return $this->container['invoice_number'];
+    }
+
+    /**
+     * Sets invoice_number
+     *
+     * @param string $invoice_number invoice_number
+     *
+     * @return $this
+     */
+    public function setInvoiceNumber($invoice_number)
+    {
+        $this->container['invoice_number'] = $invoice_number;
 
         return $this;
     }
