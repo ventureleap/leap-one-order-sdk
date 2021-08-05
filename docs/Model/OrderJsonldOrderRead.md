@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **payment_reference** | **string** |  | [optional] 
 **payment_comment** | **string** |  | [optional] 
 **is_b_to_b** | **bool** |  | [optional] 
-**invoice_number** | **string** |  | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

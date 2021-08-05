@@ -223,13 +223,6 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "invoice_number"
-     */
-    public function testPropertyInvoiceNumber()
-    {
-    }
-
-    /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()
