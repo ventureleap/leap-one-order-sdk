@@ -66,6 +66,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'float',
 'gross_price_per_unit' => 'int',
 'vat_per_unit' => 'int',
+'tax_percentage' => 'int',
 'active' => 'bool',
 'deleted' => 'bool',
 'custom_data' => 'object'    ];
@@ -86,6 +87,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => null,
 'gross_price_per_unit' => null,
 'vat_per_unit' => null,
+'tax_percentage' => null,
 'active' => null,
 'deleted' => null,
 'custom_data' => null    ];
@@ -127,6 +129,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'quantity',
 'gross_price_per_unit' => 'grossPricePerUnit',
 'vat_per_unit' => 'vatPerUnit',
+'tax_percentage' => 'taxPercentage',
 'active' => 'active',
 'deleted' => 'deleted',
 'custom_data' => 'customData'    ];
@@ -147,6 +150,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'setQuantity',
 'gross_price_per_unit' => 'setGrossPricePerUnit',
 'vat_per_unit' => 'setVatPerUnit',
+'tax_percentage' => 'setTaxPercentage',
 'active' => 'setActive',
 'deleted' => 'setDeleted',
 'custom_data' => 'setCustomData'    ];
@@ -167,6 +171,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
 'quantity' => 'getQuantity',
 'gross_price_per_unit' => 'getGrossPricePerUnit',
 'vat_per_unit' => 'getVatPerUnit',
+'tax_percentage' => 'getTaxPercentage',
 'active' => 'getActive',
 'deleted' => 'getDeleted',
 'custom_data' => 'getCustomData'    ];
@@ -239,6 +244,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
         $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
+        $this->container['tax_percentage'] = isset($data['tax_percentage']) ? $data['tax_percentage'] : null;
         $this->container['active'] = isset($data['active']) ? $data['active'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
@@ -513,6 +519,30 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     public function setVatPerUnit($vat_per_unit)
     {
         $this->container['vat_per_unit'] = $vat_per_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_percentage
+     *
+     * @return int
+     */
+    public function getTaxPercentage()
+    {
+        return $this->container['tax_percentage'];
+    }
+
+    /**
+     * Sets tax_percentage
+     *
+     * @param int $tax_percentage example 1900 = 19.00%
+     *
+     * @return $this
+     */
+    public function setTaxPercentage($tax_percentage)
+    {
+        $this->container['tax_percentage'] = $tax_percentage;
 
         return $this;
     }
