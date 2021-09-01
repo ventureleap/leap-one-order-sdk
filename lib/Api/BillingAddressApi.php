@@ -348,15 +348,15 @@ class BillingAddressApi
      *
      * Retrieves a BillingAddress resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead
+     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite
      */
-    public function getBillingAddressItem($id)
+    public function getBillingAddressItem($uuid)
     {
-        list($response) = $this->getBillingAddressItemWithHttpInfo($id);
+        list($response) = $this->getBillingAddressItemWithHttpInfo($uuid);
         return $response;
     }
 
@@ -365,16 +365,16 @@ class BillingAddressApi
      *
      * Retrieves a BillingAddress resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBillingAddressItemWithHttpInfo($id)
+    public function getBillingAddressItemWithHttpInfo($uuid)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
-        $request = $this->getBillingAddressItemRequest($id);
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
+        $request = $this->getBillingAddressItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -425,7 +425,7 @@ class BillingAddressApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead',
+                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -440,14 +440,14 @@ class BillingAddressApi
      *
      * Retrieves a BillingAddress resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBillingAddressItemAsync($id)
+    public function getBillingAddressItemAsync($uuid)
     {
-        return $this->getBillingAddressItemAsyncWithHttpInfo($id)
+        return $this->getBillingAddressItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,15 +460,15 @@ class BillingAddressApi
      *
      * Retrieves a BillingAddress resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBillingAddressItemAsyncWithHttpInfo($id)
+    public function getBillingAddressItemAsyncWithHttpInfo($uuid)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
-        $request = $this->getBillingAddressItemRequest($id);
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
+        $request = $this->getBillingAddressItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -510,21 +510,21 @@ class BillingAddressApi
     /**
      * Create request for operation 'getBillingAddressItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getBillingAddressItemRequest($id)
+    protected function getBillingAddressItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getBillingAddressItem'
+                'Missing the required parameter $uuid when calling getBillingAddressItem'
             );
         }
 
-        $resourcePath = '/order/billing_addresses/{id}';
+        $resourcePath = '/order/billing_addresses/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -533,10 +533,10 @@ class BillingAddressApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -615,13 +615,13 @@ class BillingAddressApi
      *
      * Creates a BillingAddress resource.
      *
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead
+     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite
      */
-    public function postBillingAddressCollection($body = null)
+    public function postBillingAddressCollection($body)
     {
         list($response) = $this->postBillingAddressCollectionWithHttpInfo($body);
         return $response;
@@ -632,15 +632,15 @@ class BillingAddressApi
      *
      * Creates a BillingAddress resource.
      *
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBillingAddressCollectionWithHttpInfo($body = null)
+    public function postBillingAddressCollectionWithHttpInfo($body)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
         $request = $this->postBillingAddressCollectionRequest($body);
 
         try {
@@ -692,7 +692,7 @@ class BillingAddressApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead',
+                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -707,12 +707,12 @@ class BillingAddressApi
      *
      * Creates a BillingAddress resource.
      *
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBillingAddressCollectionAsync($body = null)
+    public function postBillingAddressCollectionAsync($body)
     {
         return $this->postBillingAddressCollectionAsyncWithHttpInfo($body)
             ->then(
@@ -727,14 +727,14 @@ class BillingAddressApi
      *
      * Creates a BillingAddress resource.
      *
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBillingAddressCollectionAsyncWithHttpInfo($body = null)
+    public function postBillingAddressCollectionAsyncWithHttpInfo($body)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
         $request = $this->postBillingAddressCollectionRequest($body);
 
         return $this->client
@@ -777,13 +777,19 @@ class BillingAddressApi
     /**
      * Create request for operation 'postBillingAddressCollection'
      *
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The new BillingAddress resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postBillingAddressCollectionRequest($body = null)
+    protected function postBillingAddressCollectionRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling postBillingAddressCollection'
+            );
+        }
 
         $resourcePath = '/order/billing_addresses';
         $formParams = [];
@@ -871,16 +877,16 @@ class BillingAddressApi
      *
      * Replaces the BillingAddress resource.
      *
-     * @param  string $id id (required)
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead
+     * @return \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite
      */
-    public function putBillingAddressItem($id, $body = null)
+    public function putBillingAddressItem($body, $uuid)
     {
-        list($response) = $this->putBillingAddressItemWithHttpInfo($id, $body);
+        list($response) = $this->putBillingAddressItemWithHttpInfo($body, $uuid);
         return $response;
     }
 
@@ -889,17 +895,17 @@ class BillingAddressApi
      *
      * Replaces the BillingAddress resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putBillingAddressItemWithHttpInfo($id, $body = null)
+    public function putBillingAddressItemWithHttpInfo($body, $uuid)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
-        $request = $this->putBillingAddressItemRequest($id, $body);
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
+        $request = $this->putBillingAddressItemRequest($body, $uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -950,7 +956,7 @@ class BillingAddressApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead',
+                        '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -965,15 +971,15 @@ class BillingAddressApi
      *
      * Replaces the BillingAddress resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBillingAddressItemAsync($id, $body = null)
+    public function putBillingAddressItemAsync($body, $uuid)
     {
-        return $this->putBillingAddressItemAsyncWithHttpInfo($id, $body)
+        return $this->putBillingAddressItemAsyncWithHttpInfo($body, $uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -986,16 +992,16 @@ class BillingAddressApi
      *
      * Replaces the BillingAddress resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBillingAddressItemAsyncWithHttpInfo($id, $body = null)
+    public function putBillingAddressItemAsyncWithHttpInfo($body, $uuid)
     {
-        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead';
-        $request = $this->putBillingAddressItemRequest($id, $body);
+        $returnType = '\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite';
+        $request = $this->putBillingAddressItemRequest($body, $uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1037,22 +1043,28 @@ class BillingAddressApi
     /**
      * Create request for operation 'putBillingAddressItem'
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (optional)
+     * @param  \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite $body The updated BillingAddress resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putBillingAddressItemRequest($id, $body = null)
+    protected function putBillingAddressItemRequest($body, $uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling putBillingAddressItem'
+                'Missing the required parameter $body when calling putBillingAddressItem'
+            );
+        }
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling putBillingAddressItem'
             );
         }
 
-        $resourcePath = '/order/billing_addresses/{id}';
+        $resourcePath = '/order/billing_addresses/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1061,10 +1073,10 @@ class BillingAddressApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }

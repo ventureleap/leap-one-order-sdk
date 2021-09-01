@@ -4,14 +4,16 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderVoucherItem**](OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{id} | Removes the OrderVoucher resource.
+[**deleteOrderVoucherItem**](OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{uuid} | Removes the OrderVoucher resource.
 [**getOrderVoucherCollection**](OrderVoucherApi.md#getordervouchercollection) | **GET** /order/order_vouchers | Retrieves the collection of OrderVoucher resources.
-[**getOrderVoucherItem**](OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{id} | Retrieves a OrderVoucher resource.
+[**getOrderVoucherItem**](OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{uuid} | Retrieves a OrderVoucher resource.
 [**postOrderVoucherCollection**](OrderVoucherApi.md#postordervouchercollection) | **POST** /order/order_vouchers | Creates a OrderVoucher resource.
-[**putOrderVoucherItem**](OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{id} | Replaces the OrderVoucher resource.
+[**putOrderVoucherItem**](OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{uuid} | Replaces the OrderVoucher resource.
 
 # **deleteOrderVoucherItem**
-> deleteOrderVoucherItem($id)
+> deleteOrderVoucherItem($uuid)
+
+Removes the OrderVoucher resource.
 
 Removes the OrderVoucher resource.
 
@@ -30,10 +32,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $apiInstance->deleteOrderVoucherItem($id);
+    $apiInstance->deleteOrderVoucherItem($uuid);
 } catch (Exception $e) {
     echo 'Exception when calling OrderVoucherApi->deleteOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
 }
@@ -44,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -62,7 +64,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderVoucherCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2003 getOrderVoucherCollection($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2003 getOrderVoucherCollection($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted)
+
+Retrieves the collection of OrderVoucher resources.
 
 Retrieves the collection of OrderVoucher resources.
 
@@ -81,7 +85,8 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
+$page = 1; // int | The collection page number
+$properties = array("properties_example"); // string[] | 
 $custom_data = "custom_data_example"; // string | 
 $active = true; // bool | 
 $deleted = true; // bool | 
@@ -97,10 +102,9 @@ $order_created_at = "order_created_at_example"; // string |
 $order_updated_at = "order_updated_at_example"; // string | 
 $order_active = "order_active_example"; // string | 
 $order_deleted = "order_deleted_example"; // string | 
-$page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderVoucherCollection($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+    $result = $apiInstance->getOrderVoucherCollection($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderVoucherApi->getOrderVoucherCollection: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +116,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
+ **properties** | [**string[]**](../Model/string.md)|  | [optional]
  **custom_data** | **string**|  | [optional]
  **active** | **bool**|  | [optional]
  **deleted** | **bool**|  | [optional]
@@ -128,7 +133,6 @@ Name | Type | Description  | Notes
  **order_updated_at** | **string**|  | [optional]
  **order_active** | **string**|  | [optional]
  **order_deleted** | **string**|  | [optional]
- **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -146,7 +150,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderVoucherItem**
-> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead getOrderVoucherItem($id)
+> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead getOrderVoucherItem($uuid)
+
+Retrieves a OrderVoucher resource.
 
 Retrieves a OrderVoucher resource.
 
@@ -165,10 +171,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->getOrderVoucherItem($id);
+    $result = $apiInstance->getOrderVoucherItem($uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderVoucherApi->getOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
@@ -180,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -199,6 +205,8 @@ Name | Type | Description  | Notes
 
 # **postOrderVoucherCollection**
 > \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead postOrderVoucherCollection($body)
+
+Creates a OrderVoucher resource.
 
 Creates a OrderVoucher resource.
 
@@ -232,7 +240,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The new OrderVoucher resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The new OrderVoucher resource |
 
 ### Return type
 
@@ -250,7 +258,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putOrderVoucherItem**
-> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead putOrderVoucherItem($id, $body)
+> \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead putOrderVoucherItem($body, $uuid)
+
+Replaces the OrderVoucher resource.
 
 Replaces the OrderVoucher resource.
 
@@ -269,11 +279,11 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderVoucherApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
 $body = new \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite(); // \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite | The updated OrderVoucher resource
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->putOrderVoucherItem($id, $body);
+    $result = $apiInstance->putOrderVoucherItem($body, $uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderVoucherApi->putOrderVoucherItem: ', $e->getMessage(), PHP_EOL;
@@ -285,8 +295,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The updated OrderVoucher resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite**](../Model/OrderVoucherJsonldOrderVoucherWrite.md)| The updated OrderVoucher resource |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 

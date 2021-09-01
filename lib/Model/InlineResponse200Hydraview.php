@@ -60,6 +60,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
 'type' => 'string',
 'hydrafirst' => 'string',
 'hydralast' => 'string',
+'hydraprevious' => 'string',
 'hydranext' => 'string'    ];
 
     /**
@@ -72,6 +73,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
 'type' => null,
 'hydrafirst' => 'iri-reference',
 'hydralast' => 'iri-reference',
+'hydraprevious' => 'iri-reference',
 'hydranext' => 'iri-reference'    ];
 
     /**
@@ -105,6 +107,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
 'type' => '@type',
 'hydrafirst' => 'hydra:first',
 'hydralast' => 'hydra:last',
+'hydraprevious' => 'hydra:previous',
 'hydranext' => 'hydra:next'    ];
 
     /**
@@ -117,6 +120,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
 'type' => 'setType',
 'hydrafirst' => 'setHydrafirst',
 'hydralast' => 'setHydralast',
+'hydraprevious' => 'setHydraprevious',
 'hydranext' => 'setHydranext'    ];
 
     /**
@@ -129,6 +133,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
 'type' => 'getType',
 'hydrafirst' => 'getHydrafirst',
 'hydralast' => 'getHydralast',
+'hydraprevious' => 'getHydraprevious',
 'hydranext' => 'getHydranext'    ];
 
     /**
@@ -193,6 +198,7 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['hydrafirst'] = isset($data['hydrafirst']) ? $data['hydrafirst'] : null;
         $this->container['hydralast'] = isset($data['hydralast']) ? $data['hydralast'] : null;
+        $this->container['hydraprevious'] = isset($data['hydraprevious']) ? $data['hydraprevious'] : null;
         $this->container['hydranext'] = isset($data['hydranext']) ? $data['hydranext'] : null;
     }
 
@@ -312,6 +318,30 @@ class InlineResponse200Hydraview implements ModelInterface, ArrayAccess
     public function setHydralast($hydralast)
     {
         $this->container['hydralast'] = $hydralast;
+
+        return $this;
+    }
+
+    /**
+     * Gets hydraprevious
+     *
+     * @return string
+     */
+    public function getHydraprevious()
+    {
+        return $this->container['hydraprevious'];
+    }
+
+    /**
+     * Sets hydraprevious
+     *
+     * @param string $hydraprevious hydraprevious
+     *
+     * @return $this
+     */
+    public function setHydraprevious($hydraprevious)
+    {
+        $this->container['hydraprevious'] = $hydraprevious;
 
         return $this;
     }

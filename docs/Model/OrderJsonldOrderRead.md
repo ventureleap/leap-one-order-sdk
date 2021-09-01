@@ -3,11 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderJsonldOrderReadContext**](OneOfOrderJsonldOrderReadContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **uuid** | **string** |  | [optional] 
-**order_code** | **string** |  | [optional] 
 **status** | **string** |  | 
 **payment_status** | **string** |  | 
 **payment_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
@@ -24,10 +23,12 @@ Name | Type | Description | Notes
 **payment_reference** | **string** |  | [optional] 
 **payment_comment** | **string** |  | [optional] 
 **is_b_to_b** | **bool** |  | [optional] 
+**invoice_uuid** | **string** |  | [optional] 
+**invoice_number** | **string** |  | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 **total_gross_amount** | **int** |  | [optional] 

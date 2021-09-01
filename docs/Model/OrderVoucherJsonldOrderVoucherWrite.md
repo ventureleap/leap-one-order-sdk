@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderVoucherJsonldOrderVoucherWriteContext**](OneOfOrderVoucherJsonldOrderVoucherWriteContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **order** | **string** |  | 
 **voucher** | **string** |  | 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

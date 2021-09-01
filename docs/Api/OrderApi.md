@@ -4,14 +4,16 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderItem**](OrderApi.md#deleteorderitem) | **DELETE** /order/orders/{id} | Removes the Order resource.
+[**deleteOrderItem**](OrderApi.md#deleteorderitem) | **DELETE** /order/orders/{uuid} | Removes the Order resource.
 [**getOrderCollection**](OrderApi.md#getordercollection) | **GET** /order/orders | Retrieves the collection of Order resources.
-[**getOrderItem**](OrderApi.md#getorderitem) | **GET** /order/orders/{id} | Retrieves a Order resource.
+[**getOrderItem**](OrderApi.md#getorderitem) | **GET** /order/orders/{uuid} | Retrieves a Order resource.
 [**postOrderCollection**](OrderApi.md#postordercollection) | **POST** /order/orders | Creates a Order resource.
-[**putOrderItem**](OrderApi.md#putorderitem) | **PUT** /order/orders/{id} | Replaces the Order resource.
+[**putOrderItem**](OrderApi.md#putorderitem) | **PUT** /order/orders/{uuid} | Replaces the Order resource.
 
 # **deleteOrderItem**
-> deleteOrderItem($id)
+> deleteOrderItem($uuid)
+
+Removes the Order resource.
 
 Removes the Order resource.
 
@@ -30,10 +32,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $apiInstance->deleteOrderItem($id);
+    $apiInstance->deleteOrderItem($uuid);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->deleteOrderItem: ', $e->getMessage(), PHP_EOL;
 }
@@ -44,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -62,7 +64,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
+> \VentureLeap\OrderService\Model\InlineResponse2004 getOrderCollection($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid)
+
+Retrieves the collection of Order resources.
 
 Retrieves the collection of Order resources.
 
@@ -81,7 +85,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
+$page = 1; // int | The collection page number
+$items_per_page = 30; // int | The number of items per page
+$pagination = true; // bool | Enable or disable pagination
+$properties = array("properties_example"); // string[] | 
 $custom_data = "custom_data_example"; // string | 
 $internal_comment = "internal_comment_example"; // string | 
 $customer_comment = "customer_comment_example"; // string | 
@@ -112,12 +119,9 @@ $order_updated_at = "order_updated_at_example"; // string |
 $order_payment_date = "order_payment_date_example"; // string | 
 $order_order_code = "order_order_code_example"; // string | 
 $order_customer_uuid = "order_customer_uuid_example"; // string | 
-$page = 1; // int | The collection page number
-$items_per_page = 30; // int | The number of items per page
-$pagination = true; // bool | Enable or disable pagination
 
 try {
-    $result = $apiInstance->getOrderCollection($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+    $result = $apiInstance->getOrderCollection($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderCollection: ', $e->getMessage(), PHP_EOL;
@@ -129,7 +133,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
+ **items_per_page** | **int**| The number of items per page | [optional] [default to 30]
+ **pagination** | **bool**| Enable or disable pagination | [optional]
+ **properties** | [**string[]**](../Model/string.md)|  | [optional]
  **custom_data** | **string**|  | [optional]
  **internal_comment** | **string**|  | [optional]
  **customer_comment** | **string**|  | [optional]
@@ -160,9 +167,6 @@ Name | Type | Description  | Notes
  **order_payment_date** | **string**|  | [optional]
  **order_order_code** | **string**|  | [optional]
  **order_customer_uuid** | **string**|  | [optional]
- **page** | **int**| The collection page number | [optional] [default to 1]
- **items_per_page** | **int**| The number of items per page | [optional] [default to 30]
- **pagination** | **bool**| Enable or disable pagination | [optional]
 
 ### Return type
 
@@ -180,7 +184,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderItem**
-> \VentureLeap\OrderService\Model\OrderJsonldOrderRead getOrderItem($id)
+> \VentureLeap\OrderService\Model\OrderJsonldOrderRead getOrderItem($uuid)
+
+Retrieves a Order resource.
 
 Retrieves a Order resource.
 
@@ -199,10 +205,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->getOrderItem($id);
+    $result = $apiInstance->getOrderItem($uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrderItem: ', $e->getMessage(), PHP_EOL;
@@ -214,7 +220,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -233,6 +239,8 @@ Name | Type | Description  | Notes
 
 # **postOrderCollection**
 > \VentureLeap\OrderService\Model\OrderJsonldOrderRead postOrderCollection($body)
+
+Creates a Order resource.
 
 Creates a Order resource.
 
@@ -266,7 +274,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\OrderJsonldOrderWrite**](../Model/OrderJsonldOrderWrite.md)| The new Order resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderJsonldOrderWrite**](../Model/OrderJsonldOrderWrite.md)| The new Order resource |
 
 ### Return type
 
@@ -284,7 +292,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putOrderItem**
-> \VentureLeap\OrderService\Model\OrderJsonldOrderRead putOrderItem($id, $body)
+> \VentureLeap\OrderService\Model\OrderJsonldOrderRead putOrderItem($body, $uuid)
+
+Replaces the Order resource.
 
 Replaces the Order resource.
 
@@ -303,11 +313,11 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
 $body = new \VentureLeap\OrderService\Model\OrderJsonldOrderWrite(); // \VentureLeap\OrderService\Model\OrderJsonldOrderWrite | The updated Order resource
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->putOrderItem($id, $body);
+    $result = $apiInstance->putOrderItem($body, $uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->putOrderItem: ', $e->getMessage(), PHP_EOL;
@@ -319,8 +329,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\OrderJsonldOrderWrite**](../Model/OrderJsonldOrderWrite.md)| The updated Order resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderJsonldOrderWrite**](../Model/OrderJsonldOrderWrite.md)| The updated Order resource |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 

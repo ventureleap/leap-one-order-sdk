@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderLogJsonldOrderReadContext**](OneOfOrderLogJsonldOrderReadContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **changed** | **string** |  | [optional] 

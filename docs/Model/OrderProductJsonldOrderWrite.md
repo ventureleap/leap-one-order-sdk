@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderProductJsonldOrderWriteContext**](OneOfOrderProductJsonldOrderWriteContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **product_id** | **string** | UUID from the product service | 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
 **gross_price_per_unit** | **int** |  | 
 **vat_per_unit** | **int** |  | [optional] 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

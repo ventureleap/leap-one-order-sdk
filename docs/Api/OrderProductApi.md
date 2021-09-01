@@ -4,14 +4,16 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrderProductItem**](OrderProductApi.md#deleteorderproductitem) | **DELETE** /order/order_products/{id} | Removes the OrderProduct resource.
+[**deleteOrderProductItem**](OrderProductApi.md#deleteorderproductitem) | **DELETE** /order/order_products/{uuid} | Removes the OrderProduct resource.
 [**getOrderProductCollection**](OrderProductApi.md#getorderproductcollection) | **GET** /order/order_products | Retrieves the collection of OrderProduct resources.
-[**getOrderProductItem**](OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{id} | Retrieves a OrderProduct resource.
+[**getOrderProductItem**](OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{uuid} | Retrieves a OrderProduct resource.
 [**postOrderProductCollection**](OrderProductApi.md#postorderproductcollection) | **POST** /order/order_products | Creates a OrderProduct resource.
-[**putOrderProductItem**](OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{id} | Replaces the OrderProduct resource.
+[**putOrderProductItem**](OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{uuid} | Replaces the OrderProduct resource.
 
 # **deleteOrderProductItem**
-> deleteOrderProductItem($id)
+> deleteOrderProductItem($uuid)
+
+Removes the OrderProduct resource.
 
 Removes the OrderProduct resource.
 
@@ -30,10 +32,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $apiInstance->deleteOrderProductItem($id);
+    $apiInstance->deleteOrderProductItem($uuid);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->deleteOrderProductItem: ', $e->getMessage(), PHP_EOL;
 }
@@ -44,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -62,7 +64,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderProductCollection($properties, $name, $uom, $product_id, $page)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderProductCollection($page, $properties, $name, $uom, $product_id)
+
+Retrieves the collection of OrderProduct resources.
 
 Retrieves the collection of OrderProduct resources.
 
@@ -81,14 +85,14 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$properties = array("properties_example"); // string[] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
+$page = 1; // int | The collection page number
+$properties = array("properties_example"); // string[] | 
 $name = "name_example"; // string | 
 $uom = "uom_example"; // string | 
 $product_id = "product_id_example"; // string | 
-$page = 1; // int | The collection page number
 
 try {
-    $result = $apiInstance->getOrderProductCollection($properties, $name, $uom, $product_id, $page);
+    $result = $apiInstance->getOrderProductCollection($page, $properties, $name, $uom, $product_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->getOrderProductCollection: ', $e->getMessage(), PHP_EOL;
@@ -100,11 +104,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **properties** | [**string[]**](../Model/string.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional]
+ **page** | **int**| The collection page number | [optional] [default to 1]
+ **properties** | [**string[]**](../Model/string.md)|  | [optional]
  **name** | **string**|  | [optional]
  **uom** | **string**|  | [optional]
  **product_id** | **string**|  | [optional]
- **page** | **int**| The collection page number | [optional] [default to 1]
 
 ### Return type
 
@@ -122,7 +126,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductItem**
-> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead getOrderProductItem($id)
+> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead getOrderProductItem($uuid)
+
+Retrieves a OrderProduct resource.
 
 Retrieves a OrderProduct resource.
 
@@ -141,10 +147,10 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->getOrderProductItem($id);
+    $result = $apiInstance->getOrderProductItem($uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->getOrderProductItem: ', $e->getMessage(), PHP_EOL;
@@ -156,7 +162,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
@@ -175,6 +181,8 @@ Name | Type | Description  | Notes
 
 # **postOrderProductCollection**
 > \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead postOrderProductCollection($body)
+
+Creates a OrderProduct resource.
 
 Creates a OrderProduct resource.
 
@@ -208,7 +216,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The new OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The new OrderProduct resource |
 
 ### Return type
 
@@ -226,7 +234,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putOrderProductItem**
-> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead putOrderProductItem($id, $body)
+> \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead putOrderProductItem($body, $uuid)
+
+Replaces the OrderProduct resource.
 
 Replaces the OrderProduct resource.
 
@@ -245,11 +255,11 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
 $body = new \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite(); // \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite | The updated OrderProduct resource
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->putOrderProductItem($id, $body);
+    $result = $apiInstance->putOrderProductItem($body, $uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->putOrderProductItem: ', $e->getMessage(), PHP_EOL;
@@ -261,8 +271,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The updated OrderProduct resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite**](../Model/OrderProductJsonldOrderProductWrite.md)| The updated OrderProduct resource |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 

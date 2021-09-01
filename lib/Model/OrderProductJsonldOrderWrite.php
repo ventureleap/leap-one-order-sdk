@@ -48,7 +48,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderWrite';
+    protected static $swaggerModelName = 'OrderProduct.jsonld-OrderWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderProductJsonldOrderWriteContext',
 'id' => 'string',
 'type' => 'string',
 'product_id' => 'string',
@@ -233,7 +233,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
         $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
@@ -271,7 +271,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderProductJsonldOrderWriteContext
      */
     public function getContext()
     {
@@ -281,7 +281,7 @@ class OrderProductJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderProductJsonldOrderWriteContext $context context
      *
      * @return $this
      */

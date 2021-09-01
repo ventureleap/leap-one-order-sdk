@@ -3,18 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfBillingAddressJsonldOrderWriteContext**](OneOfBillingAddressJsonldOrderWriteContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
-**full_name** | **string** |  | [optional] 
-**company_name** | **string** |  | [optional] 
-**street** | **string** |  | [optional] 
-**house_number** | **string** |  | [optional] 
-**zip_code** | **string** |  | [optional] 
-**city** | **string** |  | [optional] 
-**country** | **string** |  | [optional] 
-**email_address** | **string** |  | [optional] 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

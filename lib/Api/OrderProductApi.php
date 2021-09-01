@@ -91,15 +91,15 @@ class OrderProductApi
      *
      * Removes the OrderProduct resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteOrderProductItem($id)
+    public function deleteOrderProductItem($uuid)
     {
-        $this->deleteOrderProductItemWithHttpInfo($id);
+        $this->deleteOrderProductItemWithHttpInfo($uuid);
     }
 
     /**
@@ -107,16 +107,16 @@ class OrderProductApi
      *
      * Removes the OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrderProductItemWithHttpInfo($id)
+    public function deleteOrderProductItemWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderProductItemRequest($id);
+        $request = $this->deleteOrderProductItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,14 +160,14 @@ class OrderProductApi
      *
      * Removes the OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderProductItemAsync($id)
+    public function deleteOrderProductItemAsync($uuid)
     {
-        return $this->deleteOrderProductItemAsyncWithHttpInfo($id)
+        return $this->deleteOrderProductItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -180,15 +180,15 @@ class OrderProductApi
      *
      * Removes the OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderProductItemAsyncWithHttpInfo($id)
+    public function deleteOrderProductItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderProductItemRequest($id);
+        $request = $this->deleteOrderProductItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -216,21 +216,21 @@ class OrderProductApi
     /**
      * Create request for operation 'deleteOrderProductItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteOrderProductItemRequest($id)
+    protected function deleteOrderProductItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteOrderProductItem'
+                'Missing the required parameter $uuid when calling deleteOrderProductItem'
             );
         }
 
-        $resourcePath = '/order/order_products/{id}';
+        $resourcePath = '/order/order_products/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -239,10 +239,10 @@ class OrderProductApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -321,19 +321,19 @@ class OrderProductApi
      *
      * Retrieves the collection of OrderProduct resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties properties (optional)
      * @param  string $name name (optional)
      * @param  string $uom uom (optional)
      * @param  string $product_id product_id (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2002
      */
-    public function getOrderProductCollection($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
+    public function getOrderProductCollection($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
     {
-        list($response) = $this->getOrderProductCollectionWithHttpInfo($properties, $name, $uom, $product_id, $page);
+        list($response) = $this->getOrderProductCollectionWithHttpInfo($page, $properties, $name, $uom, $product_id);
         return $response;
     }
 
@@ -342,20 +342,20 @@ class OrderProductApi
      *
      * Retrieves the collection of OrderProduct resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderProductCollectionWithHttpInfo($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
+    public function getOrderProductCollectionWithHttpInfo($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $product_id, $page);
+        $request = $this->getOrderProductCollectionRequest($page, $properties, $name, $uom, $product_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -421,18 +421,18 @@ class OrderProductApi
      *
      * Retrieves the collection of OrderProduct resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsync($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
+    public function getOrderProductCollectionAsync($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
     {
-        return $this->getOrderProductCollectionAsyncWithHttpInfo($properties, $name, $uom, $product_id, $page)
+        return $this->getOrderProductCollectionAsyncWithHttpInfo($page, $properties, $name, $uom, $product_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -445,19 +445,19 @@ class OrderProductApi
      *
      * Retrieves the collection of OrderProduct resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsyncWithHttpInfo($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
+    public function getOrderProductCollectionAsyncWithHttpInfo($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderProductCollectionRequest($properties, $name, $uom, $product_id, $page);
+        $request = $this->getOrderProductCollectionRequest($page, $properties, $name, $uom, $product_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -499,16 +499,16 @@ class OrderProductApi
     /**
      * Create request for operation 'getOrderProductCollection'
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderProductCollectionRequest($properties = null, $name = null, $uom = null, $product_id = null, $page = '1')
+    protected function getOrderProductCollectionRequest($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
     {
 
         $resourcePath = '/order/order_products';
@@ -518,6 +518,10 @@ class OrderProductApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
+        }
         // query params
         if (is_array($properties)) {
             $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
@@ -536,10 +540,6 @@ class OrderProductApi
         // query params
         if ($product_id !== null) {
             $queryParams['productId'] = ObjectSerializer::toQueryValue($product_id, null);
-        }
-        // query params
-        if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
         }
 
 
@@ -617,15 +617,15 @@ class OrderProductApi
      *
      * Retrieves a OrderProduct resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
-    public function getOrderProductItem($id)
+    public function getOrderProductItem($uuid)
     {
-        list($response) = $this->getOrderProductItemWithHttpInfo($id);
+        list($response) = $this->getOrderProductItemWithHttpInfo($uuid);
         return $response;
     }
 
@@ -634,16 +634,16 @@ class OrderProductApi
      *
      * Retrieves a OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderProductItemWithHttpInfo($id)
+    public function getOrderProductItemWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
-        $request = $this->getOrderProductItemRequest($id);
+        $request = $this->getOrderProductItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -709,14 +709,14 @@ class OrderProductApi
      *
      * Retrieves a OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductItemAsync($id)
+    public function getOrderProductItemAsync($uuid)
     {
-        return $this->getOrderProductItemAsyncWithHttpInfo($id)
+        return $this->getOrderProductItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -729,15 +729,15 @@ class OrderProductApi
      *
      * Retrieves a OrderProduct resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductItemAsyncWithHttpInfo($id)
+    public function getOrderProductItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
-        $request = $this->getOrderProductItemRequest($id);
+        $request = $this->getOrderProductItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -779,21 +779,21 @@ class OrderProductApi
     /**
      * Create request for operation 'getOrderProductItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderProductItemRequest($id)
+    protected function getOrderProductItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getOrderProductItem'
+                'Missing the required parameter $uuid when calling getOrderProductItem'
             );
         }
 
-        $resourcePath = '/order/order_products/{id}';
+        $resourcePath = '/order/order_products/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -802,10 +802,10 @@ class OrderProductApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -884,13 +884,13 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
-    public function postOrderProductCollection($body = null)
+    public function postOrderProductCollection($body)
     {
         list($response) = $this->postOrderProductCollectionWithHttpInfo($body);
         return $response;
@@ -901,13 +901,13 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postOrderProductCollectionWithHttpInfo($body = null)
+    public function postOrderProductCollectionWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->postOrderProductCollectionRequest($body);
@@ -976,12 +976,12 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderProductCollectionAsync($body = null)
+    public function postOrderProductCollectionAsync($body)
     {
         return $this->postOrderProductCollectionAsyncWithHttpInfo($body)
             ->then(
@@ -996,12 +996,12 @@ class OrderProductApi
      *
      * Creates a OrderProduct resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderProductCollectionAsyncWithHttpInfo($body = null)
+    public function postOrderProductCollectionAsyncWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
         $request = $this->postOrderProductCollectionRequest($body);
@@ -1046,13 +1046,19 @@ class OrderProductApi
     /**
      * Create request for operation 'postOrderProductCollection'
      *
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The new OrderProduct resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postOrderProductCollectionRequest($body = null)
+    protected function postOrderProductCollectionRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling postOrderProductCollection'
+            );
+        }
 
         $resourcePath = '/order/order_products';
         $formParams = [];
@@ -1140,16 +1146,16 @@ class OrderProductApi
      *
      * Replaces the OrderProduct resource.
      *
-     * @param  string $id id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead
      */
-    public function putOrderProductItem($id, $body = null)
+    public function putOrderProductItem($body, $uuid)
     {
-        list($response) = $this->putOrderProductItemWithHttpInfo($id, $body);
+        list($response) = $this->putOrderProductItemWithHttpInfo($body, $uuid);
         return $response;
     }
 
@@ -1158,17 +1164,17 @@ class OrderProductApi
      *
      * Replaces the OrderProduct resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putOrderProductItemWithHttpInfo($id, $body = null)
+    public function putOrderProductItemWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
-        $request = $this->putOrderProductItemRequest($id, $body);
+        $request = $this->putOrderProductItemRequest($body, $uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1234,15 +1240,15 @@ class OrderProductApi
      *
      * Replaces the OrderProduct resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderProductItemAsync($id, $body = null)
+    public function putOrderProductItemAsync($body, $uuid)
     {
-        return $this->putOrderProductItemAsyncWithHttpInfo($id, $body)
+        return $this->putOrderProductItemAsyncWithHttpInfo($body, $uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1255,16 +1261,16 @@ class OrderProductApi
      *
      * Replaces the OrderProduct resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderProductItemAsyncWithHttpInfo($id, $body = null)
+    public function putOrderProductItemAsyncWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderProductJsonldOrderProductRead';
-        $request = $this->putOrderProductItemRequest($id, $body);
+        $request = $this->putOrderProductItemRequest($body, $uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1306,22 +1312,28 @@ class OrderProductApi
     /**
      * Create request for operation 'putOrderProductItem'
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderProductJsonldOrderProductWrite $body The updated OrderProduct resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putOrderProductItemRequest($id, $body = null)
+    protected function putOrderProductItemRequest($body, $uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling putOrderProductItem'
+                'Missing the required parameter $body when calling putOrderProductItem'
+            );
+        }
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling putOrderProductItem'
             );
         }
 
-        $resourcePath = '/order/order_products/{id}';
+        $resourcePath = '/order/order_products/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1330,10 +1342,10 @@ class OrderProductApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }

@@ -91,15 +91,15 @@ class OrderApi
      *
      * Removes the Order resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteOrderItem($id)
+    public function deleteOrderItem($uuid)
     {
-        $this->deleteOrderItemWithHttpInfo($id);
+        $this->deleteOrderItemWithHttpInfo($uuid);
     }
 
     /**
@@ -107,16 +107,16 @@ class OrderApi
      *
      * Removes the Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrderItemWithHttpInfo($id)
+    public function deleteOrderItemWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderItemRequest($id);
+        $request = $this->deleteOrderItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,14 +160,14 @@ class OrderApi
      *
      * Removes the Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderItemAsync($id)
+    public function deleteOrderItemAsync($uuid)
     {
-        return $this->deleteOrderItemAsyncWithHttpInfo($id)
+        return $this->deleteOrderItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -180,15 +180,15 @@ class OrderApi
      *
      * Removes the Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderItemAsyncWithHttpInfo($id)
+    public function deleteOrderItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderItemRequest($id);
+        $request = $this->deleteOrderItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -216,21 +216,21 @@ class OrderApi
     /**
      * Create request for operation 'deleteOrderItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteOrderItemRequest($id)
+    protected function deleteOrderItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteOrderItem'
+                'Missing the required parameter $uuid when calling deleteOrderItem'
             );
         }
 
-        $resourcePath = '/order/orders/{id}';
+        $resourcePath = '/order/orders/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -239,10 +239,10 @@ class OrderApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -321,7 +321,10 @@ class OrderApi
      *
      * Retrieves the collection of Order resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  int $items_per_page The number of items per page (optional, default to 30)
+     * @param  bool $pagination Enable or disable pagination (optional)
+     * @param  string[] $properties properties (optional)
      * @param  string $custom_data custom_data (optional)
      * @param  string $internal_comment internal_comment (optional)
      * @param  string $customer_comment customer_comment (optional)
@@ -352,17 +355,14 @@ class OrderApi
      * @param  string $order_payment_date order_payment_date (optional)
      * @param  string $order_order_code order_order_code (optional)
      * @param  string $order_customer_uuid order_customer_uuid (optional)
-     * @param  int $page The collection page number (optional, default to 1)
-     * @param  int $items_per_page The number of items per page (optional, default to 30)
-     * @param  bool $pagination Enable or disable pagination (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2004
      */
-    public function getOrderCollection($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollection($page = '1', $items_per_page = '30', $pagination = null, $properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null)
     {
-        list($response) = $this->getOrderCollectionWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        list($response) = $this->getOrderCollectionWithHttpInfo($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid);
         return $response;
     }
 
@@ -371,7 +371,10 @@ class OrderApi
      *
      * Retrieves the collection of Order resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  int $items_per_page The number of items per page (optional, default to 30)
+     * @param  bool $pagination Enable or disable pagination (optional)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
@@ -402,18 +405,15 @@ class OrderApi
      * @param  string $order_payment_date (optional)
      * @param  string $order_order_code (optional)
      * @param  string $order_customer_uuid (optional)
-     * @param  int $page The collection page number (optional, default to 1)
-     * @param  int $items_per_page The number of items per page (optional, default to 30)
-     * @param  bool $pagination Enable or disable pagination (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderCollectionWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionWithHttpInfo($page = '1', $items_per_page = '30', $pagination = null, $properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        $request = $this->getOrderCollectionRequest($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -479,7 +479,10 @@ class OrderApi
      *
      * Retrieves the collection of Order resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  int $items_per_page The number of items per page (optional, default to 30)
+     * @param  bool $pagination Enable or disable pagination (optional)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
@@ -510,16 +513,13 @@ class OrderApi
      * @param  string $order_payment_date (optional)
      * @param  string $order_order_code (optional)
      * @param  string $order_customer_uuid (optional)
-     * @param  int $page The collection page number (optional, default to 1)
-     * @param  int $items_per_page The number of items per page (optional, default to 30)
-     * @param  bool $pagination Enable or disable pagination (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsync($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionAsync($page = '1', $items_per_page = '30', $pagination = null, $properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null)
     {
-        return $this->getOrderCollectionAsyncWithHttpInfo($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination)
+        return $this->getOrderCollectionAsyncWithHttpInfo($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -532,7 +532,10 @@ class OrderApi
      *
      * Retrieves the collection of Order resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  int $items_per_page The number of items per page (optional, default to 30)
+     * @param  bool $pagination Enable or disable pagination (optional)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
@@ -563,17 +566,14 @@ class OrderApi
      * @param  string $order_payment_date (optional)
      * @param  string $order_order_code (optional)
      * @param  string $order_customer_uuid (optional)
-     * @param  int $page The collection page number (optional, default to 1)
-     * @param  int $items_per_page The number of items per page (optional, default to 30)
-     * @param  bool $pagination Enable or disable pagination (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    public function getOrderCollectionAsyncWithHttpInfo($page = '1', $items_per_page = '30', $pagination = null, $properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2004';
-        $request = $this->getOrderCollectionRequest($properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid, $page, $items_per_page, $pagination);
+        $request = $this->getOrderCollectionRequest($page, $items_per_page, $pagination, $properties, $custom_data, $internal_comment, $customer_comment, $billing_address_full_name, $billing_address_company_name, $payment_comment, $order_code, $status, $payment_status, $customer_uuid, $payment_provider, $payment_method, $active, $deleted, $is_b_to_b, $date_of_validity_before, $date_of_validity_strictly_before, $date_of_validity_after, $date_of_validity_strictly_after, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $order_status, $order_payment_status, $order_created_at, $order_updated_at, $order_payment_date, $order_order_code, $order_customer_uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -615,7 +615,10 @@ class OrderApi
     /**
      * Create request for operation 'getOrderCollection'
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  int $items_per_page The number of items per page (optional, default to 30)
+     * @param  bool $pagination Enable or disable pagination (optional)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  string $internal_comment (optional)
      * @param  string $customer_comment (optional)
@@ -646,14 +649,11 @@ class OrderApi
      * @param  string $order_payment_date (optional)
      * @param  string $order_order_code (optional)
      * @param  string $order_customer_uuid (optional)
-     * @param  int $page The collection page number (optional, default to 1)
-     * @param  int $items_per_page The number of items per page (optional, default to 30)
-     * @param  bool $pagination Enable or disable pagination (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderCollectionRequest($properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null, $page = '1', $items_per_page = '30', $pagination = null)
+    protected function getOrderCollectionRequest($page = '1', $items_per_page = '30', $pagination = null, $properties = null, $custom_data = null, $internal_comment = null, $customer_comment = null, $billing_address_full_name = null, $billing_address_company_name = null, $payment_comment = null, $order_code = null, $status = null, $payment_status = null, $customer_uuid = null, $payment_provider = null, $payment_method = null, $active = null, $deleted = null, $is_b_to_b = null, $date_of_validity_before = null, $date_of_validity_strictly_before = null, $date_of_validity_after = null, $date_of_validity_strictly_after = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $order_status = null, $order_payment_status = null, $order_created_at = null, $order_updated_at = null, $order_payment_date = null, $order_order_code = null, $order_customer_uuid = null)
     {
 
         $resourcePath = '/order/orders';
@@ -663,6 +663,18 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
+        }
+        // query params
+        if ($items_per_page !== null) {
+            $queryParams['itemsPerPage'] = ObjectSerializer::toQueryValue($items_per_page, null);
+        }
+        // query params
+        if ($pagination !== null) {
+            $queryParams['pagination'] = ObjectSerializer::toQueryValue($pagination, null);
+        }
         // query params
         if (is_array($properties)) {
             $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
@@ -790,18 +802,6 @@ class OrderApi
         if ($order_customer_uuid !== null) {
             $queryParams['order[customerUuid]'] = ObjectSerializer::toQueryValue($order_customer_uuid, null);
         }
-        // query params
-        if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
-        }
-        // query params
-        if ($items_per_page !== null) {
-            $queryParams['itemsPerPage'] = ObjectSerializer::toQueryValue($items_per_page, null);
-        }
-        // query params
-        if ($pagination !== null) {
-            $queryParams['pagination'] = ObjectSerializer::toQueryValue($pagination, null);
-        }
 
 
         // body params
@@ -878,15 +878,15 @@ class OrderApi
      *
      * Retrieves a Order resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderJsonldOrderRead
      */
-    public function getOrderItem($id)
+    public function getOrderItem($uuid)
     {
-        list($response) = $this->getOrderItemWithHttpInfo($id);
+        list($response) = $this->getOrderItemWithHttpInfo($uuid);
         return $response;
     }
 
@@ -895,16 +895,16 @@ class OrderApi
      *
      * Retrieves a Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderJsonldOrderRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderItemWithHttpInfo($id)
+    public function getOrderItemWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
-        $request = $this->getOrderItemRequest($id);
+        $request = $this->getOrderItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -970,14 +970,14 @@ class OrderApi
      *
      * Retrieves a Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderItemAsync($id)
+    public function getOrderItemAsync($uuid)
     {
-        return $this->getOrderItemAsyncWithHttpInfo($id)
+        return $this->getOrderItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -990,15 +990,15 @@ class OrderApi
      *
      * Retrieves a Order resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderItemAsyncWithHttpInfo($id)
+    public function getOrderItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
-        $request = $this->getOrderItemRequest($id);
+        $request = $this->getOrderItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1040,21 +1040,21 @@ class OrderApi
     /**
      * Create request for operation 'getOrderItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderItemRequest($id)
+    protected function getOrderItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getOrderItem'
+                'Missing the required parameter $uuid when calling getOrderItem'
             );
         }
 
-        $resourcePath = '/order/orders/{id}';
+        $resourcePath = '/order/orders/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1063,10 +1063,10 @@ class OrderApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -1145,13 +1145,13 @@ class OrderApi
      *
      * Creates a Order resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderJsonldOrderRead
      */
-    public function postOrderCollection($body = null)
+    public function postOrderCollection($body)
     {
         list($response) = $this->postOrderCollectionWithHttpInfo($body);
         return $response;
@@ -1162,13 +1162,13 @@ class OrderApi
      *
      * Creates a Order resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderJsonldOrderRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postOrderCollectionWithHttpInfo($body = null)
+    public function postOrderCollectionWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
         $request = $this->postOrderCollectionRequest($body);
@@ -1237,12 +1237,12 @@ class OrderApi
      *
      * Creates a Order resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderCollectionAsync($body = null)
+    public function postOrderCollectionAsync($body)
     {
         return $this->postOrderCollectionAsyncWithHttpInfo($body)
             ->then(
@@ -1257,12 +1257,12 @@ class OrderApi
      *
      * Creates a Order resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderCollectionAsyncWithHttpInfo($body = null)
+    public function postOrderCollectionAsyncWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
         $request = $this->postOrderCollectionRequest($body);
@@ -1307,13 +1307,19 @@ class OrderApi
     /**
      * Create request for operation 'postOrderCollection'
      *
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The new Order resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postOrderCollectionRequest($body = null)
+    protected function postOrderCollectionRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling postOrderCollection'
+            );
+        }
 
         $resourcePath = '/order/orders';
         $formParams = [];
@@ -1401,16 +1407,16 @@ class OrderApi
      *
      * Replaces the Order resource.
      *
-     * @param  string $id id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderJsonldOrderRead
      */
-    public function putOrderItem($id, $body = null)
+    public function putOrderItem($body, $uuid)
     {
-        list($response) = $this->putOrderItemWithHttpInfo($id, $body);
+        list($response) = $this->putOrderItemWithHttpInfo($body, $uuid);
         return $response;
     }
 
@@ -1419,17 +1425,17 @@ class OrderApi
      *
      * Replaces the Order resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderJsonldOrderRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putOrderItemWithHttpInfo($id, $body = null)
+    public function putOrderItemWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
-        $request = $this->putOrderItemRequest($id, $body);
+        $request = $this->putOrderItemRequest($body, $uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1495,15 +1501,15 @@ class OrderApi
      *
      * Replaces the Order resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderItemAsync($id, $body = null)
+    public function putOrderItemAsync($body, $uuid)
     {
-        return $this->putOrderItemAsyncWithHttpInfo($id, $body)
+        return $this->putOrderItemAsyncWithHttpInfo($body, $uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1516,16 +1522,16 @@ class OrderApi
      *
      * Replaces the Order resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderItemAsyncWithHttpInfo($id, $body = null)
+    public function putOrderItemAsyncWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderJsonldOrderRead';
-        $request = $this->putOrderItemRequest($id, $body);
+        $request = $this->putOrderItemRequest($body, $uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1567,22 +1573,28 @@ class OrderApi
     /**
      * Create request for operation 'putOrderItem'
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderJsonldOrderWrite $body The updated Order resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putOrderItemRequest($id, $body = null)
+    protected function putOrderItemRequest($body, $uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling putOrderItem'
+                'Missing the required parameter $body when calling putOrderItem'
+            );
+        }
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling putOrderItem'
             );
         }
 
-        $resourcePath = '/order/orders/{id}';
+        $resourcePath = '/order/orders/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1591,10 +1603,10 @@ class OrderApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }

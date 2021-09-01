@@ -48,7 +48,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Voucher:jsonld-VoucherRead';
+    protected static $swaggerModelName = 'Voucher.jsonld-VoucherRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfVoucherJsonldVoucherReadContext',
 'id' => 'string',
 'type' => 'string',
 'uuid' => 'string',
@@ -287,13 +287,13 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['quantity_per_person'] = isset($data['quantity_per_person']) ? $data['quantity_per_person'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1;
+        $this->container['quantity_per_person'] = isset($data['quantity_per_person']) ? $data['quantity_per_person'] : 1;
         $this->container['order_vouchers'] = isset($data['order_vouchers']) ? $data['order_vouchers'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
         $this->container['quantity_used'] = isset($data['quantity_used']) ? $data['quantity_used'] : null;
@@ -352,7 +352,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfVoucherJsonldVoucherReadContext
      */
     public function getContext()
     {
@@ -362,7 +362,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfVoucherJsonldVoucherReadContext $context context
      *
      * @return $this
      */

@@ -48,7 +48,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderVoucher:jsonld-OrderVoucherWrite';
+    protected static $swaggerModelName = 'OrderVoucher.jsonld-OrderVoucherWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderVoucherJsonldOrderVoucherWriteContext',
 'id' => 'string',
 'type' => 'string',
 'order' => 'string',
@@ -209,7 +209,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
@@ -247,7 +247,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderVoucherJsonldOrderVoucherWriteContext
      */
     public function getContext()
     {
@@ -257,7 +257,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderVoucherJsonldOrderVoucherWriteContext $context context
      *
      * @return $this
      */

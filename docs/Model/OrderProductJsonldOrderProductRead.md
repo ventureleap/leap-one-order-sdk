@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderProductJsonldOrderProductReadContext**](OneOfOrderProductJsonldOrderProductReadContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **uuid** | **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 **total_gross_amount** | **int** |  | [optional] 

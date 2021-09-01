@@ -97,65 +97,30 @@ class BillingAddressJsonldBillingAddressWriteTest extends \PHPUnit_Framework_Tes
     }
 
     /**
-     * Test attribute "full_name"
-     */
-    public function testPropertyFullName()
-    {
-    }
-
-    /**
-     * Test attribute "company_name"
-     */
-    public function testPropertyCompanyName()
-    {
-    }
-
-    /**
-     * Test attribute "street"
-     */
-    public function testPropertyStreet()
-    {
-    }
-
-    /**
-     * Test attribute "house_number"
-     */
-    public function testPropertyHouseNumber()
-    {
-    }
-
-    /**
-     * Test attribute "zip_code"
-     */
-    public function testPropertyZipCode()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-    }
-
-    /**
-     * Test attribute "email_address"
-     */
-    public function testPropertyEmailAddress()
-    {
-    }
-
-    /**
      * Test attribute "active"
      */
     public function testPropertyActive()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "application_id"
+     */
+    public function testPropertyApplicationId()
     {
     }
 

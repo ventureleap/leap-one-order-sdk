@@ -104,13 +104,6 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "order_code"
-     */
-    public function testPropertyOrderCode()
-    {
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -219,6 +212,20 @@ class OrderJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
      * Test attribute "is_b_to_b"
      */
     public function testPropertyIsBToB()
+    {
+    }
+
+    /**
+     * Test attribute "invoice_uuid"
+     */
+    public function testPropertyInvoiceUuid()
+    {
+    }
+
+    /**
+     * Test attribute "invoice_number"
+     */
+    public function testPropertyInvoiceNumber()
     {
     }
 

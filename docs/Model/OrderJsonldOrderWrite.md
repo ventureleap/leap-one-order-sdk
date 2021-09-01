@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfOrderJsonldOrderWriteContext**](OneOfOrderJsonldOrderWriteContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **status** | **string** |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **payment_reference** | **string** |  | [optional] 
 **payment_comment** | **string** |  | [optional] 
 **is_b_to_b** | **bool** |  | [optional] 
-**active** | **bool** |  | [optional] 
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

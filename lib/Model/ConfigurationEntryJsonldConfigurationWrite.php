@@ -48,7 +48,7 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ConfigurationEntry:jsonld-configuration:write';
+    protected static $swaggerModelName = 'ConfigurationEntry.jsonld-configuration.write';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfConfigurationEntryJsonldConfigurationWriteContext',
 'id' => 'string',
 'type' => 'string',
 'key' => 'string',
@@ -232,7 +232,7 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfConfigurationEntryJsonldConfigurationWriteContext
      */
     public function getContext()
     {
@@ -242,7 +242,7 @@ class ConfigurationEntryJsonldConfigurationWrite implements ModelInterface, Arra
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfConfigurationEntryJsonldConfigurationWriteContext $context context
      *
      * @return $this
      */

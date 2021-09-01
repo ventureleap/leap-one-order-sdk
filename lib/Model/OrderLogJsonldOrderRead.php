@@ -48,7 +48,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderLog:jsonld-OrderRead';
+    protected static $swaggerModelName = 'OrderLog.jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderLogJsonldOrderReadContext',
 'id' => 'string',
 'type' => 'string',
 'changed' => 'string',
@@ -241,7 +241,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderLogJsonldOrderReadContext
      */
     public function getContext()
     {
@@ -251,7 +251,7 @@ class OrderLogJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderLogJsonldOrderReadContext $context context
      *
      * @return $this
      */

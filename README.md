@@ -87,10 +87,10 @@ $apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->getBillingAddressItem($id);
+    $result = $apiInstance->getBillingAddressItem($uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingAddressApi->getBillingAddressItem: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +127,11 @@ $apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
 $body = new \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite(); // \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite | The updated BillingAddress resource
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->putBillingAddressItem($id, $body);
+    $result = $apiInstance->putBillingAddressItem($body, $uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingAddressApi->putBillingAddressItem: ', $e->getMessage(), PHP_EOL;
@@ -146,38 +146,37 @@ All URIs are relative to */*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BillingAddressApi* | [**getBillingAddressCollection**](docs/Api/BillingAddressApi.md#getbillingaddresscollection) | **GET** /order/billing_addresses | Retrieves the collection of BillingAddress resources.
-*BillingAddressApi* | [**getBillingAddressItem**](docs/Api/BillingAddressApi.md#getbillingaddressitem) | **GET** /order/billing_addresses/{id} | Retrieves a BillingAddress resource.
+*BillingAddressApi* | [**getBillingAddressItem**](docs/Api/BillingAddressApi.md#getbillingaddressitem) | **GET** /order/billing_addresses/{uuid} | Retrieves a BillingAddress resource.
 *BillingAddressApi* | [**postBillingAddressCollection**](docs/Api/BillingAddressApi.md#postbillingaddresscollection) | **POST** /order/billing_addresses | Creates a BillingAddress resource.
-*BillingAddressApi* | [**putBillingAddressItem**](docs/Api/BillingAddressApi.md#putbillingaddressitem) | **PUT** /order/billing_addresses/{id} | Replaces the BillingAddress resource.
-*ConfigurationEntryApi* | [**deleteConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#deleteconfigurationentryitem) | **DELETE** /order/configuration_entries/{id} | Removes the ConfigurationEntry resource.
+*BillingAddressApi* | [**putBillingAddressItem**](docs/Api/BillingAddressApi.md#putbillingaddressitem) | **PUT** /order/billing_addresses/{uuid} | Replaces the BillingAddress resource.
+*ConfigurationEntryApi* | [**deleteConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#deleteconfigurationentryitem) | **DELETE** /order/configuration_entries/{uuid} | Removes the ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**getConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#getconfigurationentrycollection) | **GET** /order/configuration_entries | Retrieves the collection of ConfigurationEntry resources.
-*ConfigurationEntryApi* | [**getConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#getconfigurationentryitem) | **GET** /order/configuration_entries/{id} | Retrieves a ConfigurationEntry resource.
+*ConfigurationEntryApi* | [**getConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#getconfigurationentryitem) | **GET** /order/configuration_entries/{uuid} | Retrieves a ConfigurationEntry resource.
 *ConfigurationEntryApi* | [**postConfigurationEntryCollection**](docs/Api/ConfigurationEntryApi.md#postconfigurationentrycollection) | **POST** /order/configuration_entries | Creates a ConfigurationEntry resource.
-*ConfigurationEntryApi* | [**putConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#putconfigurationentryitem) | **PUT** /order/configuration_entries/{id} | Replaces the ConfigurationEntry resource.
-*OrderApi* | [**deleteOrderItem**](docs/Api/OrderApi.md#deleteorderitem) | **DELETE** /order/orders/{id} | Removes the Order resource.
+*ConfigurationEntryApi* | [**putConfigurationEntryItem**](docs/Api/ConfigurationEntryApi.md#putconfigurationentryitem) | **PUT** /order/configuration_entries/{uuid} | Replaces the ConfigurationEntry resource.
+*OrderApi* | [**deleteOrderItem**](docs/Api/OrderApi.md#deleteorderitem) | **DELETE** /order/orders/{uuid} | Removes the Order resource.
 *OrderApi* | [**getOrderCollection**](docs/Api/OrderApi.md#getordercollection) | **GET** /order/orders | Retrieves the collection of Order resources.
-*OrderApi* | [**getOrderItem**](docs/Api/OrderApi.md#getorderitem) | **GET** /order/orders/{id} | Retrieves a Order resource.
+*OrderApi* | [**getOrderItem**](docs/Api/OrderApi.md#getorderitem) | **GET** /order/orders/{uuid} | Retrieves a Order resource.
 *OrderApi* | [**postOrderCollection**](docs/Api/OrderApi.md#postordercollection) | **POST** /order/orders | Creates a Order resource.
-*OrderApi* | [**putOrderItem**](docs/Api/OrderApi.md#putorderitem) | **PUT** /order/orders/{id} | Replaces the Order resource.
-*OrderProductApi* | [**deleteOrderProductItem**](docs/Api/OrderProductApi.md#deleteorderproductitem) | **DELETE** /order/order_products/{id} | Removes the OrderProduct resource.
+*OrderApi* | [**putOrderItem**](docs/Api/OrderApi.md#putorderitem) | **PUT** /order/orders/{uuid} | Replaces the Order resource.
+*OrderProductApi* | [**deleteOrderProductItem**](docs/Api/OrderProductApi.md#deleteorderproductitem) | **DELETE** /order/order_products/{uuid} | Removes the OrderProduct resource.
 *OrderProductApi* | [**getOrderProductCollection**](docs/Api/OrderProductApi.md#getorderproductcollection) | **GET** /order/order_products | Retrieves the collection of OrderProduct resources.
-*OrderProductApi* | [**getOrderProductItem**](docs/Api/OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{id} | Retrieves a OrderProduct resource.
+*OrderProductApi* | [**getOrderProductItem**](docs/Api/OrderProductApi.md#getorderproductitem) | **GET** /order/order_products/{uuid} | Retrieves a OrderProduct resource.
 *OrderProductApi* | [**postOrderProductCollection**](docs/Api/OrderProductApi.md#postorderproductcollection) | **POST** /order/order_products | Creates a OrderProduct resource.
-*OrderProductApi* | [**putOrderProductItem**](docs/Api/OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{id} | Replaces the OrderProduct resource.
-*OrderVoucherApi* | [**deleteOrderVoucherItem**](docs/Api/OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{id} | Removes the OrderVoucher resource.
+*OrderProductApi* | [**putOrderProductItem**](docs/Api/OrderProductApi.md#putorderproductitem) | **PUT** /order/order_products/{uuid} | Replaces the OrderProduct resource.
+*OrderVoucherApi* | [**deleteOrderVoucherItem**](docs/Api/OrderVoucherApi.md#deleteordervoucheritem) | **DELETE** /order/order_vouchers/{uuid} | Removes the OrderVoucher resource.
 *OrderVoucherApi* | [**getOrderVoucherCollection**](docs/Api/OrderVoucherApi.md#getordervouchercollection) | **GET** /order/order_vouchers | Retrieves the collection of OrderVoucher resources.
-*OrderVoucherApi* | [**getOrderVoucherItem**](docs/Api/OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{id} | Retrieves a OrderVoucher resource.
+*OrderVoucherApi* | [**getOrderVoucherItem**](docs/Api/OrderVoucherApi.md#getordervoucheritem) | **GET** /order/order_vouchers/{uuid} | Retrieves a OrderVoucher resource.
 *OrderVoucherApi* | [**postOrderVoucherCollection**](docs/Api/OrderVoucherApi.md#postordervouchercollection) | **POST** /order/order_vouchers | Creates a OrderVoucher resource.
-*OrderVoucherApi* | [**putOrderVoucherItem**](docs/Api/OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{id} | Replaces the OrderVoucher resource.
-*VoucherApi* | [**deleteVoucherItem**](docs/Api/VoucherApi.md#deletevoucheritem) | **DELETE** /order/vouchers/{id} | Removes the Voucher resource.
+*OrderVoucherApi* | [**putOrderVoucherItem**](docs/Api/OrderVoucherApi.md#putordervoucheritem) | **PUT** /order/order_vouchers/{uuid} | Replaces the OrderVoucher resource.
+*VoucherApi* | [**deleteVoucherItem**](docs/Api/VoucherApi.md#deletevoucheritem) | **DELETE** /order/vouchers/{uuid} | Removes the Voucher resource.
 *VoucherApi* | [**getVoucherCollection**](docs/Api/VoucherApi.md#getvouchercollection) | **GET** /order/vouchers | Retrieves the collection of Voucher resources.
-*VoucherApi* | [**getVoucherItem**](docs/Api/VoucherApi.md#getvoucheritem) | **GET** /order/vouchers/{id} | Retrieves a Voucher resource.
+*VoucherApi* | [**getVoucherItem**](docs/Api/VoucherApi.md#getvoucheritem) | **GET** /order/vouchers/{uuid} | Retrieves a Voucher resource.
 *VoucherApi* | [**postVoucherCollection**](docs/Api/VoucherApi.md#postvouchercollection) | **POST** /order/vouchers | Creates a Voucher resource.
-*VoucherApi* | [**putVoucherItem**](docs/Api/VoucherApi.md#putvoucheritem) | **PUT** /order/vouchers/{id} | Replaces the Voucher resource.
+*VoucherApi* | [**putVoucherItem**](docs/Api/VoucherApi.md#putvoucheritem) | **PUT** /order/vouchers/{uuid} | Replaces the Voucher resource.
 
 ## Documentation For Models
 
- - [BillingAddressJsonldBillingAddressRead](docs/Model/BillingAddressJsonldBillingAddressRead.md)
  - [BillingAddressJsonldBillingAddressWrite](docs/Model/BillingAddressJsonldBillingAddressWrite.md)
  - [BillingAddressJsonldOrderRead](docs/Model/BillingAddressJsonldOrderRead.md)
  - [BillingAddressJsonldOrderWrite](docs/Model/BillingAddressJsonldOrderWrite.md)
@@ -192,6 +191,24 @@ Class | Method | HTTP request | Description
  - [InlineResponse200Hydrasearch](docs/Model/InlineResponse200Hydrasearch.md)
  - [InlineResponse200HydrasearchHydramapping](docs/Model/InlineResponse200HydrasearchHydramapping.md)
  - [InlineResponse200Hydraview](docs/Model/InlineResponse200Hydraview.md)
+ - [OneOfBillingAddressJsonldBillingAddressWriteContext](docs/Model/OneOfBillingAddressJsonldBillingAddressWriteContext.md)
+ - [OneOfBillingAddressJsonldOrderReadContext](docs/Model/OneOfBillingAddressJsonldOrderReadContext.md)
+ - [OneOfBillingAddressJsonldOrderWriteContext](docs/Model/OneOfBillingAddressJsonldOrderWriteContext.md)
+ - [OneOfConfigurationEntryJsonldConfigurationReadContext](docs/Model/OneOfConfigurationEntryJsonldConfigurationReadContext.md)
+ - [OneOfConfigurationEntryJsonldConfigurationWriteContext](docs/Model/OneOfConfigurationEntryJsonldConfigurationWriteContext.md)
+ - [OneOfOrderJsonldOrderReadContext](docs/Model/OneOfOrderJsonldOrderReadContext.md)
+ - [OneOfOrderJsonldOrderWriteContext](docs/Model/OneOfOrderJsonldOrderWriteContext.md)
+ - [OneOfOrderLogJsonldOrderReadContext](docs/Model/OneOfOrderLogJsonldOrderReadContext.md)
+ - [OneOfOrderProductJsonldOrderProductReadContext](docs/Model/OneOfOrderProductJsonldOrderProductReadContext.md)
+ - [OneOfOrderProductJsonldOrderProductWriteContext](docs/Model/OneOfOrderProductJsonldOrderProductWriteContext.md)
+ - [OneOfOrderProductJsonldOrderReadContext](docs/Model/OneOfOrderProductJsonldOrderReadContext.md)
+ - [OneOfOrderProductJsonldOrderWriteContext](docs/Model/OneOfOrderProductJsonldOrderWriteContext.md)
+ - [OneOfOrderVoucherJsonldOrderReadContext](docs/Model/OneOfOrderVoucherJsonldOrderReadContext.md)
+ - [OneOfOrderVoucherJsonldOrderVoucherReadContext](docs/Model/OneOfOrderVoucherJsonldOrderVoucherReadContext.md)
+ - [OneOfOrderVoucherJsonldOrderVoucherWriteContext](docs/Model/OneOfOrderVoucherJsonldOrderVoucherWriteContext.md)
+ - [OneOfOrderVoucherJsonldVoucherReadContext](docs/Model/OneOfOrderVoucherJsonldVoucherReadContext.md)
+ - [OneOfVoucherJsonldVoucherReadContext](docs/Model/OneOfVoucherJsonldVoucherReadContext.md)
+ - [OneOfVoucherJsonldVoucherWriteContext](docs/Model/OneOfVoucherJsonldVoucherWriteContext.md)
  - [OrderJsonldOrderRead](docs/Model/OrderJsonldOrderRead.md)
  - [OrderJsonldOrderWrite](docs/Model/OrderJsonldOrderWrite.md)
  - [OrderLogJsonldOrderRead](docs/Model/OrderLogJsonldOrderRead.md)
@@ -208,12 +225,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
-## 0
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
 
 ## apiKey
 

@@ -48,7 +48,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderProductWrite';
+    protected static $swaggerModelName = 'OrderProduct.jsonld-OrderProductWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderProductJsonldOrderProductWriteContext',
 'id' => 'string',
 'type' => 'string',
 'order' => 'string',
@@ -239,7 +239,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
         $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
@@ -280,7 +280,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderProductJsonldOrderProductWriteContext
      */
     public function getContext()
     {
@@ -290,7 +290,7 @@ class OrderProductJsonldOrderProductWrite implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderProductJsonldOrderProductWriteContext $context context
      *
      * @return $this
      */

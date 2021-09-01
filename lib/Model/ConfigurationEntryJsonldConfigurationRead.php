@@ -48,7 +48,7 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ConfigurationEntry:jsonld-configuration:read';
+    protected static $swaggerModelName = 'ConfigurationEntry.jsonld-configuration.read';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfConfigurationEntryJsonldConfigurationReadContext',
 'id' => 'string',
 'type' => 'string',
 'uuid' => 'string',
@@ -256,7 +256,7 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfConfigurationEntryJsonldConfigurationReadContext
      */
     public function getContext()
     {
@@ -266,7 +266,7 @@ class ConfigurationEntryJsonldConfigurationRead implements ModelInterface, Array
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfConfigurationEntryJsonldConfigurationReadContext $context context
      *
      * @return $this
      */

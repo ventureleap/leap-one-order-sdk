@@ -48,7 +48,7 @@ class VoucherJsonldVoucherWrite implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Voucher:jsonld-VoucherWrite';
+    protected static $swaggerModelName = 'Voucher.jsonld-VoucherWrite';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class VoucherJsonldVoucherWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfVoucherJsonldVoucherWriteContext',
 'id' => 'string',
 'type' => 'string',
 'voucher_comment' => 'string',
@@ -250,9 +250,9 @@ self::VOUCHER_TYPE_AMOUNT,        ];
         $this->container['voucher_type'] = isset($data['voucher_type']) ? $data['voucher_type'] : null;
         $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
         $this->container['valid_to'] = isset($data['valid_to']) ? $data['valid_to'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['quantity_per_person'] = isset($data['quantity_per_person']) ? $data['quantity_per_person'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1;
+        $this->container['quantity_per_person'] = isset($data['quantity_per_person']) ? $data['quantity_per_person'] : 1;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
     }
@@ -310,7 +310,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfVoucherJsonldVoucherWriteContext
      */
     public function getContext()
     {
@@ -320,7 +320,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfVoucherJsonldVoucherWriteContext $context context
      *
      * @return $this
      */

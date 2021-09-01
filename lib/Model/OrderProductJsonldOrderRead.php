@@ -48,7 +48,7 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderProduct:jsonld-OrderRead';
+    protected static $swaggerModelName = 'OrderProduct.jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderProductJsonldOrderReadContext',
 'id' => 'string',
 'type' => 'string',
 'uuid' => 'string',
@@ -277,7 +277,7 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
@@ -319,7 +319,7 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderProductJsonldOrderReadContext
      */
     public function getContext()
     {
@@ -329,7 +329,7 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderProductJsonldOrderReadContext $context context
      *
      * @return $this
      */

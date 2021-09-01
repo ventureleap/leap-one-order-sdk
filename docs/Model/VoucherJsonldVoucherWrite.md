@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | **string** |  | [optional] 
+**context** | [**OneOfVoucherJsonldVoucherWriteContext**](OneOfVoucherJsonldVoucherWriteContext.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **voucher_comment** | **string** |  | [optional] 
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **voucher_type** | **string** | percentage/ammount | 
 **valid_from** | [**\DateTime**](\DateTime.md) |  | 
 **valid_to** | [**\DateTime**](\DateTime.md) |  | 
-**quantity** | **int** |  | 
-**quantity_per_person** | **int** |  | 
-**active** | **bool** |  | [optional] 
+**quantity** | **int** |  | [default to 1]
+**quantity_per_person** | **int** |  | [default to 1]
+**active** | **bool** |  | [optional] [default to true]
 **deleted** | **bool** |  | [optional] 
 **custom_data** | **object** |  | [optional] 
 

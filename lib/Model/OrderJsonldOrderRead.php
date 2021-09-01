@@ -48,7 +48,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Order:jsonld-OrderRead';
+    protected static $swaggerModelName = 'Order.jsonld-OrderRead';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'string',
+        'context' => 'OneOfOrderJsonldOrderReadContext',
 'id' => 'string',
 'type' => 'string',
 'uuid' => 'string',
-'order_code' => 'string',
 'status' => 'string',
 'payment_status' => 'string',
 'payment_date' => '\DateTime',
@@ -77,6 +76,8 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'string',
 'payment_comment' => 'string',
 'is_b_to_b' => 'bool',
+'invoice_uuid' => 'string',
+'invoice_number' => 'string',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -102,8 +103,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'uuid' => 'uuid',
-'order_code' => null,
+'uuid' => null,
 'status' => null,
 'payment_status' => null,
 'payment_date' => 'date-time',
@@ -120,6 +120,8 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => null,
 'payment_comment' => null,
 'is_b_to_b' => null,
+'invoice_uuid' => null,
+'invoice_number' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -167,7 +169,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'id' => '@id',
 'type' => '@type',
 'uuid' => 'uuid',
-'order_code' => 'orderCode',
 'status' => 'status',
 'payment_status' => 'paymentStatus',
 'payment_date' => 'paymentDate',
@@ -184,6 +185,8 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'paymentReference',
 'payment_comment' => 'paymentComment',
 'is_b_to_b' => 'isBToB',
+'invoice_uuid' => 'invoiceUuid',
+'invoice_number' => 'invoiceNumber',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -210,7 +213,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'id' => 'setId',
 'type' => 'setType',
 'uuid' => 'setUuid',
-'order_code' => 'setOrderCode',
 'status' => 'setStatus',
 'payment_status' => 'setPaymentStatus',
 'payment_date' => 'setPaymentDate',
@@ -227,6 +229,8 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'setPaymentReference',
 'payment_comment' => 'setPaymentComment',
 'is_b_to_b' => 'setIsBToB',
+'invoice_uuid' => 'setInvoiceUuid',
+'invoice_number' => 'setInvoiceNumber',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -253,7 +257,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'id' => 'getId',
 'type' => 'getType',
 'uuid' => 'getUuid',
-'order_code' => 'getOrderCode',
 'status' => 'getStatus',
 'payment_status' => 'getPaymentStatus',
 'payment_date' => 'getPaymentDate',
@@ -270,6 +273,8 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
 'payment_reference' => 'getPaymentReference',
 'payment_comment' => 'getPaymentComment',
 'is_b_to_b' => 'getIsBToB',
+'invoice_uuid' => 'getInvoiceUuid',
+'invoice_number' => 'getInvoiceNumber',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -348,7 +353,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
-        $this->container['order_code'] = isset($data['order_code']) ? $data['order_code'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['payment_status'] = isset($data['payment_status']) ? $data['payment_status'] : null;
         $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
@@ -365,10 +369,12 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['payment_comment'] = isset($data['payment_comment']) ? $data['payment_comment'] : null;
         $this->container['is_b_to_b'] = isset($data['is_b_to_b']) ? $data['is_b_to_b'] : null;
+        $this->container['invoice_uuid'] = isset($data['invoice_uuid']) ? $data['invoice_uuid'] : null;
+        $this->container['invoice_number'] = isset($data['invoice_number']) ? $data['invoice_number'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
-        $this->container['active'] = isset($data['active']) ? $data['active'] : null;
+        $this->container['active'] = isset($data['active']) ? $data['active'] : true;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['custom_data'] = isset($data['custom_data']) ? $data['custom_data'] : null;
         $this->container['total_gross_amount'] = isset($data['total_gross_amount']) ? $data['total_gross_amount'] : null;
@@ -421,7 +427,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return string
+     * @return OneOfOrderJsonldOrderReadContext
      */
     public function getContext()
     {
@@ -431,7 +437,7 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param string $context context
+     * @param OneOfOrderJsonldOrderReadContext $context context
      *
      * @return $this
      */
@@ -510,30 +516,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setUuid($uuid)
     {
         $this->container['uuid'] = $uuid;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_code
-     *
-     * @return string
-     */
-    public function getOrderCode()
-    {
-        return $this->container['order_code'];
-    }
-
-    /**
-     * Sets order_code
-     *
-     * @param string $order_code order_code
-     *
-     * @return $this
-     */
-    public function setOrderCode($order_code)
-    {
-        $this->container['order_code'] = $order_code;
 
         return $this;
     }
@@ -918,6 +900,54 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setIsBToB($is_b_to_b)
     {
         $this->container['is_b_to_b'] = $is_b_to_b;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_uuid
+     *
+     * @return string
+     */
+    public function getInvoiceUuid()
+    {
+        return $this->container['invoice_uuid'];
+    }
+
+    /**
+     * Sets invoice_uuid
+     *
+     * @param string $invoice_uuid invoice_uuid
+     *
+     * @return $this
+     */
+    public function setInvoiceUuid($invoice_uuid)
+    {
+        $this->container['invoice_uuid'] = $invoice_uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_number
+     *
+     * @return string
+     */
+    public function getInvoiceNumber()
+    {
+        return $this->container['invoice_number'];
+    }
+
+    /**
+     * Sets invoice_number
+     *
+     * @param string $invoice_number invoice_number
+     *
+     * @return $this
+     */
+    public function setInvoiceNumber($invoice_number)
+    {
+        $this->container['invoice_number'] = $invoice_number;
 
         return $this;
     }

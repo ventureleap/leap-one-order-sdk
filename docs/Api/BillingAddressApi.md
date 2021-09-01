@@ -5,12 +5,14 @@ All URIs are relative to */*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getBillingAddressCollection**](BillingAddressApi.md#getbillingaddresscollection) | **GET** /order/billing_addresses | Retrieves the collection of BillingAddress resources.
-[**getBillingAddressItem**](BillingAddressApi.md#getbillingaddressitem) | **GET** /order/billing_addresses/{id} | Retrieves a BillingAddress resource.
+[**getBillingAddressItem**](BillingAddressApi.md#getbillingaddressitem) | **GET** /order/billing_addresses/{uuid} | Retrieves a BillingAddress resource.
 [**postBillingAddressCollection**](BillingAddressApi.md#postbillingaddresscollection) | **POST** /order/billing_addresses | Creates a BillingAddress resource.
-[**putBillingAddressItem**](BillingAddressApi.md#putbillingaddressitem) | **PUT** /order/billing_addresses/{id} | Replaces the BillingAddress resource.
+[**putBillingAddressItem**](BillingAddressApi.md#putbillingaddressitem) | **PUT** /order/billing_addresses/{uuid} | Replaces the BillingAddress resource.
 
 # **getBillingAddressCollection**
 > \VentureLeap\OrderService\Model\InlineResponse200 getBillingAddressCollection($page)
+
+Retrieves the collection of BillingAddress resources.
 
 Retrieves the collection of BillingAddress resources.
 
@@ -62,7 +64,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBillingAddressItem**
-> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead getBillingAddressItem($id)
+> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite getBillingAddressItem($uuid)
+
+Retrieves a BillingAddress resource.
 
 Retrieves a BillingAddress resource.
 
@@ -81,10 +85,10 @@ $apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->getBillingAddressItem($id);
+    $result = $apiInstance->getBillingAddressItem($uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingAddressApi->getBillingAddressItem: ', $e->getMessage(), PHP_EOL;
@@ -96,11 +100,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead**](../Model/BillingAddressJsonldBillingAddressRead.md)
+[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)
 
 ### Authorization
 
@@ -114,7 +118,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postBillingAddressCollection**
-> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead postBillingAddressCollection($body)
+> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite postBillingAddressCollection($body)
+
+Creates a BillingAddress resource.
 
 Creates a BillingAddress resource.
 
@@ -148,11 +154,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)| The new BillingAddress resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)| The new BillingAddress resource |
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead**](../Model/BillingAddressJsonldBillingAddressRead.md)
+[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)
 
 ### Authorization
 
@@ -166,7 +172,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putBillingAddressItem**
-> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead putBillingAddressItem($id, $body)
+> \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite putBillingAddressItem($body, $uuid)
+
+Replaces the BillingAddress resource.
 
 Replaces the BillingAddress resource.
 
@@ -185,11 +193,11 @@ $apiInstance = new VentureLeap\OrderService\Api\BillingAddressApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
 $body = new \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite(); // \VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite | The updated BillingAddress resource
+$uuid = "uuid_example"; // string | Resource identifier
 
 try {
-    $result = $apiInstance->putBillingAddressItem($id, $body);
+    $result = $apiInstance->putBillingAddressItem($body, $uuid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BillingAddressApi->putBillingAddressItem: ', $e->getMessage(), PHP_EOL;
@@ -201,12 +209,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **body** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)| The updated BillingAddress resource | [optional]
+ **body** | [**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)| The updated BillingAddress resource |
+ **uuid** | **string**| Resource identifier |
 
 ### Return type
 
-[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressRead**](../Model/BillingAddressJsonldBillingAddressRead.md)
+[**\VentureLeap\OrderService\Model\BillingAddressJsonldBillingAddressWrite**](../Model/BillingAddressJsonldBillingAddressWrite.md)
 
 ### Authorization
 

@@ -91,15 +91,15 @@ class OrderVoucherApi
      *
      * Removes the OrderVoucher resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteOrderVoucherItem($id)
+    public function deleteOrderVoucherItem($uuid)
     {
-        $this->deleteOrderVoucherItemWithHttpInfo($id);
+        $this->deleteOrderVoucherItemWithHttpInfo($uuid);
     }
 
     /**
@@ -107,16 +107,16 @@ class OrderVoucherApi
      *
      * Removes the OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrderVoucherItemWithHttpInfo($id)
+    public function deleteOrderVoucherItemWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderVoucherItemRequest($id);
+        $request = $this->deleteOrderVoucherItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,14 +160,14 @@ class OrderVoucherApi
      *
      * Removes the OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderVoucherItemAsync($id)
+    public function deleteOrderVoucherItemAsync($uuid)
     {
-        return $this->deleteOrderVoucherItemAsyncWithHttpInfo($id)
+        return $this->deleteOrderVoucherItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -180,15 +180,15 @@ class OrderVoucherApi
      *
      * Removes the OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrderVoucherItemAsyncWithHttpInfo($id)
+    public function deleteOrderVoucherItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '';
-        $request = $this->deleteOrderVoucherItemRequest($id);
+        $request = $this->deleteOrderVoucherItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -216,21 +216,21 @@ class OrderVoucherApi
     /**
      * Create request for operation 'deleteOrderVoucherItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteOrderVoucherItemRequest($id)
+    protected function deleteOrderVoucherItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling deleteOrderVoucherItem'
+                'Missing the required parameter $uuid when calling deleteOrderVoucherItem'
             );
         }
 
-        $resourcePath = '/order/order_vouchers/{id}';
+        $resourcePath = '/order/order_vouchers/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -239,10 +239,10 @@ class OrderVoucherApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -321,7 +321,8 @@ class OrderVoucherApi
      *
      * Retrieves the collection of OrderVoucher resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties properties (optional)
      * @param  string $custom_data custom_data (optional)
      * @param  bool $active active (optional)
      * @param  bool $deleted deleted (optional)
@@ -337,15 +338,14 @@ class OrderVoucherApi
      * @param  string $order_updated_at order_updated_at (optional)
      * @param  string $order_active order_active (optional)
      * @param  string $order_deleted order_deleted (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2003
      */
-    public function getOrderVoucherCollection($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollection($page = '1', $properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null)
     {
-        list($response) = $this->getOrderVoucherCollectionWithHttpInfo($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        list($response) = $this->getOrderVoucherCollectionWithHttpInfo($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted);
         return $response;
     }
 
@@ -354,7 +354,8 @@ class OrderVoucherApi
      *
      * Retrieves the collection of OrderVoucher resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
@@ -370,16 +371,15 @@ class OrderVoucherApi
      * @param  string $order_updated_at (optional)
      * @param  string $order_active (optional)
      * @param  string $order_deleted (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderVoucherCollectionWithHttpInfo($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionWithHttpInfo($page = '1', $properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
-        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        $request = $this->getOrderVoucherCollectionRequest($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted);
 
         try {
             $options = $this->createHttpClientOption();
@@ -445,7 +445,8 @@ class OrderVoucherApi
      *
      * Retrieves the collection of OrderVoucher resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
@@ -461,14 +462,13 @@ class OrderVoucherApi
      * @param  string $order_updated_at (optional)
      * @param  string $order_active (optional)
      * @param  string $order_deleted (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherCollectionAsync($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionAsync($page = '1', $properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null)
     {
-        return $this->getOrderVoucherCollectionAsyncWithHttpInfo($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page)
+        return $this->getOrderVoucherCollectionAsyncWithHttpInfo($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -481,7 +481,8 @@ class OrderVoucherApi
      *
      * Retrieves the collection of OrderVoucher resources.
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
@@ -497,15 +498,14 @@ class OrderVoucherApi
      * @param  string $order_updated_at (optional)
      * @param  string $order_active (optional)
      * @param  string $order_deleted (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherCollectionAsyncWithHttpInfo($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    public function getOrderVoucherCollectionAsyncWithHttpInfo($page = '1', $properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2003';
-        $request = $this->getOrderVoucherCollectionRequest($properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted, $page);
+        $request = $this->getOrderVoucherCollectionRequest($page, $properties, $custom_data, $active, $deleted, $created_at_before, $created_at_strictly_before, $created_at_after, $created_at_strictly_after, $updated_at_before, $updated_at_strictly_before, $updated_at_after, $updated_at_strictly_after, $order_created_at, $order_updated_at, $order_active, $order_deleted);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -547,7 +547,8 @@ class OrderVoucherApi
     /**
      * Create request for operation 'getOrderVoucherCollection'
      *
-     * @param  string[] $properties Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} (optional)
+     * @param  int $page The collection page number (optional, default to 1)
+     * @param  string[] $properties (optional)
      * @param  string $custom_data (optional)
      * @param  bool $active (optional)
      * @param  bool $deleted (optional)
@@ -563,12 +564,11 @@ class OrderVoucherApi
      * @param  string $order_updated_at (optional)
      * @param  string $order_active (optional)
      * @param  string $order_deleted (optional)
-     * @param  int $page The collection page number (optional, default to 1)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderVoucherCollectionRequest($properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null, $page = '1')
+    protected function getOrderVoucherCollectionRequest($page = '1', $properties = null, $custom_data = null, $active = null, $deleted = null, $created_at_before = null, $created_at_strictly_before = null, $created_at_after = null, $created_at_strictly_after = null, $updated_at_before = null, $updated_at_strictly_before = null, $updated_at_after = null, $updated_at_strictly_after = null, $order_created_at = null, $order_updated_at = null, $order_active = null, $order_deleted = null)
     {
 
         $resourcePath = '/order/order_vouchers';
@@ -578,6 +578,10 @@ class OrderVoucherApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
+        }
         // query params
         if (is_array($properties)) {
             $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
@@ -644,10 +648,6 @@ class OrderVoucherApi
         // query params
         if ($order_deleted !== null) {
             $queryParams['order[deleted]'] = ObjectSerializer::toQueryValue($order_deleted, null);
-        }
-        // query params
-        if ($page !== null) {
-            $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
         }
 
 
@@ -725,15 +725,15 @@ class OrderVoucherApi
      *
      * Retrieves a OrderVoucher resource.
      *
-     * @param  string $id id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead
      */
-    public function getOrderVoucherItem($id)
+    public function getOrderVoucherItem($uuid)
     {
-        list($response) = $this->getOrderVoucherItemWithHttpInfo($id);
+        list($response) = $this->getOrderVoucherItemWithHttpInfo($uuid);
         return $response;
     }
 
@@ -742,16 +742,16 @@ class OrderVoucherApi
      *
      * Retrieves a OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderVoucherItemWithHttpInfo($id)
+    public function getOrderVoucherItemWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
-        $request = $this->getOrderVoucherItemRequest($id);
+        $request = $this->getOrderVoucherItemRequest($uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -817,14 +817,14 @@ class OrderVoucherApi
      *
      * Retrieves a OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherItemAsync($id)
+    public function getOrderVoucherItemAsync($uuid)
     {
-        return $this->getOrderVoucherItemAsyncWithHttpInfo($id)
+        return $this->getOrderVoucherItemAsyncWithHttpInfo($uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -837,15 +837,15 @@ class OrderVoucherApi
      *
      * Retrieves a OrderVoucher resource.
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderVoucherItemAsyncWithHttpInfo($id)
+    public function getOrderVoucherItemAsyncWithHttpInfo($uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
-        $request = $this->getOrderVoucherItemRequest($id);
+        $request = $this->getOrderVoucherItemRequest($uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -887,21 +887,21 @@ class OrderVoucherApi
     /**
      * Create request for operation 'getOrderVoucherItem'
      *
-     * @param  string $id (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderVoucherItemRequest($id)
+    protected function getOrderVoucherItemRequest($uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling getOrderVoucherItem'
+                'Missing the required parameter $uuid when calling getOrderVoucherItem'
             );
         }
 
-        $resourcePath = '/order/order_vouchers/{id}';
+        $resourcePath = '/order/order_vouchers/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -910,10 +910,10 @@ class OrderVoucherApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
@@ -992,13 +992,13 @@ class OrderVoucherApi
      *
      * Creates a OrderVoucher resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead
      */
-    public function postOrderVoucherCollection($body = null)
+    public function postOrderVoucherCollection($body)
     {
         list($response) = $this->postOrderVoucherCollectionWithHttpInfo($body);
         return $response;
@@ -1009,13 +1009,13 @@ class OrderVoucherApi
      *
      * Creates a OrderVoucher resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postOrderVoucherCollectionWithHttpInfo($body = null)
+    public function postOrderVoucherCollectionWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
         $request = $this->postOrderVoucherCollectionRequest($body);
@@ -1084,12 +1084,12 @@ class OrderVoucherApi
      *
      * Creates a OrderVoucher resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderVoucherCollectionAsync($body = null)
+    public function postOrderVoucherCollectionAsync($body)
     {
         return $this->postOrderVoucherCollectionAsyncWithHttpInfo($body)
             ->then(
@@ -1104,12 +1104,12 @@ class OrderVoucherApi
      *
      * Creates a OrderVoucher resource.
      *
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrderVoucherCollectionAsyncWithHttpInfo($body = null)
+    public function postOrderVoucherCollectionAsyncWithHttpInfo($body)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
         $request = $this->postOrderVoucherCollectionRequest($body);
@@ -1154,13 +1154,19 @@ class OrderVoucherApi
     /**
      * Create request for operation 'postOrderVoucherCollection'
      *
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The new OrderVoucher resource (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postOrderVoucherCollectionRequest($body = null)
+    protected function postOrderVoucherCollectionRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling postOrderVoucherCollection'
+            );
+        }
 
         $resourcePath = '/order/order_vouchers';
         $formParams = [];
@@ -1248,16 +1254,16 @@ class OrderVoucherApi
      *
      * Replaces the OrderVoucher resource.
      *
-     * @param  string $id id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead
      */
-    public function putOrderVoucherItem($id, $body = null)
+    public function putOrderVoucherItem($body, $uuid)
     {
-        list($response) = $this->putOrderVoucherItemWithHttpInfo($id, $body);
+        list($response) = $this->putOrderVoucherItemWithHttpInfo($body, $uuid);
         return $response;
     }
 
@@ -1266,17 +1272,17 @@ class OrderVoucherApi
      *
      * Replaces the OrderVoucher resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putOrderVoucherItemWithHttpInfo($id, $body = null)
+    public function putOrderVoucherItemWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
-        $request = $this->putOrderVoucherItemRequest($id, $body);
+        $request = $this->putOrderVoucherItemRequest($body, $uuid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1342,15 +1348,15 @@ class OrderVoucherApi
      *
      * Replaces the OrderVoucher resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderVoucherItemAsync($id, $body = null)
+    public function putOrderVoucherItemAsync($body, $uuid)
     {
-        return $this->putOrderVoucherItemAsyncWithHttpInfo($id, $body)
+        return $this->putOrderVoucherItemAsyncWithHttpInfo($body, $uuid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1363,16 +1369,16 @@ class OrderVoucherApi
      *
      * Replaces the OrderVoucher resource.
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrderVoucherItemAsyncWithHttpInfo($id, $body = null)
+    public function putOrderVoucherItemAsyncWithHttpInfo($body, $uuid)
     {
         $returnType = '\VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherRead';
-        $request = $this->putOrderVoucherItemRequest($id, $body);
+        $request = $this->putOrderVoucherItemRequest($body, $uuid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1414,22 +1420,28 @@ class OrderVoucherApi
     /**
      * Create request for operation 'putOrderVoucherItem'
      *
-     * @param  string $id (required)
-     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (optional)
+     * @param  \VentureLeap\OrderService\Model\OrderVoucherJsonldOrderVoucherWrite $body The updated OrderVoucher resource (required)
+     * @param  string $uuid Resource identifier (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putOrderVoucherItemRequest($id, $body = null)
+    protected function putOrderVoucherItemRequest($body, $uuid)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling putOrderVoucherItem'
+                'Missing the required parameter $body when calling putOrderVoucherItem'
+            );
+        }
+        // verify the required parameter 'uuid' is set
+        if ($uuid === null || (is_array($uuid) && count($uuid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $uuid when calling putOrderVoucherItem'
             );
         }
 
-        $resourcePath = '/order/order_vouchers/{id}';
+        $resourcePath = '/order/order_vouchers/{uuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1438,10 +1450,10 @@ class OrderVoucherApi
 
 
         // path params
-        if ($id !== null) {
+        if ($uuid !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
+                '{' . 'uuid' . '}',
+                ObjectSerializer::toPathValue($uuid),
                 $resourcePath
             );
         }
