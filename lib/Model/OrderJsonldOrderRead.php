@@ -406,9 +406,6 @@ class OrderJsonldOrderRead implements ModelInterface, ArrayAccess
         if ($this->container['customer_uuid'] === null) {
             $invalidProperties[] = "'customer_uuid' can't be null";
         }
-        if ($this->container['billing_address'] === null) {
-            $invalidProperties[] = "'billing_address' can't be null";
-        }
         return $invalidProperties;
     }
 
