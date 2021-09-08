@@ -86,7 +86,7 @@ class VoucherJsonldVoucherRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'uuid' => 'uuid',
+'uuid' => null,
 'voucher_code' => null,
 'voucher_comment' => null,
 'value' => null,

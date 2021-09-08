@@ -87,7 +87,7 @@ class OrderProductJsonldOrderProductRead implements ModelInterface, ArrayAccess
         'context' => null,
 'id' => null,
 'type' => null,
-'uuid' => 'uuid',
+'uuid' => null,
 'order' => 'iri-reference',
 'product_id' => 'uuid',
 'name' => null,
