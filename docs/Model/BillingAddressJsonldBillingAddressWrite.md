@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**OneOfBillingAddressJsonldBillingAddressWriteContext**](OneOfBillingAddressJsonldBillingAddressWriteContext.md) |  | [optional] 
+**context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **active** | **bool** |  | [optional] [default to true]

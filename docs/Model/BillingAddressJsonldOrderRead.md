@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**OneOfBillingAddressJsonldOrderReadContext**](OneOfBillingAddressJsonldOrderReadContext.md) |  | [optional] 
+**context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **full_name** | **string** |  | [optional] 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**OneOfOrderProductJsonldOrderProductWriteContext**](OneOfOrderProductJsonldOrderProductWriteContext.md) |  | [optional] 
+**context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **order** | **string** | The corresponding order for this product as Iri | 

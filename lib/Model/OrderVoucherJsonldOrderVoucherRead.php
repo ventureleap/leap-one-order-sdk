@@ -56,7 +56,7 @@ class OrderVoucherJsonldOrderVoucherRead implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'OneOfOrderVoucherJsonldOrderVoucherReadContext',
+        'context' => 'string',
 'id' => 'string',
 'type' => 'string',
 'uuid' => 'string',
@@ -346,7 +346,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Gets context
      *
-     * @return OneOfOrderVoucherJsonldOrderVoucherReadContext
+     * @return string
      */
     public function getContext()
     {
@@ -356,7 +356,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Sets context
      *
-     * @param OneOfOrderVoucherJsonldOrderVoucherReadContext $context context
+     * @param string $context context
      *
      * @return $this
      */

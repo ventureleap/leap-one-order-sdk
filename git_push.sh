@@ -18,7 +18,7 @@ if [ "$git_repo_id" = "" ]; then
 fi
 
 if [ "$release_note" = "" ]; then
-    release_note="Order Service commit hash: 9499aa1"
+    release_note="Order Service commit hash: bf964ba"
     echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 

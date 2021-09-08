@@ -56,7 +56,7 @@ class BillingAddressJsonldBillingAddressWrite implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'OneOfBillingAddressJsonldBillingAddressWriteContext',
+        'context' => 'string',
 'id' => 'string',
 'type' => 'string',
 'active' => 'bool',
@@ -247,7 +247,7 @@ class BillingAddressJsonldBillingAddressWrite implements ModelInterface, ArrayAc
     /**
      * Gets context
      *
-     * @return OneOfBillingAddressJsonldBillingAddressWriteContext
+     * @return string
      */
     public function getContext()
     {
@@ -257,7 +257,7 @@ class BillingAddressJsonldBillingAddressWrite implements ModelInterface, ArrayAc
     /**
      * Sets context
      *
-     * @param OneOfBillingAddressJsonldBillingAddressWriteContext $context context
+     * @param string $context context
      *
      * @return $this
      */

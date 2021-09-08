@@ -56,7 +56,7 @@ class VoucherJsonldVoucherWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'OneOfVoucherJsonldVoucherWriteContext',
+        'context' => 'string',
 'id' => 'string',
 'type' => 'string',
 'voucher_comment' => 'string',
@@ -310,7 +310,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Gets context
      *
-     * @return OneOfVoucherJsonldVoucherWriteContext
+     * @return string
      */
     public function getContext()
     {
@@ -320,7 +320,7 @@ self::VOUCHER_TYPE_AMOUNT,        ];
     /**
      * Sets context
      *
-     * @param OneOfVoucherJsonldVoucherWriteContext $context context
+     * @param string $context context
      *
      * @return $this
      */

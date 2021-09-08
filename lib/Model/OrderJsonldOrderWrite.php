@@ -56,7 +56,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'OneOfOrderJsonldOrderWriteContext',
+        'context' => 'string',
 'id' => 'string',
 'type' => 'string',
 'status' => 'string',
@@ -322,7 +322,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return OneOfOrderJsonldOrderWriteContext
+     * @return string
      */
     public function getContext()
     {
@@ -332,7 +332,7 @@ class OrderJsonldOrderWrite implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param OneOfOrderJsonldOrderWriteContext $context context
+     * @param string $context context
      *
      * @return $this
      */

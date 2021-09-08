@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**context** | [**OneOfOrderVoucherJsonldOrderVoucherWriteContext**](OneOfOrderVoucherJsonldOrderVoucherWriteContext.md) |  | [optional] 
+**context** | **string** |  | [optional] 
 **id** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **order** | **string** |  | 

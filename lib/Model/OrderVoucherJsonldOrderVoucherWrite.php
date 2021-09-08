@@ -56,7 +56,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'context' => 'OneOfOrderVoucherJsonldOrderVoucherWriteContext',
+        'context' => 'string',
 'id' => 'string',
 'type' => 'string',
 'order' => 'string',
@@ -247,7 +247,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
     /**
      * Gets context
      *
-     * @return OneOfOrderVoucherJsonldOrderVoucherWriteContext
+     * @return string
      */
     public function getContext()
     {
@@ -257,7 +257,7 @@ class OrderVoucherJsonldOrderVoucherWrite implements ModelInterface, ArrayAccess
     /**
      * Sets context
      *
-     * @param OneOfOrderVoucherJsonldOrderVoucherWriteContext $context context
+     * @param string $context context
      *
      * @return $this
      */
