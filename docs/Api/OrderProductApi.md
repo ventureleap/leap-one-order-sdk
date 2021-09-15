@@ -64,7 +64,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderProductCollection**
-> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderProductCollection($page, $properties, $name, $uom, $product_id)
+> \VentureLeap\OrderService\Model\InlineResponse2002 getOrderProductCollection($page, $name, $uom, $product_id, $properties)
 
 Retrieves the collection of OrderProduct resources.
 
@@ -86,13 +86,13 @@ $apiInstance = new VentureLeap\OrderService\Api\OrderProductApi(
     $config
 );
 $page = 1; // int | The collection page number
-$properties = array("properties_example"); // string[] | 
 $name = "name_example"; // string | 
 $uom = "uom_example"; // string | 
 $product_id = "product_id_example"; // string | 
+$properties = array("properties_example"); // string[] | 
 
 try {
-    $result = $apiInstance->getOrderProductCollection($page, $properties, $name, $uom, $product_id);
+    $result = $apiInstance->getOrderProductCollection($page, $name, $uom, $product_id, $properties);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderProductApi->getOrderProductCollection: ', $e->getMessage(), PHP_EOL;
@@ -105,10 +105,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The collection page number | [optional] [default to 1]
- **properties** | [**string[]**](../Model/string.md)|  | [optional]
  **name** | **string**|  | [optional]
  **uom** | **string**|  | [optional]
  **product_id** | **string**|  | [optional]
+ **properties** | [**string[]**](../Model/string.md)|  | [optional]
 
 ### Return type
 

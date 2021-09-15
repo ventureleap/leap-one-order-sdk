@@ -322,18 +322,18 @@ class OrderProductApi
      * Retrieves the collection of OrderProduct resources.
      *
      * @param  int $page The collection page number (optional, default to 1)
-     * @param  string[] $properties properties (optional)
      * @param  string $name name (optional)
      * @param  string $uom uom (optional)
      * @param  string $product_id product_id (optional)
+     * @param  string[] $properties properties (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \VentureLeap\OrderService\Model\InlineResponse2002
      */
-    public function getOrderProductCollection($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
+    public function getOrderProductCollection($page = '1', $name = null, $uom = null, $product_id = null, $properties = null)
     {
-        list($response) = $this->getOrderProductCollectionWithHttpInfo($page, $properties, $name, $uom, $product_id);
+        list($response) = $this->getOrderProductCollectionWithHttpInfo($page, $name, $uom, $product_id, $properties);
         return $response;
     }
 
@@ -343,19 +343,19 @@ class OrderProductApi
      * Retrieves the collection of OrderProduct resources.
      *
      * @param  int $page The collection page number (optional, default to 1)
-     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
+     * @param  string[] $properties (optional)
      *
      * @throws \VentureLeap\OrderService\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \VentureLeap\OrderService\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderProductCollectionWithHttpInfo($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
+    public function getOrderProductCollectionWithHttpInfo($page = '1', $name = null, $uom = null, $product_id = null, $properties = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderProductCollectionRequest($page, $properties, $name, $uom, $product_id);
+        $request = $this->getOrderProductCollectionRequest($page, $name, $uom, $product_id, $properties);
 
         try {
             $options = $this->createHttpClientOption();
@@ -422,17 +422,17 @@ class OrderProductApi
      * Retrieves the collection of OrderProduct resources.
      *
      * @param  int $page The collection page number (optional, default to 1)
-     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
+     * @param  string[] $properties (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsync($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
+    public function getOrderProductCollectionAsync($page = '1', $name = null, $uom = null, $product_id = null, $properties = null)
     {
-        return $this->getOrderProductCollectionAsyncWithHttpInfo($page, $properties, $name, $uom, $product_id)
+        return $this->getOrderProductCollectionAsyncWithHttpInfo($page, $name, $uom, $product_id, $properties)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -446,18 +446,18 @@ class OrderProductApi
      * Retrieves the collection of OrderProduct resources.
      *
      * @param  int $page The collection page number (optional, default to 1)
-     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
+     * @param  string[] $properties (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderProductCollectionAsyncWithHttpInfo($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
+    public function getOrderProductCollectionAsyncWithHttpInfo($page = '1', $name = null, $uom = null, $product_id = null, $properties = null)
     {
         $returnType = '\VentureLeap\OrderService\Model\InlineResponse2002';
-        $request = $this->getOrderProductCollectionRequest($page, $properties, $name, $uom, $product_id);
+        $request = $this->getOrderProductCollectionRequest($page, $name, $uom, $product_id, $properties);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -500,15 +500,15 @@ class OrderProductApi
      * Create request for operation 'getOrderProductCollection'
      *
      * @param  int $page The collection page number (optional, default to 1)
-     * @param  string[] $properties (optional)
      * @param  string $name (optional)
      * @param  string $uom (optional)
      * @param  string $product_id (optional)
+     * @param  string[] $properties (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getOrderProductCollectionRequest($page = '1', $properties = null, $name = null, $uom = null, $product_id = null)
+    protected function getOrderProductCollectionRequest($page = '1', $name = null, $uom = null, $product_id = null, $properties = null)
     {
 
         $resourcePath = '/order/order_products';
@@ -523,13 +523,6 @@ class OrderProductApi
             $queryParams['page'] = ObjectSerializer::toQueryValue($page, null);
         }
         // query params
-        if (is_array($properties)) {
-            $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
-        }
-        if ($properties !== null) {
-            $queryParams['properties[]'] = ObjectSerializer::toQueryValue($properties, null);
-        }
-        // query params
         if ($name !== null) {
             $queryParams['name'] = ObjectSerializer::toQueryValue($name, null);
         }
@@ -540,6 +533,13 @@ class OrderProductApi
         // query params
         if ($product_id !== null) {
             $queryParams['productId'] = ObjectSerializer::toQueryValue($product_id, null);
+        }
+        // query params
+        if (is_array($properties)) {
+            $properties = ObjectSerializer::serializeCollection($properties, 'multi', true);
+        }
+        if ($properties !== null) {
+            $queryParams['properties[]'] = ObjectSerializer::toQueryValue($properties, null);
         }
 
 
