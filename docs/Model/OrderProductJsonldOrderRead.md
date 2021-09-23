@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **quantity** | **float** | example 10 (pieces) or 1,5 (liters) | [optional] 
 **gross_price_per_unit** | **int** |  | 
 **vat_per_unit** | **int** |  | [optional] 
-**tax_percentage** | **int** | example 1900 &#x3D; 19.00% | [optional] 
 **application_id** | **string** |  | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] 

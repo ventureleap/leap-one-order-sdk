@@ -146,13 +146,6 @@ class OrderProductJsonldOrderReadTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "tax_percentage"
-     */
-    public function testPropertyTaxPercentage()
-    {
-    }
-
-    /**
      * Test attribute "application_id"
      */
     public function testPropertyApplicationId()

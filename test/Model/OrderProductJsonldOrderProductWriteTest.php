@@ -146,13 +146,6 @@ class OrderProductJsonldOrderProductWriteTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test attribute "tax_percentage"
-     */
-    public function testPropertyTaxPercentage()
-    {
-    }
-
-    /**
      * Test attribute "active"
      */
     public function testPropertyActive()

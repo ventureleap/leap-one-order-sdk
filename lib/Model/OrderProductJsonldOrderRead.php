@@ -66,7 +66,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'quantity' => 'float',
 'gross_price_per_unit' => 'int',
 'vat_per_unit' => 'int',
-'tax_percentage' => 'int',
 'application_id' => 'string',
 'created_at' => '\DateTime',
 'updated_at' => '\DateTime',
@@ -94,7 +93,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'quantity' => null,
 'gross_price_per_unit' => null,
 'vat_per_unit' => null,
-'tax_percentage' => null,
 'application_id' => null,
 'created_at' => 'date-time',
 'updated_at' => 'date-time',
@@ -143,7 +141,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'quantity' => 'quantity',
 'gross_price_per_unit' => 'grossPricePerUnit',
 'vat_per_unit' => 'vatPerUnit',
-'tax_percentage' => 'taxPercentage',
 'application_id' => 'applicationId',
 'created_at' => 'createdAt',
 'updated_at' => 'updatedAt',
@@ -171,7 +168,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'quantity' => 'setQuantity',
 'gross_price_per_unit' => 'setGrossPricePerUnit',
 'vat_per_unit' => 'setVatPerUnit',
-'tax_percentage' => 'setTaxPercentage',
 'application_id' => 'setApplicationId',
 'created_at' => 'setCreatedAt',
 'updated_at' => 'setUpdatedAt',
@@ -199,7 +195,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
 'quantity' => 'getQuantity',
 'gross_price_per_unit' => 'getGrossPricePerUnit',
 'vat_per_unit' => 'getVatPerUnit',
-'tax_percentage' => 'getTaxPercentage',
 'application_id' => 'getApplicationId',
 'created_at' => 'getCreatedAt',
 'updated_at' => 'getUpdatedAt',
@@ -279,7 +274,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['gross_price_per_unit'] = isset($data['gross_price_per_unit']) ? $data['gross_price_per_unit'] : null;
         $this->container['vat_per_unit'] = isset($data['vat_per_unit']) ? $data['vat_per_unit'] : null;
-        $this->container['tax_percentage'] = isset($data['tax_percentage']) ? $data['tax_percentage'] : null;
         $this->container['application_id'] = isset($data['application_id']) ? $data['application_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -558,30 +552,6 @@ class OrderProductJsonldOrderRead implements ModelInterface, ArrayAccess
     public function setVatPerUnit($vat_per_unit)
     {
         $this->container['vat_per_unit'] = $vat_per_unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_percentage
-     *
-     * @return int
-     */
-    public function getTaxPercentage()
-    {
-        return $this->container['tax_percentage'];
-    }
-
-    /**
-     * Sets tax_percentage
-     *
-     * @param int $tax_percentage example 1900 = 19.00%
-     *
-     * @return $this
-     */
-    public function setTaxPercentage($tax_percentage)
-    {
-        $this->container['tax_percentage'] = $tax_percentage;
 
         return $this;
     }
